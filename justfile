@@ -2,12 +2,12 @@
 env_name := "ben_docs"
 env_run_cmd := "mamba run --live-stream --name " + env_name
 
-# Install environment
-all: install
-
 # Build the book
 build: clean
 	{{env_run_cmd}} jupyter-book build bigearthnet_documentation
+
+# Install and build environment
+all: install build
 
 clean:
 	{{env_run_cmd}} jupyter-book clean bigearthnet_documentation
@@ -31,3 +31,7 @@ install-no-lock:
 # Requires the current environment to be activated!
 write-lock:
 	mamba env export > lock.yml
+
+# Deploy to the hidden server
+deploy: build
+	scp -r {{justfile_directory()}}/bigearthnet_documentation/_build/html/* $USERNAME@$SERVER:ben-docs-server/

@@ -1,4 +1,4 @@
-# BigEarthNet Documentation
+# BigEarthNet Documentation Introduction
 
 :::{warning}
 - This site is an initial draft of the BigEarthNet documentation!
@@ -13,7 +13,8 @@ updated in {cite:t}`BEN19labels`.
 
 By providing the following reference, we try to accomplish several goals:
 
-- Provide interested users a high-level overview of the BigEarthNet dataset - What are these so-called _patches_?
+- Provide interested users a high-level overview of the BigEarthNet dataset
+  - What are these so-called _patches_?
   - Where does the data come from?
   - How can I open the patches?
   - How do I work with the metadata?
@@ -42,6 +43,3 @@ All previous comments will be deleted after the transition!
 
 ```{bibliography}
 ```
-
-<!-- TODO:
-Actually push to GitHub -->

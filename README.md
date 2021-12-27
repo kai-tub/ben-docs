@@ -2,6 +2,15 @@
 
 A user-friendly introduction to the multi-spectral BigEarthNet dataset.
 
+## Accessing the site
+At the time of writing, the content is not allowed to be shared with the general public.
+To still allow thesis students and other colleagues to take a look at the current progress, the content is manually hosted on our `erde` server.
+The website is _manually_ hosted via port 28080.
+Connect to the server with:
+`ssh -L 28080:localhost:28080 USERNAME@erde.rsim.tu-berlin.de`
+
+Then open the
+
 ## Usage
 
 ### Building the book

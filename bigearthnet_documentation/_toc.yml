@@ -4,4 +4,6 @@
 format: jb-book
 root: intro
 chapters:
-  - file: dummy
+  - file: what-is-ben
+  - file: references
+  - file: efficiently-loading-ben
