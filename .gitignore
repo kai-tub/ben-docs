@@ -1,2 +1,10 @@
 _build/
 .env
+tmp/
+*.bak
+*.tmp
+.ipynb_checkpoints/
+*.bak
+/gdf/
+dist/
+dist

@@ -5,7 +5,7 @@
 
 #######################################################################################
 # Book settings
-title: BigEarthNet Documentation # The title of the book. Will be placed in the left navbar.
+title: BigEarthNet Guide # The title of the book. Will be placed in the left navbar.
 author: Kai Norman Clasen # The author of the book
 copyright: "2021" # Copyright year to be placed in the footer
 logo: logo.png # A path to the book logo
@@ -38,6 +38,21 @@ html:
   comments:
     utterances:
       repo: "kai-tub/ben-docs"
-# sphinx:
-#   extra_extensions:
-#     -
+
+sphinx:
+  config:
+    nb_custom_formats:
+      .mipynb:
+        - common_nb_preprocessors.metadata_injector.jupyter_book_metadata_injector
+        # Currently, requires an option argument to work
+        - remove_line: True
+  bibtex_default_style: unsrt
+
+parse:
+  myst_enable_extensions:
+    - dollarmath
+    - linkify
+    - colon_fence
+    - deflist
+    - html_image
+    - html_admonition

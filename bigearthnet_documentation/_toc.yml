@@ -2,8 +2,13 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
+root: problem-statement
 chapters:
-  - file: what-is-ben
-  - file: references
+  - file: intro
+  - file: basics
+  - file: data-source
+  - file: labels
+  - file: raw-data
+  - file: label-distribution
   - file: efficiently-loading-ben
+  - file: references

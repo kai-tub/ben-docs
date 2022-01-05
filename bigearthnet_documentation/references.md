@@ -3,8 +3,7 @@
 Here, we provide a collection of relevant links provided by our research group:
 
 - The original BigEarthNet (S2) paper {cite:t}`BEN`
-- The BigEarthNet-S1 publication {cite:t}`BEN19labels`
-- The publication of the recommended 19-class nomenclature {cite:t}`BEN19labels`
+- The BigEarthNet-S1 publication + the recommended 19-class nomenclature {cite:t}`BEN19labels`
 
 ## Pretrained models
 Every repository includes code to re-run the training procedure.
@@ -43,4 +42,5 @@ These models are all trained with the TensorFlow library.
 ## Bibliography
 
 ```{bibliography}
+  :filter: docname in docnames
 ```

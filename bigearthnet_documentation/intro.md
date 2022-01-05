@@ -1,23 +1,24 @@
-# BigEarthNet Documentation Introduction
+# BigEarthNet Guide Introduction
 
 :::{warning}
 - This site is an initial draft of the BigEarthNet documentation!
 - The provided code hasn't passed any internal reviews and should only be copied with caution!
-- The first few iterations may contain many spelling mistakes and incoherent sentences.
+- The first few iterations may contain spelling mistakes and incoherent sentences.
   -  I (Kai) apologies for it in advance. 🙂
 :::
 
 This documentation attempts to lower the bar to work with the multi-spectral [BigEarthNet](http://bigearth.net/) dataset.
-The BigEarthNet dataset was initially published in {cite:t}`BEN` and
-updated in {cite:t}`BEN19labels`.
+The BigEarthNet dataset was originally published in {cite:t}`intro-BEN` and
+updated in {cite:t}`intro-BEN19labels`.
 
 By providing the following reference, we try to accomplish several goals:
 
 - Provide interested users a high-level overview of the BigEarthNet dataset
-  - What are these so-called _patches_?
   - Where does the data come from?
-  - How can I open the patches?
+  - What are _patches_ or tiles?
+  - How can I visualize the data?
   - How do I work with the metadata?
+  - How do I efficiently work with files?
 - Provide pre-calculated files that allow for quick stochastical analysis without requiring any complicated installation or download steps
   - Ideally, (large) CSV files will be generated that allow for fast inspection of the label distributions
   - These files will be created automatically to guarantee reproducibility and easy introspection
@@ -42,4 +43,7 @@ All previous comments will be deleted after the transition!
 :::
 
 ```{bibliography}
+  :filter: docname in docnames
+  :labelprefix: Intro-
+  :keyprefix: intro-
 ```
