@@ -1,38 +1,23 @@
 # environment
-env_name := "ben_docs"
-env_run_cmd := "mamba run --live-stream --name " + env_name
-set dotenv-load := true
-
-# Build the book
-build: clean
-	{{env_run_cmd}} jupyter-book build bigearthnet_documentation
+env-cmd := "poetry run"
+set dotenv-load := false
 
 # Install and build environment
 all: install build
 
-clean:
-	{{env_run_cmd}} jupyter-book clean bigearthnet_documentation
+test:
+	{{env-cmd}} pytest tests/
 
-# Install all dependencies with mamba and install nbstripout filter to clean notebooks
-install:
-	mamba env create --file {{justfile_directory()}}/lock.yml --name {{env_name}} --force
-	{{env_run_cmd}} python -m ipykernel install --user
-	{{env_run_cmd}} nbstripout --install
+install: install_python_deps install_ipykernel
 
-# Update dependencies by running a fresh install iva the unlocked environment
-# and then exporting the updated locked environment to `lock.yml`
-update-dependencies: install-no-lock write-lock
+install_python_deps:
+    poetry install
 
-# Install from the general environment without locked dependencies
-install-no-lock:
-	mamba env create --file {{justfile_directory()}}/env.yml --name {{env_name}} --force
-	{{env_run_cmd}} python -m ipykernel install --user
-	{{env_run_cmd}} nbstripout --install
+install_ipykernel:
+	{{env-cmd}} python -m ipykernel install --user
 
-# Requires the current environment to be activated!
-write-lock:
-	mamba env export > lock.yml
+build: install_ipykernel
+	{{env-cmd}} sphinx-build {{justfile_directory()}}/docs {{justfile_directory()}}/docs/_build/
 
-# Deploy to the hidden server
-deploy: build
-	scp -r {{justfile_directory()}}/bigearthnet_documentation/_build/html/* $USERNAME@$SERVER:ben-docs-server/
+serve-docs: build
+	{{env-cmd}} python {{justfile_directory()}}/serve_docs.py

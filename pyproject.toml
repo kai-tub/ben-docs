@@ -1,0 +1,55 @@
+[tool.poetry]
+name = "ben-docs"
+version = "0.1.0"
+description = "A user-friendly introduction to the multi-spectral BigEarthNet dataset."
+authors = ["Kai Norman Clasen <k.clasen@protonmail.com>"]
+license = "MIT license"
+readme = "README.md"
+homepage = "https://github.com/kai-tub/ben-docs/"
+repository = "https://github.com/kai-tub/ben-docs/"
+
+documentation = "https://github.com/kai-tub.github.io/ben-docs"
+
+include = [
+    "LICENSE",
+]
+
+[tool.poetry.dependencies]
+# TODO: Find a better way to set these values!
+python = "^3.8"
+rasterio = "^1.2.10"
+altair = "^4.2.0"
+altair-saver = "^0.5.0"
+geopandas = "^0.10.2"
+diskcache = "^5.4.0"
+numpy = "^1.22.3"
+matplotlib = "^3.5.1"
+bigearthnet-common = "^2.4.1"
+bigearthnet-gdf-builder = "^0.1.5"
+common-nb-preprocessors = "^0.0.10"
+
+[tool.poetry.dev-dependencies]
+black = "*"
+isort = "*"
+pytest = "*"
+Sphinx = "^4.5"
+furo = "*"
+livereload = "*"
+sphinx-external-toc = "*"
+pre-commit = "*"
+myst-nb = "0.14"
+ipykernel = "*"
+linkify = "^1.4"
+linkify-it-py = "^1.0.3"
+sphinx_design = "^0.1.0"
+sphinxcontrib-mermaid = "^0.7.1"
+sphinx-comments = "^0.0.3"
+sphinxcontrib-bibtex = "^2.4.2"
+nbstripout = "^0.5.0"
+
+[tool.isort]
+profile = "black"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -46,14 +46,14 @@ Sentinel-2 bands grouped by spatial resolution
 
 The spectrums range from visible (380nm–700nm), near-infrared (700nm–1100nm) to short-wave infrared (1100nm–3000nm) light.
 The low-spatial resolution 60m bands are designed for aerosol (B01), water-vapor (B09), and cirrus cloud (B10) detection.
-BigEarthNet does not include band B10 as B10 provides no surface-level information {cite:p}`ben-cirrus`.
+BigEarthNet does not include band B10 as B10 provides no surface-level information {cite:p}`cirrus`.
 The 20m bands in the near-infrared range (B05, B06, B07, B8A) are vital for differentiating vegetation from other objects.
-The remaining 20m bands in the short-wave infrared spectrum (B11, B12) are helpful for snow, ice, and cloud discrimination {cite:p}`ben-Fletcher2012`.
+The remaining 20m bands in the short-wave infrared spectrum (B11, B12) are helpful for snow, ice, and cloud discrimination {cite:p}`Fletcher2012`.
 
 The high spatial resolution bands B04, B03, and B02 are the classic red, green, blue (RGB) channels.
 The last 10m resolution band, B08, covers a broader spectrum than B08A but is less resistant against water vapor contaminating the spectral reflectance.
 As some applications suffer from possible contamination, the narrower, lower spatial resolution band B08A was added.
-To cover all use-cases, both bands were included, even if they overlap in the sensed spectrums {cite:p}`ben-sentinel_band_heritage`.
+To cover all use-cases, both bands were included, even if they overlap in the sensed spectrums {cite:p}`sentinel_band_heritage`.
 Concatenating these spectrums results in images with twelve channels, compared to the more common three RGB channels.
 
 :::{important}
@@ -71,11 +71,3 @@ TODO:
 
 ## Sentinel-1
 Some information about Sentinel-1
-
-## Bibliography
-
-```{bibliography}
-    :filter: docname in docnames
-    :labelprefix: BEN-
-    :keyprefix: ben-
-```

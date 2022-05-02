@@ -1,6 +1,6 @@
 # Problem statement
 
-I've talked with colleagues about their experience working with BigEarthNet and their problems during the time working with the archive.
+I've talked with colleagues about their experience working with BigEarthNet and their problems during their time working with the archive.
 I've also asked master thesis students what topics seem hard to grasp from an _outside_ perspective.
 Some of these problems were also mentioned in the intermediate presentation and during discussions with the VQA project group.
 

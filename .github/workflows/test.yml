@@ -1,0 +1,43 @@
+name: Test
+on:
+  push:
+    branches: [main]
+    paths:
+      - "bigearthnet_docs/**"
+  pull_request:
+    branches: [main]
+    paths:
+      - "bigearthnet_docs/**"
+
+jobs:
+  test:
+    strategy:
+      fail-fast: true
+      matrix:
+
+        python-version: [ "3.8" ]
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+        with:
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+          installer-parallel: true
+      - uses: extractions/setup-just@v1
+      - name: Install dependencies
+        run: |
+          just install
+      - name: Check precommit
+        run: |
+          pre-commit run --all-files
+      - name: Run tests from within poetry
+        run: |
+          source $VENV
+          just test
+

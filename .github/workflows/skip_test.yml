@@ -1,0 +1,16 @@
+name: Test
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "bigearthnet_docs/**"
+  pull_request:
+    branches: [main]
+    paths-ignore:
+      - "bigearthnet_docs/**"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: 'echo "No build required"'

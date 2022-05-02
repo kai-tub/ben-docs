@@ -18,7 +18,7 @@ Then open the
 If you'd like to develop and/or build the BigEarthNet Documentation book, you should:
 
 1. Clone this repository
-2. Install the `lock` environment with conda or, better, [mamba](https://github.com/mamba-org/mamba).
+2. Install the `lock` environment with `conda` or, better, [mamba](https://github.com/mamba-org/mamba).
    1. The installation can be run automatically by running `just install`.
 3. (Optional) Edit the books source files located in the `bigearthnet_documentation/` directory
 4. Run `just build` to build the new documentation and inspect the output in `bigearthnet_documentation/_build/html/`.
@@ -33,3 +33,9 @@ If you do not want to wait for GitHub Actions to tell you if the PR will pass th
 ## Credits
 
 This project is created using the excellent open-source [Jupyter Book project](https://jupyterbook.org/) and the [executablebooks/cookiecutter-jupyter-book template](https://github.com/executablebooks/cookiecutter-jupyter-book).
+
+## TODO:
+- Use only a single reference; no need to provide the paper links on every page
+- Update to use the updated code for the previewer
+- Update to use the template from my cookiecutter template
+- Check

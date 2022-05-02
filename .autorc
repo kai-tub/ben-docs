@@ -1,0 +1,17 @@
+{
+    "plugins": [
+        "git-tag",
+        "all-contributors",
+        "first-time-contributor",
+        [
+            "exec",
+            {
+                "beforeCommitChangelog": "bash .auto/update_version.sh"
+            }
+        ]
+    ],
+    "owner": "kai-tub",
+    "repo": "ben-docs",
+    "name": "Kai Norman Clasen",
+    "email": "k.clasen@protonmail.com"
+}

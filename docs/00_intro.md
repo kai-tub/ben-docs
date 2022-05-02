@@ -1,4 +1,4 @@
-# BigEarthNet Guide Introduction
+# BigEarthNet Guide
 
 :::{warning}
 - This site is an initial draft of the BigEarthNet documentation!
@@ -8,8 +8,8 @@
 :::
 
 This documentation attempts to lower the bar to work with the multi-spectral [BigEarthNet](http://bigearth.net/) dataset.
-The BigEarthNet dataset was originally published in {cite:t}`intro-BEN` and
-updated in {cite:t}`intro-BEN19labels`.
+The BigEarthNet dataset was originally published in {cite:t}`BEN` and
+updated in {cite:t}`BEN19labels`.
 
 By providing the following reference, we try to accomplish several goals:
 
@@ -42,8 +42,8 @@ The official release of the documentation will be hosted on a different platform
 All previous comments will be deleted after the transition!
 :::
 
-```{bibliography}
+<!-- ```{bibliography}
   :filter: docname in docnames
   :labelprefix: Intro-
   :keyprefix: intro-
-```
+``` -->

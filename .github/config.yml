@@ -1,0 +1,17 @@
+# config for the welcome-bot
+newIssueWelcomeComment: |
+  Thanks for opening your first issue here! 💖
+
+# Be sure to follow the issue template.
+# Then the issue will be worked on in no time. 👍
+# Comment to be posted on PRs from first time contributors in your repository
+newPRWelcomeComment: |
+  Thanks for opening a pull request! 💖
+  Please check out the [code of conduct](ben-docs/blob/main/.github/CODE_OF_CONDUCT.md) and the [contributing guidelines](ben-docs/blob/main/.github/CONTRIBUTING.md).
+  Although, you probably have read it already. 😎
+# Comment to be posted on PR merges from first time contributors in your repository
+firstPRMergeComment: |
+  Congrats on merging your first pull request! 🎉🎉🎉
+  We are proud of you and your accomplishment 🏆.
+
+  ![thanks-for-pr-image](ben-docs/blob/main/.github/thanks_for_pr.jpg)
