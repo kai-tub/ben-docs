@@ -35,9 +35,9 @@ jobs:
           just install
       - name: Check precommit
         run: |
+          source $VENV
           pre-commit run --all-files
       - name: Run tests from within poetry
         run: |
           source $VENV
           just test
-

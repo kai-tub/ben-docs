@@ -1,11 +1,12 @@
 # BigEarthNet Guide
 
 :::{warning}
-- This site is an initial draft of the BigEarthNet documentation!
+- This site is an initial draft of the BigEarthNet Guide!
 - The provided code hasn't passed any internal reviews and should only be copied with caution!
 - The first few iterations may contain spelling mistakes and incoherent sentences.
   -  I (Kai) apologies for it in advance. 🙂
 :::
+
 
 This documentation attempts to lower the bar to work with the multi-spectral [BigEarthNet](http://bigearth.net/) dataset.
 The BigEarthNet dataset was originally published in {cite:t}`BEN` and
@@ -31,13 +32,11 @@ By providing the following reference, we try to accomplish several goals:
 - Unify our shared knowledge into a single place for our reference
 
 Feel free to let me know about any suggestions!
-Either use the public GitHub-based comment section based on [utteranc.es](https://utteranc.es/) or write me an e-mail!
-The current progress and the general roadmap will be mainly tracked on the [GitHub project page](https://github.com/kai-tub/ben-docs/projects/1).
-Additional ideas/whishes should be discussed in the [Issues](https://github.com/kai-tub/ben-docs/issues) section.
-
 
 :::{note}
-This site will be hosted on GitHub during the development and use [utteranc.es](https://utteranc.es) to enable comments.
+This site will be hosted on GitHub during the development and use [hypothes.is](https://web.hypothes.is/) to enable comments.
+On the right-hand side you can access a bar to see comments for the current page and create own annotations by highlighting text and clicking on the `annotate` selection.
+
 The official release of the documentation will be hosted on a different platform.
 All previous comments will be deleted after the transition!
 :::
