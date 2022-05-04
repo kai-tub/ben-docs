@@ -32,7 +32,6 @@ jobs:
       - uses: extractions/setup-just@v1
       - name: Install dependencies
         run: |
-          source $VENV
           just install
       - name: Check precommit
         run: |
