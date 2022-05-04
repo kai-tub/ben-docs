@@ -41,7 +41,7 @@ jobs:
       - uses: conda-incubator/setup-miniconda@v2
         with:
           # This needs to be equal to the env name in the justfile!
-          activate-environment: ben_docs
+          activate-environment: bigearthnet_docs
           environment-file: lock.yml
           use-only-tar-bz2: true # This needs to be set for caching to work
           # Note that pip depdencies aren't cached!

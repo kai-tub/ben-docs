@@ -42,5 +42,6 @@ These models are all trained with the TensorFlow library.
 ## Bibliography
 
 ```{bibliography}
-  :filter: docname in docnames
+  :style: plain
+
 ```

@@ -1,6 +1,6 @@
 # Data Source
 
-BigEarthNet is a collection of satellite images primarily designed to train machine-learning models.
+[BigEarthNet](bigearth.net) is a collection of satellite images primarily designed to train machine-learning models.
 
 Two datasets belong to the BigEarthNet collection:
 - BigEarthNet-S2
@@ -57,7 +57,9 @@ To cover all use-cases, both bands were included, even if they overlap in the se
 Concatenating these spectrums results in images with twelve channels, compared to the more common three RGB channels.
 
 :::{important}
-- BigEarthNet-S2 dropped channel B10 from the original Sentinel-2 data, as the band does not contain any surface-level information
+- BigEarthNet-S2 dropped channel B10 from the original Sentinel-2 data, as the band does not contain any surface-level information.
+  - More precisely, channel B10 is dropped after converting a Sentinel-2 L1C data product that encodes the TOA to a Sentinel-2 L2A product containing the BOA data.
+  - See the official [Sentinel-2 data products page](https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-2/data-products) for more information
 - The bands B08 and B8A are included, even if they overlap in the sensed spectral reflectivity.
   - Allows the user to decide how to handle the overlap.
 :::

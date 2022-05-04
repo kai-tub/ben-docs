@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "ben-docs"
+name = "bigearthnet_docs"
 version = "0.1.0"
 description = "A user-friendly introduction to the multi-spectral BigEarthNet dataset."
 authors = ["Kai Norman Clasen <k.clasen@protonmail.com>"]
@@ -27,6 +27,8 @@ matplotlib = "^3.5.1"
 bigearthnet-common = "^2.4.1"
 bigearthnet-gdf-builder = "^0.1.5"
 common-nb-preprocessors = "^0.0.10"
+bigearthnet-encoder = "^0.1.1"
+appdirs = "^1.4.4"
 
 [tool.poetry.dev-dependencies]
 black = "*"
@@ -46,6 +48,10 @@ sphinxcontrib-mermaid = "^0.7.1"
 sphinx-comments = "^0.0.3"
 sphinxcontrib-bibtex = "^2.4.2"
 nbstripout = "^0.5.0"
+mapclassify = "^2.4.3"
+folium = "^0.12.1"
+matplotlib = "^3.5.2"
+sphinx-book-theme = "^0.3.2"
 
 [tool.isort]
 profile = "black"

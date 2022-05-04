@@ -1,5 +1,11 @@
 # Efficiently loading BigEarthNet
 
+:::{warning}
+
+MOVE TO BIGEARTHNET ENCODER!
+
+:::
+
 One crucial component of reducing the training time is minimizing data access.
 There are _many_ different approaches with their pros and cons.
 This section assembles a couple of popular approaches, discusses possible shortcomings, and gives _one_ strategy to minimize data loading time.
@@ -43,6 +49,14 @@ Geographic metadata about each patch could be used for _remote-sensing_ specific
 
 - Should also allow to easily extend archive with additional information
 
+#### Comments
+After spending some more time working with satellite data and deep-learning, I personally think that this isn't as important as I initially thought.
+It is often _easier_ and more flexible to keep the metadata separate.
+
+For example: If we do some smart geographic location-based sampling, the metadata has to be available at the start of the epoch to calculate what images should be sampled.
+If the metadata is _embedded_ with the image data in a common structure, the image data would probably have to be loaded even if it isn't necessary.
+Some libraries allow metadata reading without loading the images, but this is generally not true for _key-value storages_.
+
 ### Easy to install
 - Do not require loading via rasterio
   - rasterio is complicated to install/brings many hard dependencies with it
@@ -51,8 +65,12 @@ Geographic metadata about each patch could be used for _remote-sensing_ specific
 ### Deep-Learning Library agnostic
 - Should work with tensor-flow, pytorch or even more exotic interfaces
 
-## Competitors
-- https://realpython.com/storing-images-in-python/#reading-from-lmdb
-- LMDB + ProtoBuf
-  - https://github.com/npuichigo/pytorch_lmdb_dataset/blob/master/proto/tensor.proto
+### Competitors
+- [LMDB](https://realpython.com/storing-images-in-python/#reading-from-lmdb)
 - H5PY
+- [FFCV](https://ffcv.io/)
+
+<!-- TODO: Add my attempt at LMDB encoding and list potential issues -->
+
+## FFCV
+FFCV is a very recent, bleeding-edge data-loading library.
