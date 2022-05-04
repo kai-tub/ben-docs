@@ -1,0 +1,139 @@
+Traceback (most recent call last):
+  File "/home/runner/work/ben-docs/ben-docs/.venv/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/runner/work/ben-docs/ben-docs/.venv/lib/python3.8/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/runner/work/ben-docs/ben-docs/.venv/lib/python3.8/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/home/runner/work/ben-docs/ben-docs/.venv/lib/python3.8/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/home/runner/work/ben-docs/ben-docs/.venv/lib/python3.8/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/home/runner/work/ben-docs/ben-docs/.venv/lib/python3.8/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/runner/work/ben-docs/ben-docs/.venv/lib/python3.8/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import warnings
+
+warnings.filterwarnings("ignore")
+import geopandas
+import folium
+
+# import folium.plugins
+
+
+def draw_fast_marker_cluster(gdf):
+    marker_gdf = gdf.copy()
+    marker_gdf = marker_gdf.to_crs("EPSG:4326")
+    m = folium.Map(tiles="Stamen Terrain")
+    data = marker_gdf.representative_point().apply(lambda point: [point.y, point.x])
+    map_data = folium.plugins.FastMarkerCluster(data)
+    m.add_child(map_data)
+    return m
+
+
+def simplify_gdf(gdf, tolerance=100):
+    geo_series = gdf.geometry.unary_union
+    g_series_simp = geo_series.simplify(tolerance)
+    return geopandas.GeoDataFrame(
+        {"name": ["BigEarthNet-simplified"]}, geometry=[g_series_simp], crs=gdf.crs
+    )
+
+
+# gdf = geopandas.read_parquet("../gdf/raw_ben_s2_gdf_3035.parquet")
+# gdf_simp = simplify_gdf(gdf)
+# gdf_simp.to_parquet("_static/ben_simple_union.parquet")
+
+gdf = geopandas.read_parquet("_static/ben_simple_union.parquet")
+gdf.explore(tiles="cartodb positron")
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+Input [0;32mIn [1][0m, in [0;36m<cell line: 32>[0;34m()[0m
+[1;32m     23[0m     [38;5;28;01mreturn[39;00m geopandas[38;5;241m.[39mGeoDataFrame(
+[1;32m     24[0m         {[38;5;124m"[39m[38;5;124mname[39m[38;5;124m"[39m: [[38;5;124m"[39m[38;5;124mBigEarthNet-simplified[39m[38;5;124m"[39m]}, geometry[38;5;241m=[39m[g_series_simp], crs[38;5;241m=[39mgdf[38;5;241m.[39mcrs
+[1;32m     25[0m     )
+[1;32m     28[0m [38;5;66;03m# gdf = geopandas.read_parquet("../gdf/raw_ben_s2_gdf_3035.parquet")[39;00m
+[1;32m     29[0m [38;5;66;03m# gdf_simp = simplify_gdf(gdf)[39;00m
+[1;32m     30[0m [38;5;66;03m# gdf_simp.to_parquet("_static/ben_simple_union.parquet")[39;00m
+[0;32m---> 32[0m gdf [38;5;241m=[39m [43mgeopandas[49m[38;5;241;43m.[39;49m[43mread_parquet[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43m_static/ben_simple_union.parquet[39;49m[38;5;124;43m"[39;49m[43m)[49m
+[1;32m     33[0m gdf[38;5;241m.[39mexplore(tiles[38;5;241m=[39m[38;5;124m"[39m[38;5;124mcartodb positron[39m[38;5;124m"[39m)
+
+File [0;32m~/work/ben-docs/ben-docs/.venv/lib/python3.8/site-packages/geopandas/io/arrow.py:459[0m, in [0;36m_read_parquet[0;34m(path, columns, storage_options, **kwargs)[0m
+[1;32m    457[0m path [38;5;241m=[39m _expand_user(path)
+[1;32m    458[0m kwargs[[38;5;124m"[39m[38;5;124muse_pandas_metadata[39m[38;5;124m"[39m] [38;5;241m=[39m [38;5;28;01mTrue[39;00m
+[0;32m--> 459[0m table [38;5;241m=[39m [43mparquet[49m[38;5;241;43m.[39;49m[43mread_table[49m[43m([49m[43mpath[49m[43m,[49m[43m [49m[43mcolumns[49m[38;5;241;43m=[39;49m[43mcolumns[49m[43m,[49m[43m [49m[43mfilesystem[49m[38;5;241;43m=[39;49m[43mfilesystem[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+[1;32m    461[0m [38;5;28;01mreturn[39;00m _arrow_to_geopandas(table)
+
+File [0;32m~/work/ben-docs/ben-docs/.venv/lib/python3.8/site-packages/pyarrow/parquet.py:1905[0m, in [0;36mread_table[0;34m(source, columns, use_threads, metadata, use_pandas_metadata, memory_map, read_dictionary, filesystem, filters, buffer_size, partitioning, use_legacy_dataset, ignore_prefixes, pre_buffer, coerce_int96_timestamp_unit)[0m
+[1;32m   1898[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
+[1;32m   1899[0m         [38;5;124m"[39m[38;5;124mThe [39m[38;5;124m'[39m[38;5;124mmetadata[39m[38;5;124m'[39m[38;5;124m keyword is no longer supported with the new [39m[38;5;124m"[39m
+[1;32m   1900[0m         [38;5;124m"[39m[38;5;124mdatasets-based implementation. Specify [39m[38;5;124m"[39m
+[1;32m   1901[0m         [38;5;124m"[39m[38;5;124m'[39m[38;5;124muse_legacy_dataset=True[39m[38;5;124m'[39m[38;5;124m to temporarily recover the old [39m[38;5;124m"[39m
+[1;32m   1902[0m         [38;5;124m"[39m[38;5;124mbehaviour.[39m[38;5;124m"[39m
+[1;32m   1903[0m     )
+[1;32m   1904[0m [38;5;28;01mtry[39;00m:
+[0;32m-> 1905[0m     dataset [38;5;241m=[39m [43m_ParquetDatasetV2[49m[43m([49m
+[1;32m   1906[0m [43m        [49m[43msource[49m[43m,[49m
+[1;32m   1907[0m [43m        [49m[43mfilesystem[49m[38;5;241;43m=[39;49m[43mfilesystem[49m[43m,[49m
+[1;32m   1908[0m [43m        [49m[43mpartitioning[49m[38;5;241;43m=[39;49m[43mpartitioning[49m[43m,[49m
+[1;32m   1909[0m [43m        [49m[43mmemory_map[49m[38;5;241;43m=[39;49m[43mmemory_map[49m[43m,[49m
+[1;32m   1910[0m [43m        [49m[43mread_dictionary[49m[38;5;241;43m=[39;49m[43mread_dictionary[49m[43m,[49m
+[1;32m   1911[0m [43m        [49m[43mbuffer_size[49m[38;5;241;43m=[39;49m[43mbuffer_size[49m[43m,[49m
+[1;32m   1912[0m [43m        [49m[43mfilters[49m[38;5;241;43m=[39;49m[43mfilters[49m[43m,[49m
+[1;32m   1913[0m [43m        [49m[43mignore_prefixes[49m[38;5;241;43m=[39;49m[43mignore_prefixes[49m[43m,[49m
+[1;32m   1914[0m [43m        [49m[43mpre_buffer[49m[38;5;241;43m=[39;49m[43mpre_buffer[49m[43m,[49m
+[1;32m   1915[0m [43m        [49m[43mcoerce_int96_timestamp_unit[49m[38;5;241;43m=[39;49m[43mcoerce_int96_timestamp_unit[49m
+[1;32m   1916[0m [43m    [49m[43m)[49m
+[1;32m   1917[0m [38;5;28;01mexcept[39;00m [38;5;167;01mImportError[39;00m:
+[1;32m   1918[0m     [38;5;66;03m# fall back on ParquetFile for simple cases when pyarrow.dataset[39;00m
+[1;32m   1919[0m     [38;5;66;03m# module is not available[39;00m
+[1;32m   1920[0m     [38;5;28;01mif[39;00m filters [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+
+File [0;32m~/work/ben-docs/ben-docs/.venv/lib/python3.8/site-packages/pyarrow/parquet.py:1726[0m, in [0;36m_ParquetDatasetV2.__init__[0;34m(self, path_or_paths, filesystem, filters, partitioning, read_dictionary, buffer_size, memory_map, ignore_prefixes, pre_buffer, coerce_int96_timestamp_unit, **kwargs)[0m
+[1;32m   1722[0m [38;5;28;01mif[39;00m partitioning [38;5;241m==[39m [38;5;124m"[39m[38;5;124mhive[39m[38;5;124m"[39m:
+[1;32m   1723[0m     partitioning [38;5;241m=[39m ds[38;5;241m.[39mHivePartitioning[38;5;241m.[39mdiscover(
+[1;32m   1724[0m         infer_dictionary[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
+[0;32m-> 1726[0m [38;5;28mself[39m[38;5;241m.[39m_dataset [38;5;241m=[39m [43mds[49m[38;5;241;43m.[39;49m[43mdataset[49m[43m([49m[43mpath_or_paths[49m[43m,[49m[43m [49m[43mfilesystem[49m[38;5;241;43m=[39;49m[43mfilesystem[49m[43m,[49m
+[1;32m   1727[0m [43m                           [49m[38;5;28;43mformat[39;49m[38;5;241;43m=[39;49m[43mparquet_format[49m[43m,[49m
+[1;32m   1728[0m [43m                           [49m[43mpartitioning[49m[38;5;241;43m=[39;49m[43mpartitioning[49m[43m,[49m
+[1;32m   1729[0m [43m                           [49m[43mignore_prefixes[49m[38;5;241;43m=[39;49m[43mignore_prefixes[49m[43m)[49m
+
+File [0;32m~/work/ben-docs/ben-docs/.venv/lib/python3.8/site-packages/pyarrow/dataset.py:680[0m, in [0;36mdataset[0;34m(source, schema, format, filesystem, partitioning, partition_base_dir, exclude_invalid_files, ignore_prefixes)[0m
+[1;32m    669[0m kwargs [38;5;241m=[39m [38;5;28mdict[39m(
+[1;32m    670[0m     schema[38;5;241m=[39mschema,
+[1;32m    671[0m     filesystem[38;5;241m=[39mfilesystem,
+[0;32m   (...)[0m
+[1;32m    676[0m     selector_ignore_prefixes[38;5;241m=[39mignore_prefixes
+[1;32m    677[0m )
+[1;32m    679[0m [38;5;28;01mif[39;00m _is_path_like(source):
+[0;32m--> 680[0m     [38;5;28;01mreturn[39;00m [43m_filesystem_dataset[49m[43m([49m[43msource[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+[1;32m    681[0m [38;5;28;01melif[39;00m [38;5;28misinstance[39m(source, ([38;5;28mtuple[39m, [38;5;28mlist[39m)):
+[1;32m    682[0m     [38;5;28;01mif[39;00m [38;5;28mall[39m(_is_path_like(elem) [38;5;28;01mfor[39;00m elem [38;5;129;01min[39;00m source):
+
+File [0;32m~/work/ben-docs/ben-docs/.venv/lib/python3.8/site-packages/pyarrow/dataset.py:425[0m, in [0;36m_filesystem_dataset[0;34m(source, schema, filesystem, partitioning, format, partition_base_dir, exclude_invalid_files, selector_ignore_prefixes)[0m
+[1;32m    423[0m     fs, paths_or_selector [38;5;241m=[39m _ensure_multiple_sources(source, filesystem)
+[1;32m    424[0m [38;5;28;01melse[39;00m:
+[0;32m--> 425[0m     fs, paths_or_selector [38;5;241m=[39m [43m_ensure_single_source[49m[43m([49m[43msource[49m[43m,[49m[43m [49m[43mfilesystem[49m[43m)[49m
+[1;32m    427[0m options [38;5;241m=[39m FileSystemFactoryOptions(
+[1;32m    428[0m     partitioning[38;5;241m=[39mpartitioning,
+[1;32m    429[0m     partition_base_dir[38;5;241m=[39mpartition_base_dir,
+[1;32m    430[0m     exclude_invalid_files[38;5;241m=[39mexclude_invalid_files,
+[1;32m    431[0m     selector_ignore_prefixes[38;5;241m=[39mselector_ignore_prefixes
+[1;32m    432[0m )
+[1;32m    433[0m factory [38;5;241m=[39m FileSystemDatasetFactory(fs, paths_or_selector, [38;5;28mformat[39m, options)
+
+File [0;32m~/work/ben-docs/ben-docs/.venv/lib/python3.8/site-packages/pyarrow/dataset.py:401[0m, in [0;36m_ensure_single_source[0;34m(path, filesystem)[0m
+[1;32m    399[0m     paths_or_selector [38;5;241m=[39m [path]
+[1;32m    400[0m [38;5;28;01melse[39;00m:
+[0;32m--> 401[0m     [38;5;28;01mraise[39;00m [38;5;167;01mFileNotFoundError[39;00m(path)
+[1;32m    403[0m [38;5;28;01mreturn[39;00m filesystem, paths_or_selector
+
+[0;31mFileNotFoundError[0m: _static/ben_simple_union.parquet
+FileNotFoundError: _static/ben_simple_union.parquet
+

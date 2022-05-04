@@ -1,0 +1,214 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Visualizations"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# remove-input\n",
+    "from bigearthnet_docs import get_s2_example_patch_path\n",
+    "from rich import print\n",
+    "\n",
+    "# this is a function only available for the documentation\n",
+    "s2_patch_folder_path = get_s2_example_patch_path()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "The BigEarthNet encoder library provides a quick and easy way to convert a BigEarthNet folder to a BigEarthNet-Patch-Interface."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import bigearthnet_encoder.encoder as ben_encoder\n",
+    "\n",
+    "s2_patch = ben_encoder.tiff_dir_to_ben_s2_patch(s2_patch_folder_path)\n",
+    "s2_patch"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "The patch-interface provides easy introspection:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(s2_patch.get_band_by_name(\"B03\"))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Visualizing individual bands\n",
+    "\n",
+    "If we are only interested in a single band, we can usually use `plt.imshow`.\n",
+    "\n",
+    "A nice side-effect of `plt.imshow` is that it automatically applies a min/max normalization to one-dimensional input data.\n",
+    "So the outputs look \"good by default\":"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import matplotlib.pyplot as plt\n",
+    "\n",
+    "b03_data = s2_patch.get_band_data_by_name(\"B03\")\n",
+    "plt.imshow(b03_data, cmap=\"gray\")\n",
+    "plt.axis(\"off\");"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# remove-input\n",
+    "from myst_nb.glue import glue\n",
+    "\n",
+    "import bigearthnet_common.constants as ben_constants\n",
+    "\n",
+    "for b in ben_constants.BEN_CHANNELS:\n",
+    "    band_data = s2_patch.get_band_data_by_name(b)\n",
+    "    plt.imshow(band_data, cmap=\"gray\")\n",
+    "    plt.axis(\"off\")\n",
+    "    glue(f\"s2_{b}\", plt.gcf(), display=False)\n",
+    "    plt.close()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    ":::::{dropdown} All bands\n",
+    "::::{grid} 2\n",
+    "\n",
+    ":::{grid-item-card} B01\n",
+    ":text-align: center\n",
+    "{glue:}`s2_B01`\n",
+    ":::\n",
+    ":::{grid-item-card}  B02\n",
+    ":text-align: center\n",
+    "{glue:}`s2_B02`\n",
+    ":::\n",
+    "\n",
+    ":::{grid-item-card} B03\n",
+    ":text-align: center\n",
+    "{glue:}`s2_B03`\n",
+    ":::\n",
+    ":::{grid-item-card}  B04\n",
+    ":text-align: center\n",
+    "{glue:}`s2_B04`\n",
+    ":::\n",
+    "\n",
+    ":::{grid-item-card} B05\n",
+    ":text-align: center\n",
+    "{glue:}`s2_B05`\n",
+    ":::\n",
+    ":::{grid-item-card}  B06\n",
+    ":text-align: center\n",
+    "{glue:}`s2_B06`\n",
+    ":::\n",
+    "\n",
+    ":::{grid-item-card} B07\n",
+    ":text-align: center\n",
+    "{glue:}`s2_B07`\n",
+    ":::\n",
+    ":::{grid-item-card}  B08\n",
+    ":text-align: center\n",
+    "{glue:}`s2_B08`\n",
+    ":::\n",
+    "\n",
+    ":::{grid-item-card} B8A\n",
+    ":text-align: center\n",
+    "{glue:}`s2_B8A`\n",
+    ":::\n",
+    ":::{grid-item-card}  B09\n",
+    ":text-align: center\n",
+    "{glue:}`s2_B09`\n",
+    ":::\n",
+    "\n",
+    "\n",
+    ":::{grid-item-card} B11\n",
+    ":text-align: center\n",
+    "{glue:}`s2_B11`\n",
+    ":::\n",
+    ":::{grid-item-card}  B12\n",
+    ":text-align: center\n",
+    "{glue:}`s2_B12`\n",
+    ":::\n",
+    "\n",
+    "::::\n",
+    ":::::"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Visualizing RGB bands\n",
+    "\n",
+    ":::{admonition} TODO\n",
+    ":class: note\n",
+    "\n",
+    "Implement the visualization\n",
+    ":::"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "interpreter": {
+   "hash": "39573a176a5dc66e77c638524d862738e0c7a65ebf3dd3bea929e6a56e08f067"
+  },
+  "kernelspec": {
+   "display_name": "Python 3.9.10 ('ben-docs-ESkrV8a6-py3.9')",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.10"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

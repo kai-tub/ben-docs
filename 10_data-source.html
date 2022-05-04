@@ -1,0 +1,467 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Data Source &#8212; BigEarthNet Guide</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="BigEarthNet Labels" href="15_labels.html" />
+    <link rel="prev" title="Remote Sensing Basics" href="05_basics.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">BigEarthNet Guide</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_basics.html">
+   Remote Sensing Basics
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Data Source
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15_labels.html">
+   BigEarthNet Labels
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20_raw-data.html">
+   Raw BigEarthNet Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21_visualizations.html">
+   Visualizations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="25_patch-distribution.html">
+   Geographical Patch distribution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="99_references.html">
+   Further references
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/kai-tub/ben-docs"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/10_data-source.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sentinel-2">
+   Sentinel-2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sentinel-1">
+   Sentinel-1
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Data Source</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sentinel-2">
+   Sentinel-2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sentinel-1">
+   Sentinel-1
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="data-source">
+<h1>Data Source<a class="headerlink" href="#data-source" title="Permalink to this headline">#</a></h1>
+<p><span class="xref myst">BigEarthNet</span> is a collection of satellite images primarily designed to train machine-learning models.</p>
+<p>Two datasets belong to the BigEarthNet collection:</p>
+<ul class="simple">
+<li><p>BigEarthNet-S2</p></li>
+<li><p>BigEarthNet-S1</p></li>
+</ul>
+<p>BigEarthNet-S2, initially named BigEarthNet, was released first.
+After adding the BigEarthNet-S1 archive, the term <em>BigEarthNet</em> has become an umbrella term for both datasets.</p>
+<p>The difference between these two archives is the data <em>source</em>.
+Both archives <em>sensed</em> the same regions, but the images were taken from different satellites.
+The S2 archive used the Sentinel-2 satellites and S1, the satellite of the Sentinel-1 mission. Hence, the name S1/2 for Sentinel-1/2.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Due to historical reasons, BigEarthNet and BigEarthNet-S2 are often used interchangeably.</p>
+</div>
+<p>The images cover ten different European countries that were sensed (multiple times) from June 2017 to May 2018.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Sensed Countries<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text">Austria</p></li>
+<li><p class="sd-card-text">Belgium</p></li>
+<li><p class="sd-card-text">Finland</p></li>
+<li><p class="sd-card-text">Ireland</p></li>
+<li><p class="sd-card-text">Kosovo</p></li>
+<li><p class="sd-card-text">Lithuania</p></li>
+<li><p class="sd-card-text">Luxembourg</p></li>
+<li><p class="sd-card-text">Portugal</p></li>
+<li><p class="sd-card-text">Serbia</p></li>
+<li><p class="sd-card-text">Switzerland</p></li>
+</ul>
+</div>
+</details><section id="sentinel-2">
+<h2>Sentinel-2<a class="headerlink" href="#sentinel-2" title="Permalink to this headline">#</a></h2>
+<p>The Sentinel-2 mission is a multi-spectral high-resolution earth monitoring mission from the European Union’s earth observation program <a class="reference external" href="https://www.copernicus.eu/en">Copernicus Program</a>.
+The Sentinel-2 mission consists of two polar-orbiting satellites, Sentinel-2A and Sentinel-2B, with a high revisit time (5 – 10 days).
+Each satellite has a <a class="reference external" href="https://sentinel.esa.int/web/sentinel/missions/sentinel-2/instrument-payload">Multi-Spectral Instrument (MSI)</a> that senses 13 different spectrums of light with varying spatial resolution.
+The following <a class="reference internal" href="#sentinel2-bands"><span class="std std-ref">figure</span></a> visualizes the spectrum of each band grouped by their spatial resolution.</p>
+<figure class="align-default" id="sentinel2-bands">
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/ben_bands_vis.png"><img alt="BigEarthNet Bands" class="bg-primary mb-1" src="_images/ben_bands_vis.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-text">Sentinel-2 bands grouped by spatial resolution</span><a class="headerlink" href="#sentinel2-bands" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The spectrums range from visible (380nm–700nm), near-infrared (700nm–1100nm) to short-wave infrared (1100nm–3000nm) light.
+The low-spatial resolution 60m bands are designed for aerosol (B01), water-vapor (B09), and cirrus cloud (B10) detection.
+BigEarthNet does not include band B10 as B10 provides no surface-level information <span id="id1">[<a class="reference internal" href="99_references.html#id6" title="European Space Agency. Cloud Masks. June 2021. URL: https://sentinel.esa.int/web/sentinel/technical-guides/sentinel-2-msi/level-1c/cloud-masks.">5</a>]</span>.
+The 20m bands in the near-infrared range (B05, B06, B07, B8A) are vital for differentiating vegetation from other objects.
+The remaining 20m bands in the short-wave infrared spectrum (B11, B12) are helpful for snow, ice, and cloud discrimination <span id="id2">[<a class="reference internal" href="99_references.html#id9" title="Karen Fletcher. Sentinel-2 : Esa's optical high-resolution mission for GMES operational services. ESA Communications, 2012. ISBN 9789292214197. URL: http://esamultimedia.esa.int/multimedia/publications/SP-1322_2/offline/download.pdf.">1</a>]</span>.</p>
+<p>The high spatial resolution bands B04, B03, and B02 are the classic red, green, blue (RGB) channels.
+The last 10m resolution band, B08, covers a broader spectrum than B08A but is less resistant against water vapor contaminating the spectral reflectance.
+As some applications suffer from possible contamination, the narrower, lower spatial resolution band B08A was added.
+To cover all use-cases, both bands were included, even if they overlap in the sensed spectrums <span id="id3">[<a class="reference internal" href="99_references.html#id8" title="European Space Agency. Heritage. 2021. URL: https://sentinel.esa.int/web/sentinel/missions/sentinel-2/heritage.">4</a>]</span>.
+Concatenating these spectrums results in images with twelve channels, compared to the more common three RGB channels.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p>BigEarthNet-S2 dropped channel B10 from the original Sentinel-2 data, as the band does not contain any surface-level information.</p>
+<ul>
+<li><p>More precisely, channel B10 is dropped after converting a Sentinel-2 L1C data product that encodes the TOA to a Sentinel-2 L2A product containing the BOA data.</p></li>
+<li><p>See the official <a class="reference external" href="https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-2/data-products">Sentinel-2 data products page</a> for more information</p></li>
+</ul>
+</li>
+<li><p>The bands B08 and B8A are included, even if they overlap in the sensed spectral reflectivity.</p>
+<ul>
+<li><p>Allows the user to decide how to handle the overlap.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>TODO:</p>
+<ul class="simple">
+<li><p>Show example image and example patch!</p></li>
+<li><p>Show example band</p></li>
+<li><p>Quick comment about the product formatting:</p>
+<ul>
+<li><p><a class="reference external" href="https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-2-msi/level-2a/product-formatting">Level-2A</a> encode <code class="docutils literal notranslate"><span class="pre">NO_DATA</span></code> as the 0 value!</p></li>
+<li><p>There should be no patch with the value 0</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="sentinel-1">
+<h2>Sentinel-1<a class="headerlink" href="#sentinel-1" title="Permalink to this headline">#</a></h2>
+<p>Some information about Sentinel-1</p>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="05_basics.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Remote Sensing Basics</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="15_labels.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">BigEarthNet Labels</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Kai Norman Clasen<br/>
+  
+      &copy; Copyright 2022, Kai Norman Clasen.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,568 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Visualizations &#8212; BigEarthNet Guide</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Geographical Patch distribution" href="25_patch-distribution.html" />
+    <link rel="prev" title="Raw BigEarthNet Data" href="20_raw-data.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">BigEarthNet Guide</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_basics.html">
+   Remote Sensing Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10_data-source.html">
+   Data Source
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15_labels.html">
+   BigEarthNet Labels
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20_raw-data.html">
+   Raw BigEarthNet Data
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Visualizations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="25_patch-distribution.html">
+   Geographical Patch distribution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="99_references.html">
+   Further references
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/kai-tub/ben-docs"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/21_visualizations.mipynb.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.mipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualizing-individual-bands">
+   Visualizing individual bands
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualizing-rgb-bands">
+   Visualizing RGB bands
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Visualizations</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualizing-individual-bands">
+   Visualizing individual bands
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualizing-rgb-bands">
+   Visualizing RGB bands
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="visualizations">
+<h1>Visualizations<a class="headerlink" href="#visualizations" title="Permalink to this headline">#</a></h1>
+<div class="cell tag_remove-input docutils container">
+</div>
+<p>The BigEarthNet encoder library provides a quick and easy way to convert a BigEarthNet folder to a BigEarthNet-Patch-Interface.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">bigearthnet_encoder.encoder</span> <span class="k">as</span> <span class="nn">ben_encoder</span>
+
+<span class="n">s2_patch</span> <span class="o">=</span> <span class="n">ben_encoder</span><span class="o">.</span><span class="n">tiff_dir_to_ben_s2_patch</span><span class="p">(</span><span class="n">s2_patch_folder_path</span><span class="p">)</span>
+<span class="n">s2_patch</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BigEarthNet_S2_Patch with:
+	B01 with 60m spatial resolution and a size of (20, 20) pixel
+	B02 with 10m spatial resolution and a size of (120, 120) pixel
+	B03 with 10m spatial resolution and a size of (120, 120) pixel
+	B04 with 10m spatial resolution and a size of (120, 120) pixel
+	B05 with 20m spatial resolution and a size of (60, 60) pixel
+	B06 with 20m spatial resolution and a size of (60, 60) pixel
+	B07 with 20m spatial resolution and a size of (60, 60) pixel
+	B08 with 10m spatial resolution and a size of (120, 120) pixel
+	B8A with 20m spatial resolution and a size of (60, 60) pixel
+	B09 with 60m spatial resolution and a size of (20, 20) pixel
+	B11 with 20m spatial resolution and a size of (60, 60) pixel
+	B12 with 20m spatial resolution and a size of (60, 60) pixel
+</pre></div>
+</div>
+</div>
+</div>
+<p>The patch-interface provides easy introspection:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">s2_patch</span><span class="o">.</span><span class="n">get_band_by_name</span><span class="p">(</span><span class="s2">&quot;B03&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">B03 with 10m spatial resolution and a size of <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">120</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">120</span><span style="font-weight: bold">)</span> pixel
+</pre>
+</div></div>
+</div>
+<section id="visualizing-individual-bands">
+<h2>Visualizing individual bands<a class="headerlink" href="#visualizing-individual-bands" title="Permalink to this headline">#</a></h2>
+<p>If we are only interested in a single band, we can usually use <code class="docutils literal notranslate"><span class="pre">plt.imshow</span></code>.</p>
+<p>A nice side-effect of <code class="docutils literal notranslate"><span class="pre">plt.imshow</span></code> is that it automatically applies a min/max normalization to one-dimensional input data.
+So the outputs look “good by default”:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">b03_data</span> <span class="o">=</span> <span class="n">s2_patch</span><span class="o">.</span><span class="n">get_band_data_by_name</span><span class="p">(</span><span class="s2">&quot;B03&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">b03_data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/27d7699e7b2397e9960feef38249323cee5e71254003a7e61a575af3be04c549.png" src="_images/27d7699e7b2397e9960feef38249323cee5e71254003a7e61a575af3be04c549.png" />
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+All bands<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+B01</div>
+<p class="sd-card-text"><img alt="_images/02b022a3019460092b00214e5a30975849ee931339c9e3bdd0f866e2164ce92a.png" src="_images/02b022a3019460092b00214e5a30975849ee931339c9e3bdd0f866e2164ce92a.png" /></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+B02</div>
+<p class="sd-card-text"><img alt="_images/68bdf7002bda6013616102071f5ef6fc675c86ff7817e59ac3e766f3f68bd390.png" src="_images/68bdf7002bda6013616102071f5ef6fc675c86ff7817e59ac3e766f3f68bd390.png" /></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+B03</div>
+<p class="sd-card-text"><img alt="_images/27d7699e7b2397e9960feef38249323cee5e71254003a7e61a575af3be04c549.png" src="_images/27d7699e7b2397e9960feef38249323cee5e71254003a7e61a575af3be04c549.png" /></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+B04</div>
+<p class="sd-card-text"><img alt="_images/54a3b46647ca39d647a93ba077935f5db8dbd5a25a86667caa968cf5da10a111.png" src="_images/54a3b46647ca39d647a93ba077935f5db8dbd5a25a86667caa968cf5da10a111.png" /></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+B05</div>
+<p class="sd-card-text"><img alt="_images/5b5f5ce6a122a753a3ea41f2c7e2bc38eb3604a79b2de99a385bc3be880ad305.png" src="_images/5b5f5ce6a122a753a3ea41f2c7e2bc38eb3604a79b2de99a385bc3be880ad305.png" /></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+B06</div>
+<p class="sd-card-text"><img alt="_images/6e1d0fb2e9b2d4eeb7cf5aa1eb5605e84111545a473153b22e60b09c758b2ef8.png" src="_images/6e1d0fb2e9b2d4eeb7cf5aa1eb5605e84111545a473153b22e60b09c758b2ef8.png" /></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+B07</div>
+<p class="sd-card-text"><img alt="_images/926fe19ef3f782c846f5592d8e7d8e564f5cd5185823d0ca79b9ec02d014e7a7.png" src="_images/926fe19ef3f782c846f5592d8e7d8e564f5cd5185823d0ca79b9ec02d014e7a7.png" /></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+B08</div>
+<p class="sd-card-text"><img alt="_images/1b0ce6464877be1a060dff5e23cb59811b4410b678eb87952764adb8c4d0ff24.png" src="_images/1b0ce6464877be1a060dff5e23cb59811b4410b678eb87952764adb8c4d0ff24.png" /></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+B8A</div>
+<p class="sd-card-text"><img alt="_images/f1f1ffb59801840375713a4f57c953a9aceb122eddada614bccc5b30dd25e41c.png" src="_images/f1f1ffb59801840375713a4f57c953a9aceb122eddada614bccc5b30dd25e41c.png" /></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+B09</div>
+<p class="sd-card-text"><img alt="_images/a4288090f580c5033aa0923323f5c0316412db78f011ce99e28f1a4e8c50ecaa.png" src="_images/a4288090f580c5033aa0923323f5c0316412db78f011ce99e28f1a4e8c50ecaa.png" /></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+B11</div>
+<p class="sd-card-text"><img alt="_images/504ea6e936eeae3637e91290c9e7f36eecfed009286147b9cd133f3c32e913d6.png" src="_images/504ea6e936eeae3637e91290c9e7f36eecfed009286147b9cd133f3c32e913d6.png" /></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+B12</div>
+<p class="sd-card-text"><img alt="_images/094589c23a9017e223cda9d7d6c40ca3432d7b1682147ec789cc9a14de854112.png" src="_images/094589c23a9017e223cda9d7d6c40ca3432d7b1682147ec789cc9a14de854112.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details></section>
+<section id="visualizing-rgb-bands">
+<h2>Visualizing RGB bands<a class="headerlink" href="#visualizing-rgb-bands" title="Permalink to this headline">#</a></h2>
+<div class="note admonition">
+<p class="admonition-title">TODO</p>
+<p>Implement the visualization</p>
+</div>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="20_raw-data.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Raw BigEarthNet Data</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="25_patch-distribution.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Geographical Patch distribution</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Kai Norman Clasen<br/>
+  
+      &copy; Copyright 2022, Kai Norman Clasen.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
