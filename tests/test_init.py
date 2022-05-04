@@ -1,11 +1,12 @@
 import pytest
+from bigearthnet_common.constants import BEN_S1_RE, BEN_S2_RE
+
 from bigearthnet_docs import (
     get_s1_example_folder_path,
     get_s1_example_patch_path,
-    get_s2_example_patch_path,
     get_s2_example_folder_path,
+    get_s2_example_patch_path,
 )
-from bigearthnet_common.constants import BEN_S1_RE, BEN_S2_RE
 
 
 def test_s1_folder():

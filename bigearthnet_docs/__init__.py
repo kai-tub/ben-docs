@@ -1,12 +1,13 @@
 import importlib.metadata
-from enum import Enum
 import pdb
-import appdirs
-from pathlib import Path
 import tarfile
+from enum import Enum
 from importlib import resources
-import bigearthnet_docs
+from pathlib import Path
 
+import appdirs
+
+import bigearthnet_docs
 
 __version__ = importlib.metadata.version("bigearthnet_docs")
 
