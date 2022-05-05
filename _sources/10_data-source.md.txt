@@ -46,30 +46,30 @@ Sentinel-2 bands grouped by spatial resolution
 
 The spectrums range from visible (380nm–700nm), near-infrared (700nm–1100nm) to short-wave infrared (1100nm–3000nm) light.
 The low-spatial resolution 60m bands are designed for aerosol (B01), water-vapor (B09), and cirrus cloud (B10) detection.
+
 BigEarthNet does not include band B10 as B10 provides no surface-level information {cite:p}`cirrus`.
+Band B10 is dropped after converting a Sentinel-2 L1C data product, which encodes the TOA, to a Sentinel-2 L2A product containing the BOA data.
+See the official [Sentinel-2 data products page](https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-2/data-products) for more information.
+
 The 20m bands in the near-infrared range (B05, B06, B07, B8A) are vital for differentiating vegetation from other objects.
 The remaining 20m bands in the short-wave infrared spectrum (B11, B12) are helpful for snow, ice, and cloud discrimination {cite:p}`Fletcher2012`.
 
-The high spatial resolution bands B04, B03, and B02 are the classic red, green, blue (RGB) channels.
+The high spatial resolution bands B04, B03, and B02 are the classic red, green, and blue (RGB) channels.
 The last 10m resolution band, B08, covers a broader spectrum than B08A but is less resistant against water vapor contaminating the spectral reflectance.
 As some applications suffer from possible contamination, the narrower, lower spatial resolution band B08A was added.
 To cover all use-cases, both bands were included, even if they overlap in the sensed spectrums {cite:p}`sentinel_band_heritage`.
 Concatenating these spectrums results in images with twelve channels, compared to the more common three RGB channels.
 
 :::{important}
-- BigEarthNet-S2 dropped channel B10 from the original Sentinel-2 data, as the band does not contain any surface-level information.
-  - More precisely, channel B10 is dropped after converting a Sentinel-2 L1C data product that encodes the TOA to a Sentinel-2 L2A product containing the BOA data.
-  - See the official [Sentinel-2 data products page](https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-2/data-products) for more information
+- BigEarthNet-S2 dropped channel B10 from the original Sentinel-2 data, as the band does not contain surface-level information.
 - The bands B08 and B8A are included, even if they overlap in the sensed spectral reflectivity.
   - Allows the user to decide how to handle the overlap.
 :::
 
-TODO:
-- Show example image and example patch!
-- Show example band
-- Quick comment about the product formatting:
-  - [Level-2A](https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-2-msi/level-2a/product-formatting) encode `NO_DATA` as the 0 value!
-  - There should be no patch with the value 0
-
 ## Sentinel-1
-Some information about Sentinel-1
+
+:::{admonition} ToDo
+:class: todo
+
+Add some information about Sentinel-1
+:::

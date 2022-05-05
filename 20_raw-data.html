@@ -288,6 +288,20 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#metadata-discussion">
    Metadata Discussion
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pre-converted-metadata">
+     Pre-converted metadata
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-output">
+       Example output
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -322,6 +336,20 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#metadata-discussion">
    Metadata Discussion
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pre-converted-metadata">
+     Pre-converted metadata
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-output">
+       Example output
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -538,8 +566,6 @@ For more details about what coordinate reference systems are feel free to take a
 </section>
 <section id="metadata-discussion">
 <h2>Metadata Discussion<a class="headerlink" href="#metadata-discussion" title="Permalink to this headline">#</a></h2>
-<div class="cell tag_remove-input docutils container">
-</div>
 <p>The advantages of having a JSON metadata file in every patch folder are:</p>
 <ol class="arabic simple">
 <li><p>JSON is well known data format and has excellent library support</p></li>
@@ -553,7 +579,13 @@ For more details about what coordinate reference systems are feel free to take a
 <p>The main disadvantages is that each archive (~80GB) has to be downloaded and that it is not easy to perform statistical analysis.
 The metadata files have to be parsed and converted into a common data structure first.
 Usually, the metadata is converted into a tabular format to allow the use of data analysis tools, such as <a class="reference external" href="https://pandas.pydata.org/">pandas</a>, or the geographical extension, <a class="reference external" href="https://geopandas.org/en/stable/">geopandas</a>.</p>
-<p>Instead of re-writing another parsing script, we recommend to use one of the pre-converted files:</p>
+<section id="pre-converted-metadata">
+<h3>Pre-converted metadata<a class="headerlink" href="#pre-converted-metadata" title="Permalink to this headline">#</a></h3>
+<p>Instead of re-writing another parsing script, we recommend to use <a class="reference external" href="https://docs.kai-tub.tech/bigearthnet_gdf_builder/intro.html#intro" title="(in BigEarthNet GDF Builder)"><span>BigEarthNet GDF Builder</span></a>.
+This library parses the all JSON files from the archive and converts them to a common geopandas parquet file.
+See <a class="reference external" href="https://docs.kai-tub.tech/bigearthnet_gdf_builder/intro.html#intro" title="(in BigEarthNet GDF Builder)"><span>BigEarthNet GDF Builder</span></a> for more information.</p>
+<p>Do make it simpler to do statistical analysis, we provide pre-converted files.
+These files (and the links) may change in the future!</p>
 <ul class="simple">
 <li><p>BigEarthNet-S2</p>
 <ul>
@@ -584,74 +616,35 @@ Usually, the metadata is converted into a tabular format to allow the use of dat
 </ul>
 </li>
 </ul>
-<p>These files were generated with an open-source library called <a class="reference external" href="https://github.com/kai-tub/bigearthnet_gdf_builder">bigearthnet_gdf_builder</a> to convert the metadata into a tabular format:</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-BigEarthNet-S2-Example Metadata in tabular form<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<div class="output text_html"><style type="text/css">
-</style>
-<table id="T_58e04">
-  <thead>
-    <tr>
-      <th class="blank level0" >&nbsp;</th>
-      <th id="T_58e04_level0_col0" class="col_heading level0 col0" >labels</th>
-      <th id="T_58e04_level0_col1" class="col_heading level0 col1" >tile_source</th>
-      <th id="T_58e04_level0_col2" class="col_heading level0 col2" >acquisition_date</th>
-      <th id="T_58e04_level0_col3" class="col_heading level0 col3" >name</th>
-      <th id="T_58e04_level0_col4" class="col_heading level0 col4" >geometry</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th id="T_58e04_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_58e04_row0_col0" class="data row0 col0" >['Non-irrigated arable land', 'Pastures']</td>
-      <td id="T_58e04_row0_col1" class="data row0 col1" >S2A_MSIL1C_2017
-0617T113321_N02
-05_R080_T29UPU_
-20170617T113319
-.SAFE</td>
-      <td id="T_58e04_row0_col2" class="data row0 col2" >2017-06-17 11:33:21</td>
-      <td id="T_58e04_row0_col3" class="data row0 col3" >S2A_MSIL2A_2017
-0617T113321_36_
-85</td>
-      <td id="T_58e04_row0_col4" class="data row0 col4" >POLYGON ((3181331.5370094078 3376775.0966186523, 3181642.980773266 3377939.1849836037, 3180488.731237465 3378249.876162245, 3180177.2825893136 3377085.773222342, 3181331.5370094078 3376775.0966186523))</td>
-    </tr>
-    <tr>
-      <th id="T_58e04_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_58e04_row1_col0" class="data row1 col0" >['Complex cultivation patterns', 'Land principally occupied by agriculture, with significant areas of natural vegetation', 'Broad-leaved forest', 'Transitional woodland/shrub']</td>
-      <td id="T_58e04_row1_col1" class="data row1 col1" >S2A_MSIL1C_2017
-1221T112501_N02
-06_R037_T29SND_
-20171221T114356
-.SAFE</td>
-      <td id="T_58e04_row1_col2" class="data row1 col2" >2017-12-21 11:25:01</td>
-      <td id="T_58e04_row1_col3" class="data row1 col3" >S2A_MSIL2A_2017
-1221T112501_56_
-35</td>
-      <td id="T_58e04_row1_col4" class="data row1 col4" >POLYGON ((2759565.0946549335 1995691.9501349647, 2759833.7352373255 1996859.0604991948, 2758667.523953887 1997156.3940600979, 2758398.8669133694 1995989.2738648932, 2759565.0946549335 1995691.9501349647))</td>
-    </tr>
-    <tr>
-      <th id="T_58e04_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_58e04_row2_col0" class="data row2 col0" >['Pastures']</td>
-      <td id="T_58e04_row2_col1" class="data row2 col1" >S2A_MSIL1C_2017
-0617T113321_N02
-05_R080_T29UPU_
-20170617T113319
-.SAFE</td>
-      <td id="T_58e04_row2_col2" class="data row2 col2" >2017-06-17 11:33:21</td>
-      <td id="T_58e04_row2_col3" class="data row2 col3" >S2A_MSIL2A_2017
-0617T113321_4_5
-5</td>
-      <td id="T_58e04_row2_col4" class="data row2 col4" >POLYGON ((3153761.286862948 3421649.9389573466, 3154073.9127928074 3422814.225959511, 3152920.0042282445 3423125.364234967, 3152607.373968621 3421961.0635596397, 3153761.286862948 3421649.9389573466))</td>
-    </tr>
-  </tbody>
-</table>
-</div></div>
-</details><p>Parquet files allow for easy data-processing and visualization.
+<section id="example-output">
+<h4>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">#</a></h4>
+<!-- :::{dropdown} BigEarthNet-S2-Example Metadata in tabular form
+:::{glue:} ben-s2-gdf
+::: --><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bigearthnet_gdf_builder.builder</span> <span class="kn">import</span> <span class="n">get_gdf_from_s2_patch_dir</span>
+
+<span class="c1"># gdf_builder also has a CLI tool to convert the entire archive into a single</span>
+<span class="c1"># parquet file!</span>
+<span class="c1"># Example &quot;raw&quot; subset</span>
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">get_gdf_from_s2_patch_dir</span><span class="p">(</span><span class="n">ben_s2_path</span><span class="p">)</span>
+<span class="c1"># showing first row as tables have display issues</span>
+<span class="n">gdf</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>labels                          [Non-irrigated arable land, Pastures]
+tile_source         S2A_MSIL1C_20170617T113321_N0205_R080_T29UPU_2...
+acquisition_date                                  2017-06-17 11:33:21
+name                                 S2A_MSIL2A_20170617T113321_36_85
+geometry            POLYGON ((3181331.5370094078 3376775.096618652...
+Name: 0, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Parquet files allow for easy data-processing and visualization.
 These files work particularly well with geopandas:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -680,7 +673,7 @@ These files work particularly well with geopandas:</p>
             &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&gt;
             &lt;style&gt;
-                #map_c981630aa3513029725af3cf0ca3e7d2 {
+                #map_4a26bcdcfc830cbc0f833f982c9fd050 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -708,13 +701,13 @@ These files work particularly well with geopandas:</p>
 &lt;/head&gt;
 &lt;body&gt;    
     
-            &lt;div class=&quot;folium-map&quot; id=&quot;map_c981630aa3513029725af3cf0ca3e7d2&quot; &gt;&lt;/div&gt;
+            &lt;div class=&quot;folium-map&quot; id=&quot;map_4a26bcdcfc830cbc0f833f982c9fd050&quot; &gt;&lt;/div&gt;
         
 &lt;/body&gt;
 &lt;script&gt;    
     
-            var map_c981630aa3513029725af3cf0ca3e7d2 = L.map(
-                &quot;map_c981630aa3513029725af3cf0ca3e7d2&quot;,
+            var map_4a26bcdcfc830cbc0f833f982c9fd050 = L.map(
+                &quot;map_4a26bcdcfc830cbc0f833f982c9fd050&quot;,
                 {
                     center: [39.36376105775047, -8.213206266019295],
                     crs: L.CRS.EPSG3857,
@@ -723,77 +716,77 @@ These files work particularly well with geopandas:</p>
                     preferCanvas: false,
                 }
             );
-            L.control.scale().addTo(map_c981630aa3513029725af3cf0ca3e7d2);
+            L.control.scale().addTo(map_4a26bcdcfc830cbc0f833f982c9fd050);
 
             
 
         
     
-            var tile_layer_4dfa53be519cfa543b3f3d749c954247 = L.tileLayer(
+            var tile_layer_a78a329e6d30d8ae46e55e7017a904cc = L.tileLayer(
                 &quot;https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png&quot;,
                 {&quot;attribution&quot;: &quot;Data by \u0026copy; \u003ca href=\&quot;http://openstreetmap.org\&quot;\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\&quot;http://www.openstreetmap.org/copyright\&quot;\u003eODbL\u003c/a\u003e.&quot;, &quot;detectRetina&quot;: false, &quot;maxNativeZoom&quot;: 18, &quot;maxZoom&quot;: 18, &quot;minZoom&quot;: 0, &quot;noWrap&quot;: false, &quot;opacity&quot;: 1, &quot;subdomains&quot;: &quot;abc&quot;, &quot;tms&quot;: false}
-            ).addTo(map_c981630aa3513029725af3cf0ca3e7d2);
+            ).addTo(map_4a26bcdcfc830cbc0f833f982c9fd050);
         
     
-            map_c981630aa3513029725af3cf0ca3e7d2.fitBounds(
+            map_4a26bcdcfc830cbc0f833f982c9fd050.fitBounds(
                 [[39.35830800673871, -8.220231135862965], [39.369214108762236, -8.206181396175626]],
                 {}
             );
         
     
-        function geo_json_5e62e44a6f3d47713eb8f2f733beabf6_styler(feature) {
+        function geo_json_b0c47e807162950d5b7cf784a0ea5802_styler(feature) {
             switch(feature.id) {
                 default:
                     return {&quot;fillOpacity&quot;: 0.5, &quot;weight&quot;: 2};
             }
         }
-        function geo_json_5e62e44a6f3d47713eb8f2f733beabf6_highlighter(feature) {
+        function geo_json_b0c47e807162950d5b7cf784a0ea5802_highlighter(feature) {
             switch(feature.id) {
                 default:
                     return {&quot;fillOpacity&quot;: 0.75};
             }
         }
-        function geo_json_5e62e44a6f3d47713eb8f2f733beabf6_pointToLayer(feature, latlng) {
+        function geo_json_b0c47e807162950d5b7cf784a0ea5802_pointToLayer(feature, latlng) {
             var opts = {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 2, &quot;stroke&quot;: true, &quot;weight&quot;: 3};
             
-            let style = geo_json_5e62e44a6f3d47713eb8f2f733beabf6_styler(feature)
+            let style = geo_json_b0c47e807162950d5b7cf784a0ea5802_styler(feature)
             Object.assign(opts, style)
             
             return new L.CircleMarker(latlng, opts)
         }
 
-        function geo_json_5e62e44a6f3d47713eb8f2f733beabf6_onEachFeature(feature, layer) {
+        function geo_json_b0c47e807162950d5b7cf784a0ea5802_onEachFeature(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if(typeof e.target.setStyle === &quot;function&quot;){
-                        geo_json_5e62e44a6f3d47713eb8f2f733beabf6.resetStyle(e.target);
+                        geo_json_b0c47e807162950d5b7cf784a0ea5802.resetStyle(e.target);
                     }
                 },
                 mouseover: function(e) {
                     if(typeof e.target.setStyle === &quot;function&quot;){
-                        const highlightStyle = geo_json_5e62e44a6f3d47713eb8f2f733beabf6_highlighter(e.target.feature)
+                        const highlightStyle = geo_json_b0c47e807162950d5b7cf784a0ea5802_highlighter(e.target.feature)
                         e.target.setStyle(highlightStyle);
                     }
                 },
             });
         };
-        var geo_json_5e62e44a6f3d47713eb8f2f733beabf6 = L.geoJson(null, {
-                onEachFeature: geo_json_5e62e44a6f3d47713eb8f2f733beabf6_onEachFeature,
+        var geo_json_b0c47e807162950d5b7cf784a0ea5802 = L.geoJson(null, {
+                onEachFeature: geo_json_b0c47e807162950d5b7cf784a0ea5802_onEachFeature,
             
-                style: geo_json_5e62e44a6f3d47713eb8f2f733beabf6_styler,
-                pointToLayer: geo_json_5e62e44a6f3d47713eb8f2f733beabf6_pointToLayer
+                style: geo_json_b0c47e807162950d5b7cf784a0ea5802_styler,
+                pointToLayer: geo_json_b0c47e807162950d5b7cf784a0ea5802_pointToLayer
         });
 
-        function geo_json_5e62e44a6f3d47713eb8f2f733beabf6_add (data) {
-            geo_json_5e62e44a6f3d47713eb8f2f733beabf6
+        function geo_json_b0c47e807162950d5b7cf784a0ea5802_add (data) {
+            geo_json_b0c47e807162950d5b7cf784a0ea5802
                 .addData(data)
-                .addTo(map_c981630aa3513029725af3cf0ca3e7d2);
+                .addTo(map_4a26bcdcfc830cbc0f833f982c9fd050);
         }
-            geo_json_5e62e44a6f3d47713eb8f2f733beabf6_add({&quot;bbox&quot;: [-8.220231135862965, 39.35830800673871, -8.206181396175626, 39.369214108762236], &quot;features&quot;: [{&quot;bbox&quot;: [-8.220231135862965, 39.35830800673871, -8.206181396175626, 39.369214108762236], &quot;geometry&quot;: {&quot;coordinates&quot;: [[[-8.206303786862476, 39.35830800673871], [-8.206181396175626, 39.36911991840375], [-8.220110892285982, 39.369214108762236], [-8.220231135862965, 39.358402161090694], [-8.206303786862476, 39.35830800673871]]], &quot;type&quot;: &quot;Polygon&quot;}, &quot;id&quot;: &quot;1&quot;, &quot;properties&quot;: {&quot;acquisition_date&quot;: &quot;2017-12-21 11:25:01&quot;, &quot;labels&quot;: [&quot;Complex cultivation patterns&quot;, &quot;Land principally occupied by agriculture, with significant areas of natural vegetation&quot;, &quot;Broad-leaved forest&quot;, &quot;Transitional woodland/shrub&quot;], &quot;name&quot;: &quot;S2A_MSIL2A_2017\n1221T112501_56_\n35&quot;, &quot;tile_source&quot;: &quot;S2A_MSIL1C_2017\n1221T112501_N02\n06_R037_T29SND_\n20171221T114356\n.SAFE&quot;}, &quot;type&quot;: &quot;Feature&quot;}], &quot;type&quot;: &quot;FeatureCollection&quot;});
+            geo_json_b0c47e807162950d5b7cf784a0ea5802_add({&quot;bbox&quot;: [-8.220231135862965, 39.35830800673871, -8.206181396175626, 39.369214108762236], &quot;features&quot;: [{&quot;bbox&quot;: [-8.220231135862965, 39.35830800673871, -8.206181396175626, 39.369214108762236], &quot;geometry&quot;: {&quot;coordinates&quot;: [[[-8.206303786862476, 39.35830800673871], [-8.206181396175626, 39.36911991840375], [-8.220110892285982, 39.369214108762236], [-8.220231135862965, 39.358402161090694], [-8.206303786862476, 39.35830800673871]]], &quot;type&quot;: &quot;Polygon&quot;}, &quot;id&quot;: &quot;1&quot;, &quot;properties&quot;: {&quot;acquisition_date&quot;: &quot;2017-12-21 11:25:01&quot;, &quot;labels&quot;: [&quot;Complex cultivation patterns&quot;, &quot;Land principally occupied by agriculture, with significant areas of natural vegetation&quot;, &quot;Broad-leaved forest&quot;, &quot;Transitional woodland/shrub&quot;], &quot;name&quot;: &quot;S2A_MSIL2A_20171221T112501_56_35&quot;, &quot;tile_source&quot;: &quot;S2A_MSIL1C_20171221T112501_N0206_R037_T29SND_20171221T114356.SAFE&quot;}, &quot;type&quot;: &quot;Feature&quot;}], &quot;type&quot;: &quot;FeatureCollection&quot;});
 
         
     
-    geo_json_5e62e44a6f3d47713eb8f2f733beabf6.bindTooltip(
+    geo_json_b0c47e807162950d5b7cf784a0ea5802.bindTooltip(
     function(layer){
     let div = L.DomUtil.create(&#x27;div&#x27;);
     
@@ -818,14 +811,48 @@ These files work particularly well with geopandas:</p>
                      
 &lt;/script&gt;" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div></div></div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bigearthnet_gdf_builder.builder</span> <span class="kn">import</span> <span class="n">add_full_ben_s2_metadata</span>
+
+<span class="c1"># also provides a quick way to add important metadata</span>
+<span class="c1"># example &quot;metadata&quot; subset</span>
+<span class="n">meta_gdf</span> <span class="o">=</span> <span class="n">add_full_ben_s2_metadata</span><span class="p">(</span><span class="n">gdf</span><span class="p">)</span>
+<span class="c1"># showing first row as tables have display issues</span>
+<span class="n">meta_gdf</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+</pre>
+</div><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>labels                          [Non-irrigated arable land, Pastures]
+tile_source         S2A_MSIL1C_20170617T113321_N0205_R080_T29UPU_2...
+acquisition_date                                  2017-06-17 11:33:21
+name                                 S2A_MSIL2A_20170617T113321_36_85
+geometry            POLYGON ((3181331.5370094078 3376775.096618652...
+new_labels                                    [Arable land, Pastures]
+snow                                                            False
+cloud_or_shadow                                                 False
+original_split                                                  train
+country                                                       Ireland
+season                                                         Summer
+Name: 0, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Instead of writing another metadata loading script:</p>
 <ul class="simple">
 <li><p>Download one of the pre-converted files or</p></li>
-<li><p>Use the <a class="reference external" href="https://github.com/kai-tub/bigearthnet_gdf_builder">bigearthnet_gdf_builder</a> tool to convert the metadata into a tabular format</p></li>
+<li><p>Use the <a class="reference external" href="https://docs.kai-tub.tech/bigearthnet_gdf_builder/intro.html#intro" title="(in BigEarthNet GDF Builder)"><span>BigEarthNet GDF Builder</span></a> tool to convert the metadata into a tabular format</p></li>
 </ul>
 </div>
+</section>
+</section>
 </section>
 </section>
 

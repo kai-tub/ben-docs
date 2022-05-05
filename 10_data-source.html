@@ -374,11 +374,13 @@ The following <a class="reference internal" href="#sentinel2-bands"><span class=
 </figcaption>
 </figure>
 <p>The spectrums range from visible (380nm–700nm), near-infrared (700nm–1100nm) to short-wave infrared (1100nm–3000nm) light.
-The low-spatial resolution 60m bands are designed for aerosol (B01), water-vapor (B09), and cirrus cloud (B10) detection.
-BigEarthNet does not include band B10 as B10 provides no surface-level information <span id="id1">[<a class="reference internal" href="99_references.html#id6" title="European Space Agency. Cloud Masks. June 2021. URL: https://sentinel.esa.int/web/sentinel/technical-guides/sentinel-2-msi/level-1c/cloud-masks.">5</a>]</span>.
-The 20m bands in the near-infrared range (B05, B06, B07, B8A) are vital for differentiating vegetation from other objects.
+The low-spatial resolution 60m bands are designed for aerosol (B01), water-vapor (B09), and cirrus cloud (B10) detection.</p>
+<p>BigEarthNet does not include band B10 as B10 provides no surface-level information <span id="id1">[<a class="reference internal" href="99_references.html#id6" title="European Space Agency. Cloud Masks. June 2021. URL: https://sentinel.esa.int/web/sentinel/technical-guides/sentinel-2-msi/level-1c/cloud-masks.">5</a>]</span>.
+Band B10 is dropped after converting a Sentinel-2 L1C data product, which encodes the TOA, to a Sentinel-2 L2A product containing the BOA data.
+See the official <a class="reference external" href="https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-2/data-products">Sentinel-2 data products page</a> for more information.</p>
+<p>The 20m bands in the near-infrared range (B05, B06, B07, B8A) are vital for differentiating vegetation from other objects.
 The remaining 20m bands in the short-wave infrared spectrum (B11, B12) are helpful for snow, ice, and cloud discrimination <span id="id2">[<a class="reference internal" href="99_references.html#id9" title="Karen Fletcher. Sentinel-2 : Esa's optical high-resolution mission for GMES operational services. ESA Communications, 2012. ISBN 9789292214197. URL: http://esamultimedia.esa.int/multimedia/publications/SP-1322_2/offline/download.pdf.">1</a>]</span>.</p>
-<p>The high spatial resolution bands B04, B03, and B02 are the classic red, green, blue (RGB) channels.
+<p>The high spatial resolution bands B04, B03, and B02 are the classic red, green, and blue (RGB) channels.
 The last 10m resolution band, B08, covers a broader spectrum than B08A but is less resistant against water vapor contaminating the spectral reflectance.
 As some applications suffer from possible contamination, the narrower, lower spatial resolution band B08A was added.
 To cover all use-cases, both bands were included, even if they overlap in the sensed spectrums <span id="id3">[<a class="reference internal" href="99_references.html#id8" title="European Space Agency. Heritage. 2021. URL: https://sentinel.esa.int/web/sentinel/missions/sentinel-2/heritage.">4</a>]</span>.
@@ -386,12 +388,7 @@ Concatenating these spectrums results in images with twelve channels, compared t
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <ul class="simple">
-<li><p>BigEarthNet-S2 dropped channel B10 from the original Sentinel-2 data, as the band does not contain any surface-level information.</p>
-<ul>
-<li><p>More precisely, channel B10 is dropped after converting a Sentinel-2 L1C data product that encodes the TOA to a Sentinel-2 L2A product containing the BOA data.</p></li>
-<li><p>See the official <a class="reference external" href="https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-2/data-products">Sentinel-2 data products page</a> for more information</p></li>
-</ul>
-</li>
+<li><p>BigEarthNet-S2 dropped channel B10 from the original Sentinel-2 data, as the band does not contain surface-level information.</p></li>
 <li><p>The bands B08 and B8A are included, even if they overlap in the sensed spectral reflectivity.</p>
 <ul>
 <li><p>Allows the user to decide how to handle the overlap.</p></li>
@@ -399,21 +396,13 @@ Concatenating these spectrums results in images with twelve channels, compared t
 </li>
 </ul>
 </div>
-<p>TODO:</p>
-<ul class="simple">
-<li><p>Show example image and example patch!</p></li>
-<li><p>Show example band</p></li>
-<li><p>Quick comment about the product formatting:</p>
-<ul>
-<li><p><a class="reference external" href="https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-2-msi/level-2a/product-formatting">Level-2A</a> encode <code class="docutils literal notranslate"><span class="pre">NO_DATA</span></code> as the 0 value!</p></li>
-<li><p>There should be no patch with the value 0</p></li>
-</ul>
-</li>
-</ul>
 </section>
 <section id="sentinel-1">
 <h2>Sentinel-1<a class="headerlink" href="#sentinel-1" title="Permalink to this headline">#</a></h2>
-<p>Some information about Sentinel-1</p>
+<div class="todo admonition">
+<p class="admonition-title">ToDo</p>
+<p>Add some information about Sentinel-1</p>
+</div>
 </section>
 </section>
 
