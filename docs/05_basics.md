@@ -1,5 +1,5 @@
 # Remote Sensing Basics
-Before going into the details of BigEarthNet, the following section will give a short introduction to common terms of the remote sensing domain.
+Before going into the details of {{ ben }}, the following section will give a short introduction to common terms of the remote sensing domain.
 
 Spatial resolution
   : One important concept when working with remote sensing data is the spatial resolution of an image.

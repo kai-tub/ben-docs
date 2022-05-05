@@ -41,7 +41,17 @@ extensions = [
     # "sphinx.ext.todo",
     "sphinxcontrib.bibtex",
     "sphinx_comments",
+    "sphinx.ext.todo",
+    "sphinx.ext.extlinks",
 ]
+
+intersphinx_mapping = {
+    "ben_gdf_builder": ("https://docs.kai-tub.tech/bigearthnet_gdf_builder", None)
+}
+
+# Only useful if sub-urls are accessed
+# extlinks = {
+# }
 
 comments_config = {"hypothesis": True}
 
@@ -65,6 +75,8 @@ myst_enable_extensions = [
     "substitution",
     "tasklist",
 ]
+
+myst_substitutions = {"ben": "[BigEarthNet](https://bigearth.net/)"}
 
 nb_custom_formats = {
     ".mipynb": [
