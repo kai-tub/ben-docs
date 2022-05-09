@@ -76,7 +76,13 @@ myst_enable_extensions = [
     "tasklist",
 ]
 
-myst_substitutions = {"ben": "[BigEarthNet](https://bigearth.net/)"}
+myst_substitutions = {
+    "ben": "[BigEarthNet](https://bigearth.net/)",
+    "BenEncoder": "[BigEarthNet Encoder](https://docs.kai-tub.tech/bigearthnet_encoder/)",
+    "BenInterface": "[BigEarthNet Patch Interface](https://docs.kai-tub.tech/bigearthnet_patch_interface/)",
+    "BenGdfBuilder": "[BigEarthNet GDF Builder](https://docs.kai-tub.tech/bigearthnet_gdf_builder/)",
+    "BenCommon": "[BigEarthNet Common](https://docs.kai-tub.tech/bigearthnet_common/)",
+}
 
 nb_custom_formats = {
     ".mipynb": [
