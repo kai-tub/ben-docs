@@ -125,6 +125,16 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="80_todos.html">
+   ToDo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="90_libraries.html">
+   Helpful Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="99_references.html">
    Further references
   </a>
@@ -278,10 +288,22 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#visualizing-individual-bands">
    Visualizing individual bands
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sentinel-2">
+     Sentinel-2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sentinel-1">
+     Sentinel-1
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualizing-rgb-bands">
-   Visualizing RGB bands
+  <a class="reference internal nav-link" href="#visualizing-rgb-bands-of-sentinel-2">
+   Visualizing RGB bands of Sentinel-2
   </a>
  </li>
 </ul>
@@ -307,10 +329,22 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#visualizing-individual-bands">
    Visualizing individual bands
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sentinel-2">
+     Sentinel-2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sentinel-1">
+     Sentinel-1
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualizing-rgb-bands">
-   Visualizing RGB bands
+  <a class="reference internal nav-link" href="#visualizing-rgb-bands-of-sentinel-2">
+   Visualizing RGB bands of Sentinel-2
   </a>
  </li>
 </ul>
@@ -367,18 +401,41 @@ title="Print to PDF"
 </pre>
 </div></div>
 </div>
+<p>The same also works for Sentinel-1 data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1_patch</span> <span class="o">=</span> <span class="n">ben_encoder</span><span class="o">.</span><span class="n">tiff_dir_to_ben_s1_patch</span><span class="p">(</span><span class="n">s1_patch_folder_path</span><span class="p">)</span>
+<span class="n">s1_patch</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BigEarthNet_S1_Patch with:
+	VH with 10m spatial resolution and a size of (120, 120) pixel
+	VV with 10m spatial resolution and a size of (120, 120) pixel
+</pre></div>
+</div>
+</div>
+</div>
 <section id="visualizing-individual-bands">
 <h2>Visualizing individual bands<a class="headerlink" href="#visualizing-individual-bands" title="Permalink to this headline">#</a></h2>
 <p>If we are only interested in a single band, we can usually use <code class="docutils literal notranslate"><span class="pre">plt.imshow</span></code>.</p>
 <p>A nice side-effect of <code class="docutils literal notranslate"><span class="pre">plt.imshow</span></code> is that it automatically applies a min/max normalization to one-dimensional input data.
 So the outputs look “good by default”:</p>
+<section id="sentinel-2">
+<h3>Sentinel-2<a class="headerlink" href="#sentinel-2" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
+
+<span class="k">def</span> <span class="nf">_imshow_no_axis</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+
+
 <span class="n">b03_data</span> <span class="o">=</span> <span class="n">s2_patch</span><span class="o">.</span><span class="n">get_band_data_by_name</span><span class="p">(</span><span class="s2">&quot;B03&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">b03_data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">);</span>
+<span class="n">_imshow_no_axis</span><span class="p">(</span><span class="n">b03_data</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -509,11 +566,88 @@ B12</div>
 </div>
 </div>
 </details></section>
-<section id="visualizing-rgb-bands">
-<h2>Visualizing RGB bands<a class="headerlink" href="#visualizing-rgb-bands" title="Permalink to this headline">#</a></h2>
-<div class="note admonition">
-<p class="admonition-title">TODO</p>
-<p>Implement the visualization</p>
+<section id="sentinel-1">
+<h3>Sentinel-1<a class="headerlink" href="#sentinel-1" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">vv_data</span> <span class="o">=</span> <span class="n">s1_patch</span><span class="o">.</span><span class="n">get_band_data_by_name</span><span class="p">(</span><span class="s2">&quot;VV&quot;</span><span class="p">)</span>
+<span class="n">_imshow_no_axis</span><span class="p">(</span><span class="n">vv_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/bf73d8008ea54d6044a5741dc661d9e620c528a41896f33b4f946ddc70eb98bb.png" src="_images/bf73d8008ea54d6044a5741dc661d9e620c528a41896f33b4f946ddc70eb98bb.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vh_data</span> <span class="o">=</span> <span class="n">s1_patch</span><span class="o">.</span><span class="n">get_band_data_by_name</span><span class="p">(</span><span class="s2">&quot;VH&quot;</span><span class="p">)</span>
+<span class="n">_imshow_no_axis</span><span class="p">(</span><span class="n">vh_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/63715340046801d414db15c0e35e457622270821efce8ecfe5bafdb228ceb293.png" src="_images/63715340046801d414db15c0e35e457622270821efce8ecfe5bafdb228ceb293.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="visualizing-rgb-bands-of-sentinel-2">
+<h2>Visualizing RGB bands of Sentinel-2<a class="headerlink" href="#visualizing-rgb-bands-of-sentinel-2" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">bigearthnet_patch_interface.s2_interface</span> <span class="kn">import</span> <span class="n">BigEarthNet_S2_Patch</span>
+
+
+<span class="k">def</span> <span class="nf">_read_rgb_from_s2_patch</span><span class="p">(</span><span class="n">s2_patch</span><span class="p">:</span> <span class="n">BigEarthNet_S2_Patch</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">s2_patch</span><span class="o">.</span><span class="n">get_band_data_by_name</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;B04&quot;</span><span class="p">,</span> <span class="s2">&quot;B03&quot;</span><span class="p">,</span> <span class="s2">&quot;B02&quot;</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span>
+    <span class="p">)</span>
+
+
+<span class="c1"># plt.imshow expects the channel dimension as the last axis!</span>
+<span class="n">rgb_arr</span> <span class="o">=</span> <span class="n">_read_rgb_from_s2_patch</span><span class="p">(</span><span class="n">s2_patch</span><span class="p">)</span>
+<span class="n">rgb_arr</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(120, 120, 3)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># As shown here, no implicit normalization is done!</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">rgb_arr</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).
+</pre></div>
+</div>
+<img alt="_images/f2946f6f524fc1f8d26b6bde3a387d60c829285bb2bc176d5cac70daa0702c9a.png" src="_images/f2946f6f524fc1f8d26b6bde3a387d60c829285bb2bc176d5cac70daa0702c9a.png" />
+</div>
+</div>
+<p>A simple min-max normalization is often a good start for a nice looking visualization.
+The usual issues are water patches that have very similar values across multiple bands and often produce either very noisy or black images or snowy patches.
+Some more advanced visualization techniques like histogram equalization with manual brightness adjustment usually lead to the best results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">((</span><span class="n">rgb_arr</span> <span class="o">-</span> <span class="n">rgb_arr</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="o">/</span> <span class="p">(</span><span class="n">rgb_arr</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">rgb_arr</span><span class="o">.</span><span class="n">min</span><span class="p">()))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/b92af7f7aaa216a4800e9966b1b0fc84ed35d93d484a71fb4dbdc35e9d471bde.png" src="_images/b92af7f7aaa216a4800e9966b1b0fc84ed35d93d484a71fb4dbdc35e9d471bde.png" />
+</div>
 </div>
 </section>
 </section>

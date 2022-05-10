@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Efficiently loading BigEarthNet &#8212; BigEarthNet Guide</title>
+    <title>Helpful Libraries &#8212; BigEarthNet Guide</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -45,6 +45,8 @@
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Further references" href="99_references.html" />
+    <link rel="prev" title="ToDo" href="80_todos.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -91,7 +93,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="05_basics.html">
    Remote Sensing Basics
@@ -120,6 +122,16 @@
  <li class="toctree-l1">
   <a class="reference internal" href="25_patch-distribution.html">
    Geographical Patch distribution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="80_todos.html">
+   ToDo
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Helpful Libraries
   </a>
  </li>
  <li class="toctree-l1">
@@ -213,7 +225,7 @@ title="Source repository"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/efficiently-loading-ben.md.txt"
+        <a href="_sources/90_libraries.md.txt"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -273,47 +285,23 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#requirements">
-   Requirements
+  <a class="reference internal nav-link" href="#bigearthnet-common">
+   BigEarthNet Common
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#flexible-loading-of-different-channels">
-     Flexible loading of different channels
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#easily-embedding-of-metadata">
-     Easily embedding of metadata
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#comments">
-       Comments
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#easy-to-install">
-     Easy to install
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#deep-learning-library-agnostic">
-     Deep-Learning Library agnostic
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#competitors">
-     Competitors
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ffcv">
-   FFCV
+  <a class="reference internal nav-link" href="#bigearthnet-gdf-builder">
+   BigEarthNet GDF Builder
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bigearthnet-patch-interface">
+   BigEarthNet Patch Interface
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bigearthnet-encoder">
+   BigEarthNet Encoder
   </a>
  </li>
 </ul>
@@ -325,7 +313,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Efficiently loading BigEarthNet</h1>
+                <h1>Helpful Libraries</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -336,47 +324,23 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#requirements">
-   Requirements
+  <a class="reference internal nav-link" href="#bigearthnet-common">
+   BigEarthNet Common
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#flexible-loading-of-different-channels">
-     Flexible loading of different channels
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#easily-embedding-of-metadata">
-     Easily embedding of metadata
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#comments">
-       Comments
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#easy-to-install">
-     Easy to install
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#deep-learning-library-agnostic">
-     Deep-Learning Library agnostic
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#competitors">
-     Competitors
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ffcv">
-   FFCV
+  <a class="reference internal nav-link" href="#bigearthnet-gdf-builder">
+   BigEarthNet GDF Builder
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bigearthnet-patch-interface">
+   BigEarthNet Patch Interface
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bigearthnet-encoder">
+   BigEarthNet Encoder
   </a>
  </li>
 </ul>
@@ -389,96 +353,74 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="efficiently-loading-bigearthnet">
-<h1>Efficiently loading BigEarthNet<a class="headerlink" href="#efficiently-loading-bigearthnet" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="helpful-libraries">
+<h1>Helpful Libraries<a class="headerlink" href="#helpful-libraries" title="Permalink to this headline">#</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>MOVE TO BIGEARTHNET ENCODER!</p>
+<p>These libraries should be considered as experimental!</p>
+<p>If you find any issues please use the official bug-tracker!</p>
 </div>
-<p>One crucial component of reducing the training time is minimizing data access.
-There are <em>many</em> different approaches with their pros and cons.
-This section assembles a couple of popular approaches, discusses possible shortcomings, and gives <em>one</em> strategy to minimize data loading time.</p>
-<!-- Before optimizing code, the first question should always be
-- Do we need to optimize the code? -->
-<p>The assumption is that the data loading procedure is slow and becomes a bottleneck during training.
-Looking at the structure of the data, we can identify three possible issues:</p>
-<ol class="arabic simple">
-<li><p>Provided patches are slow to be read</p>
+<p>The following is a short list of <em>unofficial</em> BigEarthNet-related libraries:</p>
+<section id="bigearthnet-common">
+<h2><a class="reference external" href="https://docs.kai-tub.tech/bigearthnet_common/">BigEarthNet Common</a><a class="headerlink" href="#bigearthnet-common" title="Permalink to this headline">#</a></h2>
+<p>The <a class="reference external" href="https://docs.kai-tub.tech/bigearthnet_common/">BigEarthNet Common</a> library provides a collection of high-level tools to better work with the BigEarthNet dataset.
+Use this library to:</p>
 <ul class="simple">
-<li><p>The data is split across multiple files. Each band is stored separately because of the different spatial resolution</p></li>
-<li><p>Each <code class="docutils literal notranslate"><span class="pre">tif</span></code> (<a class="reference external" href="https://en.wikipedia.org/wiki/GeoTIFF">GeoTIFF</a>) file contains unnecessary metadata for the training of deep neural networks</p></li>
-</ul>
-</li>
-<li><p>Images need to be converted before passing through common deep learning pipelines</p>
-<ul class="simple">
-<li><p>Data is stored as <code class="docutils literal notranslate"><span class="pre">uint16</span></code>; most libraries require <code class="docutils literal notranslate"><span class="pre">float32</span></code> or <code class="docutils literal notranslate"><span class="pre">int</span></code></p></li>
-</ul>
-</li>
-<li><p>Lower resolution bands need to be interpolated if they should be converted to a <em>tensor-like</em> structure</p></li>
-</ol>
-<section id="requirements">
-<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">#</a></h2>
-<p>Many tutorials compare and discuss libraries for converting the data into a different format or storing it in a database to optimize the access but are often not well-suited for our heterogeneous satellite data.</p>
-<p>To allow us to work with the multi-spectral satellite data flexibly, we have the following requirements:</p>
-<section id="flexible-loading-of-different-channels">
-<h3>Flexible loading of different channels<a class="headerlink" href="#flexible-loading-of-different-channels" title="Permalink to this headline">#</a></h3>
-<p>Initial experiments are often performed on the RGB-only bands to re-use code from other projects/papers that were originally created for the CV domain.
-Some experiments may only load the 10m and 20m bands, as the 60m bands <em>often</em> have negligible impact on the performance.
-Dropping these bands allows training with larger batches, reducing training time.</p>
-<p>This requirement is orthogonal to point <code class="docutils literal notranslate"><span class="pre">3</span></code> of the possible bottlenecks during data loading.
-Even if upsampling the channels to a unified dimensionality significantly improves read performance, the library should handle this scenario for the initial experiments. A pre-converted version can reside next to the more general solution.
-There should, however, be no need to use two different libraries for both scenarios.</p>
-<p>Due to this requirement, the following libraries are ill-fit for the multi-spectral deep-learning domain:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://xarray.pydata.org/en/stable/getting-started-guide/why-xarray.html">xarray</a></p></li>
-</ul>
-</section>
-<section id="easily-embedding-of-metadata">
-<h3>Easily embedding of metadata<a class="headerlink" href="#easily-embedding-of-metadata" title="Permalink to this headline">#</a></h3>
-<p>Besides the 19-class nomenclature, some experiments could also be performed on the 43-class nomenclature for comparison with other papers.
-Geographic metadata about each patch could be used for <em>remote-sensing</em> specific training strategies.</p>
-<ul class="simple">
-<li><p>Should also allow to easily extend archive with additional information</p></li>
-</ul>
-<section id="comments">
-<h4>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">#</a></h4>
-<p>After spending some more time working with satellite data and deep-learning, I personally think that this isn’t as important as I initially thought.
-It is often <em>easier</em> and more flexible to keep the metadata separate.</p>
-<p>For example: If we do some smart geographic location-based sampling, the metadata has to be available at the start of the epoch to calculate what images should be sampled.
-If the metadata is <em>embedded</em> with the image data in a common structure, the image data would probably have to be loaded even if it isn’t necessary.
-Some libraries allow metadata reading without loading the images, but this is generally not true for <em>key-value storages</em>.</p>
-</section>
-</section>
-<section id="easy-to-install">
-<h3>Easy to install<a class="headerlink" href="#easy-to-install" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>Do not require loading via rasterio</p>
+<li><p>Use any BigEarthNet related constants</p>
 <ul>
-<li><p>rasterio is complicated to install/brings many hard dependencies with it</p></li>
+<li><p>Quickly print constants by using a CLI tool</p></li>
 </ul>
 </li>
-<li><p>Do not require any <em>real</em> database connections/databases</p></li>
+<li><p>Safely read JSON files</p></li>
+<li><p>Deterministically multi-hot encode/decode 19/43-class labels</p></li>
+<li><p>Quickly accessing metadata from a patch for filtering</p>
+<ul>
+<li><p>Country</p></li>
+<li><p>Season</p></li>
+<li><p>Original Split</p></li>
+<li><p>If it is a <em>snowy</em> patch</p></li>
+<li><p>If it is a <em>cloudy/shadowy</em> patch</p></li>
+<li><p>Access related S1 or S2 patch</p></li>
 </ul>
+</li>
+<li><p>Create CSV sets via a CLI tool</p></li>
+</ul>
+<p>See the <a class="reference external" href="https://docs.kai-tub.tech/bigearthnet_common/">BigEarthNet Common</a> documentation for more details.</p>
 </section>
-<section id="deep-learning-library-agnostic">
-<h3>Deep-Learning Library agnostic<a class="headerlink" href="#deep-learning-library-agnostic" title="Permalink to this headline">#</a></h3>
+<section id="bigearthnet-gdf-builder">
+<h2><a class="reference external" href="https://docs.kai-tub.tech/bigearthnet_gdf_builder/">BigEarthNet GDF Builder</a><a class="headerlink" href="#bigearthnet-gdf-builder" title="Permalink to this headline">#</a></h2>
+<p>The <a class="reference external" href="https://docs.kai-tub.tech/bigearthnet_gdf_builder/">BigEarthNet GDF Builder</a> library helps to generate and extend BigEarthNet GeoDataFrame’s.
+Use this library to:</p>
 <ul class="simple">
-<li><p>Should work with tensor-flow, pytorch or even more exotic interfaces</p></li>
+<li><p>Convert all the individual JSON files to a common tabular data structure</p></li>
+<li><p>Easy processing of metadata with GeoDataFrame’s</p>
+<ul>
+<li><p>Assign patches to country</p></li>
+<li><p>Assign patches to season</p></li>
+<li><p>Assign patches to original split</p></li>
 </ul>
-</section>
-<section id="competitors">
-<h3>Competitors<a class="headerlink" href="#competitors" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://realpython.com/storing-images-in-python/#reading-from-lmdb">LMDB</a></p></li>
-<li><p>H5PY</p></li>
-<li><p><a class="reference external" href="https://ffcv.io/">FFCV</a></p></li>
+</li>
+<li><p>Easy processing of the geographical information</p></li>
+<li><p>Create complex subsets</p></li>
+<li><p>In-depth statistichal analysis of the meta-data</p></li>
 </ul>
-<!-- TODO: Add my attempt at LMDB encoding and list potential issues -->
+<p>See the <a class="reference external" href="https://docs.kai-tub.tech/bigearthnet_gdf_builder/">BigEarthNet GDF Builder</a> documentation for more details.</p>
 </section>
+<section id="bigearthnet-patch-interface">
+<h2><a class="reference external" href="https://docs.kai-tub.tech/bigearthnet_patch_interface/">BigEarthNet Patch Interface</a><a class="headerlink" href="#bigearthnet-patch-interface" title="Permalink to this headline">#</a></h2>
+<p>The <a class="reference external" href="https://docs.kai-tub.tech/bigearthnet_patch_interface/">BigEarthNet Patch Interface</a> is a deep-learning agnostic wrapper for BigEarthNet patches.
+The main use is to convert the patches to this intermediate format before processing it to a deep-learning specialized format.
+Internally, the bands as stored as simple NumPy arrays.
+The interface is very strict during the object creation to ensure that errors in the pipeline are catched early on.
+It also provides introspection to quickly understand the underlying data structure.</p>
+<p>See the <a class="reference external" href="https://docs.kai-tub.tech/bigearthnet_patch_interface/">BigEarthNet Patch Interface</a> documentation for more details.</p>
 </section>
-<section id="ffcv">
-<h2>FFCV<a class="headerlink" href="#ffcv" title="Permalink to this headline">#</a></h2>
-<p>FFCV is a very recent, bleeding-edge data-loading library.</p>
+<section id="bigearthnet-encoder">
+<h2><a class="reference external" href="https://docs.kai-tub.tech/bigearthnet_encoder/">BigEarthNet Encoder</a><a class="headerlink" href="#bigearthnet-encoder" title="Permalink to this headline">#</a></h2>
+<p>The goal of the <a class="reference external" href="https://docs.kai-tub.tech/bigearthnet_encoder/">BigEarthNet Encoder</a> library is to quickly transform the original BigEarthNet archive into a deep-learning optimized format.
+The long-term goal is to support multiple output formats.
+As of now, the only supported target format is the LMDB archive format.</p>
+<p>See the <a class="reference external" href="https://docs.kai-tub.tech/bigearthnet_encoder/">BigEarthNet Encoder</a> documentation for more details.</p>
 </section>
 </section>
 
@@ -490,6 +432,20 @@ Some libraries allow metadata reading without loading the images, but this is ge
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="80_todos.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">ToDo</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="99_references.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Further references</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
