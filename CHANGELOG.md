@@ -1,3 +1,21 @@
+# v0.0.2 (Mon May 16 2022)
+
+#### ⚠️ Pushed to `main`
+
+- Update dependencies ([@kai-tub](https://github.com/kai-tub))
+
+#### 📝 Documentation
+
+- Update deps and add metrics section [#13](https://github.com/kai-tub/ben-docs/pull/13) ([@kai-tub](https://github.com/kai-tub))
+- Link-to-packages [#12](https://github.com/kai-tub/ben-docs/pull/12) ([@kai-tub](https://github.com/kai-tub))
+- update parts of the documentation [#11](https://github.com/kai-tub/ben-docs/pull/11) ([@kai-tub](https://github.com/kai-tub))
+
+#### Authors: 1
+
+- Kai Norman Clasen ([@kai-tub](https://github.com/kai-tub))
+
+---
+
 # v0.0.1 (Wed May 04 2022)
 
 :tada: This release contains work from a new contributor! :tada:

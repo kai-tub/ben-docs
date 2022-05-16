@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "bigearthnet_docs"
-version = "0.1.1"
+version = "0.1.2"
 description = "A user-friendly introduction to the multi-spectral BigEarthNet dataset."
 authors = ["Kai Norman Clasen <k.clasen@protonmail.com>"]
 license = "MIT license"
