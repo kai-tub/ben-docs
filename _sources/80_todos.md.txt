@@ -1,7 +1,6 @@
 # ToDo
 
 Here is a short collection of possible enhancements that could be done in the future:
-- Create a common source for example patches
 - Write how BigEarthNet was created
     - Specifically how the split was designed
     - What cloud/shadowy patches mean
@@ -16,7 +15,6 @@ Here is a short collection of possible enhancements that could be done in the fu
         - Why it is necessary to multi-hot encode dynamically (portugal labels)
 - Extend {{ BenEncoder }} to show-case how to read from LMDB file
     - No interpolation/deep-learning related code!
-- Comment about _best_ multi-label metric
 - An in-depth discussion about possible subsets
     - Issues with multi-class (re-)sampling/balancing
     - General issues of different domains and translation of one result to the next

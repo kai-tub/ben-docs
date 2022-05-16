@@ -39,7 +39,10 @@
    "source": [
     "# remove-input\n",
     "\n",
-    "from bigearthnet_docs import get_s1_example_folder_path, get_s2_example_folder_path\n",
+    "from bigearthnet_common.example_data import (\n",
+    "    get_s1_example_folder_path,\n",
+    "    get_s2_example_folder_path,\n",
+    ")\n",
     "from rich import print\n",
     "from rich.tree import Tree\n",
     "from rich.markup import escape\n",
@@ -313,6 +316,7 @@
    "metadata": {},
    "outputs": [],
    "source": [
+    "# output_scroll\n",
     "from bigearthnet_gdf_builder.builder import get_gdf_from_s2_patch_dir\n",
     "\n",
     "# gdf_builder also has a CLI tool to convert the entire archive into a single\n",
@@ -320,7 +324,7 @@
     "# Example \"raw\" subset\n",
     "gdf = get_gdf_from_s2_patch_dir(ben_s2_path)\n",
     "# showing first row as tables have display issues\n",
-    "gdf.iloc[0]"
+    "gdf"
    ]
   },
   {
@@ -347,13 +351,14 @@
    "metadata": {},
    "outputs": [],
    "source": [
+    "# output_scroll\n",
     "from bigearthnet_gdf_builder.builder import add_full_ben_s2_metadata\n",
     "\n",
     "# also provides a quick way to add important metadata\n",
     "# example \"metadata\" subset\n",
     "meta_gdf = add_full_ben_s2_metadata(gdf)\n",
     "# showing first row as tables have display issues\n",
-    "meta_gdf.iloc[0]"
+    "meta_gdf"
    ]
   },
   {

@@ -8,21 +8,6 @@
    ]
   },
   {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# remove-input\n",
-    "from bigearthnet_docs import get_s2_example_patch_path, get_s1_example_patch_path\n",
-    "from rich import print\n",
-    "\n",
-    "# this is a function only available for the documentation\n",
-    "s2_patch_folder_path = get_s2_example_patch_path()\n",
-    "s1_patch_folder_path = get_s1_example_patch_path()"
-   ]
-  },
-  {
    "cell_type": "markdown",
    "metadata": {},
    "source": [
@@ -35,7 +20,15 @@
    "metadata": {},
    "outputs": [],
    "source": [
+    "from bigearthnet_common.example_data import (\n",
+    "    get_s2_example_patch_path,\n",
+    "    get_s1_example_patch_path,\n",
+    ")\n",
     "import bigearthnet_encoder.encoder as ben_encoder\n",
+    "from rich import print\n",
+    "\n",
+    "s2_patch_folder_path = get_s2_example_patch_path()\n",
+    "s1_patch_folder_path = get_s1_example_patch_path()\n",
     "\n",
     "s2_patch = ben_encoder.tiff_dir_to_ben_s2_patch(s2_patch_folder_path)\n",
     "s2_patch"
@@ -118,7 +111,7 @@
    "outputs": [],
    "source": [
     "# remove-input\n",
-    "from myst_nb.glue import glue\n",
+    "from myst_nb import glue\n",
     "\n",
     "import bigearthnet_common.constants as ben_constants\n",
     "\n",
