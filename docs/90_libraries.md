@@ -23,6 +23,7 @@ Use this library to:
     - If it is a _cloudy/shadowy_ patch
     - Access related S1 or S2 patch
 - Create CSV sets via a CLI tool
+- Access example data without having to download the entire BigEarthNet archive
 
 See the {{ BenCommon }} documentation for more details.
 

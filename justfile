@@ -14,7 +14,7 @@ install_python_deps:
     poetry install
 
 install_ipykernel:
-	{{env-cmd}} python -m ipykernel install --user
+	{{env-cmd}} python -m ipykernel install --user --name ben-docs
 
 build: install_ipykernel
 	{{env-cmd}} sphinx-build {{justfile_directory()}}/docs {{justfile_directory()}}/docs/_build/

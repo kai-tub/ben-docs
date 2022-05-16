@@ -24,7 +24,7 @@ These models are all trained with the TensorFlow library.
     - Requires the BigEarthNet-S1 archive on disk
 - BigEarthNet-S2 Tools
   - https://git.tu-berlin.de/rsim/BigEarthNet-S2_tools
-  - Read GeoTIFF patches form BigEarthNet-S2
+  - Read GeoTIFF patches from BigEarthNet-S2
     - While skipping cloudy/snowy patches
   - Script to extract names and download links of the Sentinel-2 Level-1C tiles
     - Requires the BigEarthNet-S2 archive on disk
