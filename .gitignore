@@ -5,6 +5,7 @@ docs/jupyter_execute/
 ###
 
 # hide this for now
+*_lmdb.db
 *.bak
 .gitattributes
 .last_checked
@@ -20,6 +21,7 @@ node_modules/
 *.parquet
 
 # Byte-compiled / optimized / DLL files
+*.bkp
 __pycache__/
 *.py[cod]
 *$py.class

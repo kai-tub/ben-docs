@@ -2,7 +2,6 @@
 
 Here is a short collection of possible enhancements that could be done in the future:
 - Write how BigEarthNet was created
-    - Specifically how the split was designed
     - What cloud/shadowy patches mean
     - What current issues are with the labels
     - Some documentation about the outlier regions
