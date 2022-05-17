@@ -1,3 +1,15 @@
+# v0.0.3 (Tue May 17 2022)
+
+#### ⚠️ Pushed to `main`
+
+- Add description on how the original split was created ([@kai-tub](https://github.com/kai-tub))
+
+#### Authors: 1
+
+- Kai Norman Clasen ([@kai-tub](https://github.com/kai-tub))
+
+---
+
 # v0.0.2 (Mon May 16 2022)
 
 #### ⚠️ Pushed to `main`
