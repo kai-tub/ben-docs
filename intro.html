@@ -2,9 +2,12 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="#" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Remote Sensing Basics" href="05_basics.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/><title>Search - BigEarthNet Guide</title><link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+        <title>BigEarthNet Guide</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -123,7 +126,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="intro.html"><div class="brand">BigEarthNet Guide</div></a>
+      <a href="#"><div class="brand">BigEarthNet Guide</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -143,12 +146,12 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="intro.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
   
   
   <span class="sidebar-brand-text">BigEarthNet Guide</span>
   
-</a><form class="sidebar-search-container" method="get" action="#" role="search">
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
@@ -186,7 +189,8 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -200,24 +204,76 @@
           </label>
         </div>
         <article role="main">
-          
-<noscript>
-<div class="admonition error">
-  <p class="admonition-title">Error</p>
-  <p>
-    Please activate JavaScript to enable the search functionality.
-  </p>
+          <section class="tex2jax_ignore mathjax_ignore" id="bigearthnet-guide">
+<h1>BigEarthNet Guide<a class="headerlink" href="#bigearthnet-guide" title="Permalink to this headline">#</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul class="simple">
+<li><p>This site is an initial draft of the BigEarthNet Guide!</p></li>
+<li><p>The provided code hasn’t passed any internal reviews and should only be copied with caution!</p></li>
+<li><p>The first few iterations may contain spelling mistakes and incoherent sentences.</p>
+<ul>
+<li><p>I (Kai) apologies for it in advance. 🙂</p></li>
+</ul>
+</li>
+</ul>
 </div>
-</noscript>
-
-<div id="search-results"></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This site will be hosted on GitHub during the development and use <a class="reference external" href="https://web.hypothes.is/">hypothes.is</a> to enable comments.
+On the right-hand side, you can access a bar to see comments for the current page and create your annotations by highlighting text and clicking on the <code class="docutils literal notranslate"><span class="pre">annotate</span></code> selection.</p>
+<ul class="simple">
+<li><p>The official release of the documentation will be hosted on a different platform.</p></li>
+<li><p>All previous comments will be deleted after the transition!</p></li>
+</ul>
+</div>
+<p>This documentation reduces the time to work with the multi-spectral <a class="reference external" href="https://bigearth.net/">BigEarthNet</a> dataset.
+The <a class="reference external" href="https://bigearth.net/">BigEarthNet</a> dataset was initially published in <span id="id1">Sumbul <em>et al.</em> [<a class="reference internal" href="99_references.html#id4" title="Gencer Sumbul, Marcela Charfuelan, Begum Demir, and Volker Markl. Bigearthnet: A large-scale benchmark archive for remote sensing image understanding. In IGARSS 2019 - 2019 IEEE International Geoscience and Remote Sensing Symposium. IEEE, July 2019. URL: https://doi.org/10.1109/igarss.2019.8900532, doi:10.1109/igarss.2019.8900532.">2</a>]</span> and
+updated in <span id="id2">Sumbul <em>et al.</em> [<a class="reference internal" href="99_references.html#id5" title="Gencer Sumbul, Arne de Wall, Tristan Kreuziger, Filipe Marcelino, Hugo Costa, Pedro Benevides, Mario Caetano, Begum Demir, and Volker Markl. BigEarthNet-MM: A large-scale, multimodal, multilabel benchmark archive for remote sensing image classification and retrieval [Software and data sets]. IEEE Geosci. Remote Sens. Mag., 9(3):174-180, September 2021. URL: https://doi.org/10.1109/mgrs.2021.3089174, doi:10.1109/mgrs.2021.3089174.">3</a>]</span>.</p>
+<p>By providing the following reference, we try to accomplish several goals:</p>
+<ul class="simple">
+<li><p>Provide interested users a high-level overview of the <a class="reference external" href="https://bigearth.net/">BigEarthNet</a> dataset</p>
+<ul>
+<li><p>Where does the data come from?</p></li>
+<li><p>What are <em>patches</em> or tiles?</p></li>
+<li><p>How is the dataset structured?</p></li>
+<li><p>How do I work with the metadata?</p></li>
+<li><p>How can I visualize the data?</p></li>
+</ul>
+</li>
+<li><p>What libraries are available to work with <a class="reference external" href="https://bigearth.net/">BigEarthNet</a>?</p></li>
+<li><p>Provide pre-calculated files that allow for quick stochastical analysis without requiring any complicated installation or preprocessing steps</p></li>
+<li><p>Give <em>behind the scenes</em> details about design decisions that are necessary to work with the data</p>
+<ul>
+<li><p>How to work with different spatial resolutions?</p></li>
+<li><p>What interpolation method should be used?</p></li>
+</ul>
+</li>
+<li><p>Provide different optimized approaches to access the dataset to reduce compute-time and power usage greatly</p>
+<ul>
+<li><p>Optimizing the way we access the data can lead to significant speed-ups (5–10x)</p></li>
+</ul>
+</li>
+<li><p>Unify our shared knowledge into a single place for our reference</p></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+</section>
 
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          
+          <a class="next-page" href="05_basics.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Remote Sensing Basics</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
           
         </div>
         <div class="bottom-of-page">
@@ -257,8 +313,5 @@
     <script src="_static/scripts/furo.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script src="_static/design-tabs.js"></script>
-    
-<script src="_static/searchtools.js"></script>
-<script src="_static/language_data.js"></script>
-<script src="searchindex.js"></script></body>
+    </body>
 </html>
