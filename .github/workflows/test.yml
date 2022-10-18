@@ -1,43 +1,67 @@
-name: Test
-on:
-  push:
-    branches: [main]
-    paths:
-      - "bigearthnet_docs/**"
-  pull_request:
-    branches: [main]
-    paths:
-      - "bigearthnet_docs/**"
+# name: Test
+# on:
+#   push:
+#     branches: [main]
+#     paths:
+#       - "bigearthnet_documentation/**"
+#   pull_request:
+#     branches: [main]
+#     paths:
+#       - "bigearthnet_documentation/**"
 
-jobs:
-  test:
-    strategy:
-      fail-fast: true
-      matrix:
+# jobs:
+#   test:
+#     strategy:
+#       fail-fast: true
+#       matrix:
+#         python-version: ["3.8","3.9","3.10"]
 
-        python-version: [ "3.8" ]
-
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python-version }}
-      - name: Install Poetry
-        uses: snok/install-poetry@v1
-        with:
-          virtualenvs-create: true
-          virtualenvs-in-project: true
-          installer-parallel: true
-      - uses: extractions/setup-just@v1
-      - name: Install dependencies
-        run: |
-          just install
-      - name: Check precommit
-        run: |
-          source $VENV
-          pre-commit run --all-files
-      - name: Run tests from within poetry
-        run: |
-          source $VENV
-          just test
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#         with:
+#           fetch-depth: 0
+#       - name: Set up Python and PDM
+#         uses: pdm-project/setup-pdm@main
+#         with:
+#           python-version: ${{ matrix.python-version }}
+#       - name: Install dependencies
+#         run: |
+#           pdm install --dev --group :all
+#       - name: Check precommit
+#         run: |
+#           pdm run pre-commit run --all-files
+#       - name: Run tests from within PDM
+#         run: |
+#           pdm run tests
+#
+      # Enable if coveragepy is run within tests
+      # assumes parallel mode!
+      # - uses: actions/upload-artifact@v2
+      #   with:
+      #     name: coverage-data
+      #     path: ".coverage.*"
+      #     # allow to skip specific python version
+      #     if-no-files-found: ignore
+# coverage_reporter:
+  #   runs-on: ubuntu-latest
+  #   needs: test
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #       with:
+  #         fetch-depth: 0
+  #     - name: Set up Python and PDM
+  #       uses: pdm-project/setup-pdm@main
+  #       with:
+  #         python-version: "3.8"
+  #     - name: Install coverage reporting deps
+  #       run: |
+  #         pdm install --group test
+  #     - uses: actions/download-artifact@v2
+  #       with:
+  #         name: coverage-data
+  #     - name: Code coverage-reporter
+  #       uses: tj-actions/coverage-reporter@v5.1
+  #       with:
+  #         # assumes pdm uses coverage merge
+  #         coverage-command: "pdm run coverage_report"

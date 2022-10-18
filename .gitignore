@@ -1,11 +1,13 @@
 # Personal often required
-links
 docs/jupyter_execute/
 .vscode/
+# do not allow for pdm to create this folder in git
+__pypackages__/
+links
 ###
 
+.pdm.toml
 # hide this for now
-*_lmdb.db
 *.bak
 .gitattributes
 .last_checked
@@ -21,7 +23,6 @@ node_modules/
 *.parquet
 
 # Byte-compiled / optimized / DLL files
-*.bkp
 __pycache__/
 *.py[cod]
 *$py.class
@@ -85,7 +86,8 @@ instance/
 .scrapy
 
 # Sphinx documentation
-docs/_build/
+docs/_build/*
+!docs/_build/.nojekyll
 
 # PyBuilder
 target/

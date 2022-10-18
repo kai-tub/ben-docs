@@ -2,12 +2,12 @@ name: Test
 on:
   push:
     branches: [main]
-    paths-ignore:
-      - "bigearthnet_docs/**"
+    # paths-ignore:
+    #   - "bigearthnet_documentation/**"
   pull_request:
     branches: [main]
-    paths-ignore:
-      - "bigearthnet_docs/**"
+    # paths-ignore:
+    #   - "bigearthnet_documentation/**"
 
 jobs:
   test:
