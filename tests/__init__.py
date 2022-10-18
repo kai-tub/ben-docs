@@ -1,1 +1,1 @@
-"""Test package for bigearthnet_docs."""
+"""Test package for bigearthnet-documentation."""

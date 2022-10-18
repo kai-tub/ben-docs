@@ -1,4 +1,4 @@
-# Contributing to the bigearthnet-docs library
+# Contributing to the BigEarthNet Documentation library
 This project is a community effort, and everyone is welcome to contribute!
 
 If you are interested in contributing, there are many ways to help out:
@@ -12,10 +12,9 @@ If you find a typo in the documentation, do not hesitate to submit a GitHub pull
    - Open an issue and tell us about your goal and a rough sketch on how you would like to implement it. Once we agree that the plan looks good, feel free to start working on your first *pull request*.
 
 ## PR guide
-1. Install the development dependencies via `poetry`
-    - Or install via `just install`
+1. Install the development dependencies via `pdm install`
 1. Update the code/tests
-1. Run all tests via `pytest tests/` or `just test`
+1. Run all tests via `pytest tests/` or `pdm run test`
 
 If anything is unclear, feel free to start the PR and mention the part that is hard to understand. I am happy to help. :)
 

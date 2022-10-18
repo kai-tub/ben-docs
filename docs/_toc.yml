@@ -1,9 +1,6 @@
-# Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
-
-# TODO: fix this to GLOB
-# format: jb-book
-# root: problem-statement
-root: 00_intro
+root: intro
 entries:
   - glob: "[0-9][0-9]_*"
+  - file: general/dependencies
+  - file: general/code_of_conduct
+  - file: general/license
