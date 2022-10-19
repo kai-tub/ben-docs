@@ -40,7 +40,7 @@ docs = [
     "linkify-it-py",
     "sphinx-design",
     "furo",
-    "common-nb-preprocessors>=1",
+    "common-nb-preprocessors>=1.1",
     "bigearthnet_encoder",
     "bigearthnet_common",
     "bigearthnet_patch_interface",
@@ -75,7 +75,7 @@ check-pre-commit = "pre-commit run --all-files"
 # check-types = "mypy src"
 
 lint.composite = [
-    "pre-commit",
+    "check-pre-commit",
     # "check-types",
 ]
 lint.help = "Will check if all files are formatted with black & isort"
