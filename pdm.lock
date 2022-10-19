@@ -247,7 +247,7 @@ summary = "Cross-platform colored terminal text."
 
 [[package]]
 name = "common-nb-preprocessors"
-version = "1.0.3"
+version = "1.1.1"
 requires_python = ">=3.8"
 summary = "preprocessors"
 dependencies = [
@@ -1656,7 +1656,7 @@ summary = "Backport of pathlib-compatible object wrapper for zip files"
 
 [metadata]
 lock_version = "4.0"
-content_hash = "sha256:59cde57f901e9f5262e88bc6b7538cda76eb57a7ae51ab041d951f78cc045e12"
+content_hash = "sha256:8dc51f877bd2e8b2174a010d6f1d6b1bcdf20184317eec7142ca7ef6d60f7f4a"
 
 [metadata.files]
 "affine 2.3.1" = [
@@ -1867,9 +1867,9 @@ content_hash = "sha256:59cde57f901e9f5262e88bc6b7538cda76eb57a7ae51ab041d951f78c
     {url = "https://files.pythonhosted.org/packages/2b/65/24d033a9325ce42ccbfa3ca2d0866c7e89cc68e5b9d92ecaba9feef631df/colorama-0.4.5.tar.gz", hash = "sha256:e6c6b4334fc50988a639d9b98aa429a0b57da6e17b9a44f0451f930b6967b7a4"},
     {url = "https://files.pythonhosted.org/packages/77/8b/7550e87b2d308a1b711725dfaddc19c695f8c5fa413c640b2be01662f4e6/colorama-0.4.5-py2.py3-none-any.whl", hash = "sha256:854bf444933e37f5824ae7bfc1e98d5bce2ebe4160d46b5edf346a89358e99da"},
 ]
-"common-nb-preprocessors 1.0.3" = [
-    {url = "https://files.pythonhosted.org/packages/48/99/32fd72373c56103d2bf1f7ad6f5e102dd2e357a7e435af91341cd8af93bc/common-nb-preprocessors-1.0.3.tar.gz", hash = "sha256:94df9da0cf2ead065db3c8b94659bf105e3f325ac7e966ef8efa1cece7ccbd41"},
-    {url = "https://files.pythonhosted.org/packages/db/3e/236baef42dfc666754d60bcda5d53be61dad37f61ddfe1e312f1297ead25/common_nb_preprocessors-1.0.3-py3-none-any.whl", hash = "sha256:440455752482a1853c787e0f8b2e00c6503fc6f75ffb3e90f85985ea9c2af38c"},
+"common-nb-preprocessors 1.1.1" = [
+    {url = "https://files.pythonhosted.org/packages/e4/b5/52ba94af09cf7986019898780136f3e1dd62313671b3ad0e237df485f918/common_nb_preprocessors-1.1.1-py3-none-any.whl", hash = "sha256:f6c8901fb9e6545b72795d955c42841673b674fd4898638f5980fc88a8a37e74"},
+    {url = "https://files.pythonhosted.org/packages/f8/54/fd253fb7c56bb572cde1069bc680e8ef546764a3b6085e15c05558827775/common-nb-preprocessors-1.1.1.tar.gz", hash = "sha256:ae85f98dfc465d1ade78385efe30121319269284eb1bcd17b60c8ff6027e4555"},
 ]
 "commonmark 0.9.1" = [
     {url = "https://files.pythonhosted.org/packages/60/48/a60f593447e8f0894ebb7f6e6c1f25dafc5e89c5879fdc9360ae93ff83f0/commonmark-0.9.1.tar.gz", hash = "sha256:452f9dc859be7f06631ddcb328b6919c67984aca654e5fefb3914d54691aed60"},
