@@ -54,7 +54,7 @@ docs = [
     "sphinx-comments>=0.0.3",
     "sphinxcontrib-bibtex>=2.4.2",
     "folium",
-    "-e file:///home/kai/git/furo-myst-nb-css-fixes#egg=furo-myst-nb-css-fixes",
+    "furo-myst-nb-css-fixes",
 ]
 test = [
     "pytest",

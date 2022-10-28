@@ -393,8 +393,6 @@ dependencies = [
 name = "furo-myst-nb-css-fixes"
 version = "0.1.0"
 requires_python = ">=3.8"
-editable = true
-path = "../furo-myst-nb-css-fixes"
 summary = "A tiny wrapper around a few lines of CSS to better support the MyST-NB Jupyter notebook outputs with the Furo Sphinx theme."
 dependencies = [
     "sphinx>=4.5",
@@ -1667,7 +1665,7 @@ summary = "Backport of pathlib-compatible object wrapper for zip files"
 
 [metadata]
 lock_version = "4.0"
-content_hash = "sha256:3b933a0553a96090c3a2e774b004dabd5a7a811e44d8f0ef5edd2c0ffd5789ca"
+content_hash = "sha256:51a15ac1c3a3e7b82e315fefa0aa6ce28b291b1509f41eae265e9fba7808576a"
 
 [metadata.files]
 "affine 2.3.1" = [
