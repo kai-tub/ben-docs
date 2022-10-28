@@ -28,6 +28,7 @@ html_title = project
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    "furo_myst_nb_css_fixes",
     "myst_nb",
     "sphinx_external_toc",
     "sphinx.ext.intersphinx",
