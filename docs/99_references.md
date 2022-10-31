@@ -31,14 +31,6 @@ These models are all trained with the TensorFlow library.
 - Code to read pairs of Sentinel-1 and Sentinel-2 patches
     - https://git.tu-berlin.de/rsim/BigEarthNet-MM_tools
 
-
-## Other links
-
-- The official [Starter Kit](https://git.tu-berlin.de/rsim/starter-kit-bigearthnet/-/tree/main)
-    - A PyTorch-based collection of commonly used functions to work with the BEN dataset
-    - Ideally, the work will be entirely included in this documentation project
-
-
 ## Bibliography
 
 ```{bibliography}
