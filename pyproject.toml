@@ -1,102 +1,48 @@
-[project]
-name = "bigearthnet-documentation"
-version = "0.1.3"
-description = "A user-friendly introduction to the multi-spectral BigEarthNet dataset."
-authors = [
-    {name = "Kai Norman Clasen", email= "k.clasen@protonmail.com"},
-]
-license = {text = "MIT license"}
+[tool.poetry]
+name = "bigearthnet-docs"
+version = "0.1.0"
+description = "A user-friendly introduction to the multi-modal BigEarthNet dataset."
+authors = ["Kai Norman Clasen <k.clasen@protonmail.com>"]
 readme = "README.md"
-#- Uses the < syntax instead of <= because conda-forge does not work correctly with <=
-# deps-start
-requires-python = ">=3.8"
-dependencies = [
-
-]
-# deps-end
-
-[project.urls]
-homepage = "https://github.com/kai-tub/ben-docs/"
+packages = [{include = "igearthnet_docs"}]
+license = "MIT"
+homepage = "https://kai-tub.github.io/ben-docs"
 repository = "https://github.com/kai-tub/ben-docs/"
 documentation = "https://kai-tub.github.io/ben-docs"
 
-[project.optional-dependencies]
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.group.docs.dependencies]
+furo = "^2022.12.7"
+myst-nb = "^0.17.1"
+sphinx-autobuild = "^2021.3.14"
+common-nb-preprocessors = "^1.1.1"
+linkify-it-py = "^2.0.0"
+bigearthnet-encoder = "^0.3.0"
+bigearthnet-common = "^2.8.0"
+bigearthnet-patch-interface = "^0.1.2"
+bigearthnet-gdf-builder = "^0.1.10"
+mapclassify = "^2.4.3"
+matplotlib = "^3.6.2"
+geopandas = "^0.12.2"
+diskcache = "^5.4.0"
+appdirs = "^1.4.4"
+sphinx-comments = "^0.0.3"
+sphinxcontrib-bibtex = "^2.5.0"
+folium = "^0.14.0"
+furo-myst-nb-css-fixes = "^0.1.1"
+jupyter = "^1.0.0"
+notebook = "^6.5.2"
+jupyterlab = "^3.5.2"
+
+
+[tool.poetry.group.lint.dependencies]
+nbqa = "^1.6.1"
+jupytext = "^1.14.4"
+ruff = "^0.0.218"
+black = {extras = ["jupyter"], version = "^22.12.0"}
+
 [build-system]
-requires = ["pdm-pep517>=1.0.0"]
-build-backend = "pdm.pep517.api"
-
-[tool.pdm.build]
-includes = [
-    "LICENSE",
-    "src",
-]
-
-[tool.pdm.dev-dependencies]
-docs = [
-    "myst-nb>=0.16",
-    "Sphinx>=4.5",
-    "sphinx-autobuild",
-    "sphinx-external-toc",
-    "linkify-it-py",
-    "sphinx-design",
-    "furo",
-    "common-nb-preprocessors>=1.1",
-    "bigearthnet_encoder",
-    "bigearthnet_common",
-    "bigearthnet_patch_interface",
-    "bigearthnet_gdf_builder>=0.1.10",
-    "mapclassify",
-    "matplotlib",
-    "geopandas>=0.11",
-    "diskcache",
-    "appdirs",
-    "sphinxcontrib-mermaid",
-    "sphinx-comments>=0.0.3",
-    "sphinxcontrib-bibtex>=2.4.2",
-    "folium",
-    "furo-myst-nb-css-fixes",
-    "jupytext",
-]
-test = [
-    "pytest",
-    "pre-commit",
-    "jupyter",
-    "notebook",
-]
-lint = [
-    "black[jupyter]",
-    "isort",
-    "nbstripout",
-]
-
-[tool.isort]
-profile = "black"
-
-[tool.pdm.scripts]
-check-pre-commit = "pre-commit run --all-files"
-# check-types = "mypy src"
-
-lint.composite = [
-    "check-pre-commit",
-    # "check-types",
-]
-lint.help = "Will check if all files are formatted with black & isort"
-
-build-docs.cmd = "sphinx-build docs docs/_build/"
-build-docs.help = "Build Sphinx documentation"
-serve-sphinx-docs.cmd = "sphinx-autobuild docs docs/_build --open-browser"
-serve-sphinx-docs.help = "Serve the Sphinx documentation with sphinx-autobuild"
-
-tests = "pytest tests/"
-# If coverage is desired:
-# tests = "coverage run --parallel --source bigearthnet_documentation -m pytest tests"
-# coverage_report.composite = [
-#     "coverage combine",
-#     "coverage report --fail-under 95",
-# ]
-# coverage_html_report = "coverage html"
-# coverage_html.composite = [
-#     "tests",
-#     "coverage_html_report"
-# ]
-# coverage_html.help = "Run the coverage with pytest and produce the html"
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

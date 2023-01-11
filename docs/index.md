@@ -37,3 +37,16 @@ By providing the following reference, we try to accomplish several goals:
 - Provide different optimized approaches to access the dataset to reduce compute-time and power usage greatly
     - Optimizing the way we access the data can lead to significant speed-ups (5--10x)
 - Unify our shared knowledge into a single place for our reference
+
+```{toctree}
+:hidden:
+
+self
+basics
+data-source
+raw-data
+libraries
+todos
+references
+
+```

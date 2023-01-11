@@ -1,0 +1,24 @@
+# https://numtide.github.io/devshell
+[[commands]]
+package = "devshell.cli"
+help = "Per project developer environments"
+
+[devshell]
+name = "BigEarthNet-Documentation"
+packages = [
+  "poetry",
+  "python3",
+  "just",
+  # required by Sphinx/docutils!
+  "stdenv.cc.cc.lib"
+  #"gcc-unwrapped", # <- Seems to also work; could switch to it if there are any issues
+]
+
+[devshell.startup.poetry]
+text = "poetry install"
+
+
+[[env]]
+# required by Sphinx!
+name = "LD_LIBRARY_PATH"
+eval = "$DEVSHELL_DIR/lib"
