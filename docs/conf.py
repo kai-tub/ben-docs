@@ -28,25 +28,21 @@ html_title = project
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    "furo_myst_nb_css_fixes",
     "myst_nb",
-    "sphinx_external_toc",
     "sphinx.ext.intersphinx",
     "sphinx.ext.autodoc",
     # Other popular choices:
-    # "sphinx_design",
-    # "myst_parser",
+    "sphinx_design",
     # "sphinx_cli_recorder",
     # "sphinxcontrib.mermaid",
-    "sphinx_design",
-    # "sphinx_inline_tabs",
-    # "sphinx_comments",
-    # "sphinx.ext.todo",
+    # "sphinx_design",
     "sphinxcontrib.bibtex",
     "sphinx_comments",
-    "sphinx.ext.todo",
     "sphinx.ext.extlinks",
+    "furo_myst_nb_css_fixes",
+    # "sphinx_external_toc",
 ]
+
 
 intersphinx_mapping = {
     "ben_gdf_builder": ("https://docs.kai-tub.tech/bigearthnet_gdf_builder", None)
@@ -85,6 +81,10 @@ myst_substitutions = {
     "BenInterface": "[BigEarthNet Patch Interface](https://docs.kai-tub.tech/bigearthnet_patch_interface/)",
     "BenGdfBuilder": "[BigEarthNet GDF Builder](https://docs.kai-tub.tech/bigearthnet_gdf_builder/)",
     "BenCommon": "[BigEarthNet Common](https://docs.kai-tub.tech/bigearthnet_common/)",
+    "nix": "[nix](https://nixos.org/explore.html)",
+    "devshell": "[devshell](https://numtide.github.io/devshell/)",
+    "hypothesis": "[hypothes.is](https://web.hypothes.is/)",
+    "issues": "[GitHub issues](https://github.com/kai-tub/ben-docs/issues)",
 }
 
 nb_custom_formats = {

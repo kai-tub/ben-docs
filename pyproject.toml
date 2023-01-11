@@ -13,6 +13,7 @@ documentation = "https://kai-tub.github.io/ben-docs"
 [tool.poetry.dependencies]
 python = "^3.8"
 
+# docs-deps-start
 [tool.poetry.group.docs.dependencies]
 furo = "^2022.12.7"
 myst-nb = "^0.17.1"
@@ -35,13 +36,17 @@ furo-myst-nb-css-fixes = "^0.1.1"
 jupyter = "^1.0.0"
 notebook = "^6.5.2"
 jupyterlab = "^3.5.2"
+sphinx-design = "^0.3.0"
+# docs-deps-end
 
-
+# lint-deps-start
 [tool.poetry.group.lint.dependencies]
 nbqa = "^1.6.1"
 jupytext = "^1.14.4"
 ruff = "^0.0.218"
 black = {extras = ["jupyter"], version = "^22.12.0"}
+
+# lint-deps-end
 
 [build-system]
 requires = ["poetry-core"]

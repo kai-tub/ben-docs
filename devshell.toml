@@ -3,12 +3,19 @@
 package = "devshell.cli"
 help = "Per project developer environments"
 
+[[commands]]
+name = "build-docs"
+help = "Build the documentation in docs/_build"
+command = "just build-docs"
+
 [devshell]
 name = "BigEarthNet-Documentation"
 packages = [
+  # nix-deps-start
   "poetry",
   "python3",
   "just",
+  # nix-deps-end
   # required by Sphinx/docutils!
   "stdenv.cc.cc.lib"
   #"gcc-unwrapped", # <- Seems to also work; could switch to it if there are any issues
@@ -22,3 +29,7 @@ text = "poetry install"
 # required by Sphinx!
 name = "LD_LIBRARY_PATH"
 eval = "$DEVSHELL_DIR/lib"
+
+[[env]]
+name = "POETRY_VIRTUALENVS_IN_PROJECT"
+value = true

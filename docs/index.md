@@ -1,23 +1,25 @@
 # BigEarthNet Guide
 
 :::{warning}
-- This site is an initial draft of the BigEarthNet Guide!
-- The provided code hasn't passed any internal reviews and should only be copied with caution!
-- The first few iterations may contain spelling mistakes and incoherent sentences.
-  -  I (Kai) apologies for it in advance. 🙂
+- This site should be considered in BETA status and is an active WIP!
 :::
 
 
 :::{note}
-This site will be hosted on GitHub during the development and use [hypothes.is](https://web.hypothes.is/) to enable comments.
-On the right-hand side, you can access a bar to see comments for the current page and create your annotations by highlighting text and clicking on the `annotate` selection.
+<!-- This site is hosted on [GitHub Pages](https://pages.github.com/) and uses [hypothes.is](https://web.hypothes.is/) to enable on-site comments. -->
+```{include} ../.github/CONTRIBUTING.md
+---
+start-after: <!-- hypothesis-pitch-start -->
+end-before: <!-- hypothesis-pitch-end -->
+---
+```
 
-- The official release of the documentation will be hosted on a different platform.
-- All previous comments will be deleted after the transition!
+See [](contributing) for more ways to contribute!
+
 :::
 
 
-This documentation reduces the time to work with the multi-spectral {{ ben }} dataset.
+The main goal of this documentation is to reduce the time to work with the multi-modal {{ ben }} dataset and makes it more accessible for others.
 The {{ ben }} dataset was initially published in {cite:t}`BEN` and
 updated in {cite:t}`BEN19labels`.
 
@@ -30,13 +32,13 @@ By providing the following reference, we try to accomplish several goals:
   - How do I work with the metadata?
   - How can I visualize the data?
 - What libraries are available to work with {{ ben }}?
-- Provide pre-calculated files that allow for quick stochastical analysis without requiring any complicated installation or preprocessing steps
+<!-- - Provide pre-calculated files that allow for quick stochastical analysis without requiring any complicated installation or preprocessing steps -->
 - Give _behind the scenes_ details about design decisions that are necessary to work with the data
     - How to work with different spatial resolutions?
-    - What interpolation method should be used?
+    <!-- - What interpolation method should be used? -->
 - Provide different optimized approaches to access the dataset to reduce compute-time and power usage greatly
     - Optimizing the way we access the data can lead to significant speed-ups (5--10x)
-- Unify our shared knowledge into a single place for our reference
+- Unify the knowledge into a single place for future reference
 
 ```{toctree}
 :hidden:
@@ -44,9 +46,27 @@ By providing the following reference, we try to accomplish several goals:
 self
 basics
 data-source
-raw-data
-libraries
-todos
-references
 
+labels
+raw-data
+patch-distribution
+
+libraries
+references
+```
+
+```{toctree}
+:hidden:
+
+opinionated
+```
+
+```{toctree}
+:hidden:
+:caption: Development
+
+general/contributing
+general/code_of_conduct
+general/dependencies
+general/license
 ```
