@@ -13,6 +13,13 @@ The difference between these two archives is the data _source_.
 Both archives _sensed_ the same regions, but the images were taken from different satellites.
 The S2 archive used the Sentinel-2 satellites and S1, the satellite of the Sentinel-1 mission. Hence, the name S1/2 for Sentinel-1/2.
 
+:::{note}
+If both are used in a multi-modal fashion, the _combined_ dataset
+is called _BigEarthNet-MM_.
+So when referring to _BigEarthNet-MM_ it technically refers to separate
+dataset _files_.
+:::
+
 :::{important}
 Due to historical reasons, BigEarthNet and BigEarthNet-S2 are often used interchangeably.
 :::
@@ -61,7 +68,8 @@ To cover all use-cases, both bands were included, even if they overlap in the se
 Concatenating these spectrums results in images with twelve channels, compared to the more common three RGB channels.
 
 :::{important}
-- BigEarthNet-S2 dropped channel B10 from the original Sentinel-2 data, as the band does not contain surface-level information.
+- BigEarthNet-S2 dropped channel B10 from the original Sentinel-2 data, as the band does not contain surface-level information. (Or more specifically, B10 is dropped
+during the BOA calculation with sen2cor.)
 - The bands B08 and B8A are included, even if they overlap in the sensed spectral reflectivity.
   - Allows the user to decide how to handle the overlap.
 :::
