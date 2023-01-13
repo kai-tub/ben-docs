@@ -13,7 +13,7 @@ name = "BigEarthNet-Documentation"
 packages = [
   # nix-deps-start
   "poetry",
-  "python3",
+  "python39",
   "just",
   # nix-deps-end
   # required by Sphinx/docutils!
@@ -22,13 +22,21 @@ packages = [
 ]
 
 [devshell.startup.poetry]
-text = "poetry install"
+text = "poetry env use $DEVSHELL_DIR/bin/python && poetry env info && poetry install"
+# text = "poetry install"
+
+
+# poetry env use /full/path/to/python
 
 
 [[env]]
 # required by Sphinx!
 name = "LD_LIBRARY_PATH"
 eval = "$DEVSHELL_DIR/lib"
+
+[[env]]
+name = "POETRY_VIRTUALENVS_PREFER_ACTIVE_PYTHON"
+value = true
 
 [[env]]
 name = "POETRY_VIRTUALENVS_IN_PROJECT"

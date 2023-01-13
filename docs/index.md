@@ -19,11 +19,14 @@ See [](contributing) for more ways to contribute!
 :::
 
 
-The main goal of this documentation is to reduce the time to work with the multi-modal {{ ben }} dataset and makes it more accessible for others.
-The {{ ben }} dataset was initially published in {cite:t}`BEN` and
-updated in {cite:t}`BEN19labels`.
+```{include} ../README.md
+---
+start-after: <!-- motivation-start -->
+end-before: <!-- motivation-end -->
+---
+```
 
-By providing the following reference, we try to accomplish several goals:
+Specifically, by providing the following reference, we try to accomplish several goals:
 
 - Provide interested users a high-level overview of the {{ ben }} dataset
   - Where does the data come from?
@@ -38,7 +41,8 @@ By providing the following reference, we try to accomplish several goals:
     <!-- - What interpolation method should be used? -->
 - Provide different optimized approaches to access the dataset to reduce compute-time and power usage greatly
     - Optimizing the way we access the data can lead to significant speed-ups (5--10x)
-- Unify the knowledge into a single place for future reference
+
+The official paper of the BigEarthNet dataset was initially published in {cite:t}`BEN` and updated to {{ben}} in {cite:t}`BEN19labels`.
 
 ```{toctree}
 :hidden:
