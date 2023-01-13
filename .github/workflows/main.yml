@@ -19,28 +19,8 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: Set up Python and PDM
-        uses: pdm-project/setup-pdm@main
-        with:
-          python-version: "3.8"
-      - name: Install dependencies
-        run: |
-          pdm sync --dev --group docs
-          pdm plugin add pdm-bump
-          pdm run build-docs
-      # Must be run BEFORE GitHub Pages Deploy
-      # as the GitHub Pages action would check out a different
-      # branch; the error you would see is "no canary release available"
-      # It also requires checkout with all associated tags, i.e.,
-      # uses: actions/checkout@v3
-      # with:
-      #   fetch-depth: 0
-      - name: Run release script
-        if: ${{ github.event_name == 'push' }}
-        run: bash .auto/run_auto.sh
-        env:
-          # To be able to trigger publish event
-          GITHUB_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+      - uses: cachix/install-nix-action@v18
+      - run: nix develop --command build-docs
       # always deploy github-pages if pushed to main
       - name: Deploy 🚀
         if: ${{ github.event_name == 'push' }}
