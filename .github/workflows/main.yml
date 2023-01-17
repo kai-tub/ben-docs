@@ -2,8 +2,6 @@ name: CI
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
 
 jobs:
   # Here I am assuming that the tests have been run on the PR
@@ -29,3 +27,6 @@ jobs:
           branch: gh-pages # The branch the action should deploy to.
           # This should be set via `just build`
           folder: docs/_build
+          # do not touch the pr-preview generated files:
+          # https://github.com/rossjrw/pr-preview-action
+          clean-exclude: pr-preview/
