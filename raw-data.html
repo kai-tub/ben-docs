@@ -652,7 +652,7 @@ These files work particularly well with geopandas:</p>
             &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&gt;
             &lt;style&gt;
-                #map_7dee16df07332eb9e92143b941250195 {
+                #map_31a5227e00cb54562c8e5affab15bcc6 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -682,14 +682,14 @@ These files work particularly well with geopandas:</p>
 &lt;body&gt;
     
     
-            &lt;div class=&quot;folium-map&quot; id=&quot;map_7dee16df07332eb9e92143b941250195&quot; &gt;&lt;/div&gt;
+            &lt;div class=&quot;folium-map&quot; id=&quot;map_31a5227e00cb54562c8e5affab15bcc6&quot; &gt;&lt;/div&gt;
         
 &lt;/body&gt;
 &lt;script&gt;
     
     
-            var map_7dee16df07332eb9e92143b941250195 = L.map(
-                &quot;map_7dee16df07332eb9e92143b941250195&quot;,
+            var map_31a5227e00cb54562c8e5affab15bcc6 = L.map(
+                &quot;map_31a5227e00cb54562c8e5affab15bcc6&quot;,
                 {
                     center: [62.74783224571742, 30.45052575660389],
                     crs: L.CRS.EPSG3857,
@@ -698,77 +698,77 @@ These files work particularly well with geopandas:</p>
                     preferCanvas: false,
                 }
             );
-            L.control.scale().addTo(map_7dee16df07332eb9e92143b941250195);
+            L.control.scale().addTo(map_31a5227e00cb54562c8e5affab15bcc6);
 
             
 
         
     
-            var tile_layer_270238928afff4d9edc10554f4b3a416 = L.tileLayer(
+            var tile_layer_8a7c20140efccfa31dc950f21fbbe0e9 = L.tileLayer(
                 &quot;https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png&quot;,
                 {&quot;attribution&quot;: &quot;Data by \u0026copy; \u003ca target=\&quot;_blank\&quot; href=\&quot;http://openstreetmap.org\&quot;\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\&quot;_blank\&quot; href=\&quot;http://www.openstreetmap.org/copyright\&quot;\u003eODbL\u003c/a\u003e.&quot;, &quot;detectRetina&quot;: false, &quot;maxNativeZoom&quot;: 18, &quot;maxZoom&quot;: 18, &quot;minZoom&quot;: 0, &quot;noWrap&quot;: false, &quot;opacity&quot;: 1, &quot;subdomains&quot;: &quot;abc&quot;, &quot;tms&quot;: false}
-            ).addTo(map_7dee16df07332eb9e92143b941250195);
+            ).addTo(map_31a5227e00cb54562c8e5affab15bcc6);
         
     
-            map_7dee16df07332eb9e92143b941250195.fitBounds(
+            map_31a5227e00cb54562c8e5affab15bcc6.fitBounds(
                 [[62.67036769745087, 30.28870185381488], [62.82529679398397, 30.6123496593929]],
                 {}
             );
         
     
-        function geo_json_8bd22493726698d31adf08fb1144115d_styler(feature) {
+        function geo_json_5b59e8f78ed5cc9803d693675eff4439_styler(feature) {
             switch(feature.id) {
                 default:
                     return {&quot;fillOpacity&quot;: 0.5, &quot;weight&quot;: 2};
             }
         }
-        function geo_json_8bd22493726698d31adf08fb1144115d_highlighter(feature) {
+        function geo_json_5b59e8f78ed5cc9803d693675eff4439_highlighter(feature) {
             switch(feature.id) {
                 default:
                     return {&quot;fillOpacity&quot;: 0.75};
             }
         }
-        function geo_json_8bd22493726698d31adf08fb1144115d_pointToLayer(feature, latlng) {
+        function geo_json_5b59e8f78ed5cc9803d693675eff4439_pointToLayer(feature, latlng) {
             var opts = {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 2, &quot;stroke&quot;: true, &quot;weight&quot;: 3};
             
-            let style = geo_json_8bd22493726698d31adf08fb1144115d_styler(feature)
+            let style = geo_json_5b59e8f78ed5cc9803d693675eff4439_styler(feature)
             Object.assign(opts, style)
             
             return new L.CircleMarker(latlng, opts)
         }
 
-        function geo_json_8bd22493726698d31adf08fb1144115d_onEachFeature(feature, layer) {
+        function geo_json_5b59e8f78ed5cc9803d693675eff4439_onEachFeature(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if(typeof e.target.setStyle === &quot;function&quot;){
-                        geo_json_8bd22493726698d31adf08fb1144115d.resetStyle(e.target);
+                        geo_json_5b59e8f78ed5cc9803d693675eff4439.resetStyle(e.target);
                     }
                 },
                 mouseover: function(e) {
                     if(typeof e.target.setStyle === &quot;function&quot;){
-                        const highlightStyle = geo_json_8bd22493726698d31adf08fb1144115d_highlighter(e.target.feature)
+                        const highlightStyle = geo_json_5b59e8f78ed5cc9803d693675eff4439_highlighter(e.target.feature)
                         e.target.setStyle(highlightStyle);
                     }
                 },
             });
         };
-        var geo_json_8bd22493726698d31adf08fb1144115d = L.geoJson(null, {
-                onEachFeature: geo_json_8bd22493726698d31adf08fb1144115d_onEachFeature,
+        var geo_json_5b59e8f78ed5cc9803d693675eff4439 = L.geoJson(null, {
+                onEachFeature: geo_json_5b59e8f78ed5cc9803d693675eff4439_onEachFeature,
             
-                style: geo_json_8bd22493726698d31adf08fb1144115d_styler,
-                pointToLayer: geo_json_8bd22493726698d31adf08fb1144115d_pointToLayer
+                style: geo_json_5b59e8f78ed5cc9803d693675eff4439_styler,
+                pointToLayer: geo_json_5b59e8f78ed5cc9803d693675eff4439_pointToLayer
         });
 
-        function geo_json_8bd22493726698d31adf08fb1144115d_add (data) {
-            geo_json_8bd22493726698d31adf08fb1144115d
+        function geo_json_5b59e8f78ed5cc9803d693675eff4439_add (data) {
+            geo_json_5b59e8f78ed5cc9803d693675eff4439
                 .addData(data)
-                .addTo(map_7dee16df07332eb9e92143b941250195);
+                .addTo(map_31a5227e00cb54562c8e5affab15bcc6);
         }
-            geo_json_8bd22493726698d31adf08fb1144115d_add({&quot;bbox&quot;: [30.28870185381488, 62.67036769745087, 30.6123496593929, 62.82529679398397], &quot;features&quot;: [{&quot;bbox&quot;: [30.28870185381488, 62.67036769745087, 30.313293163354977, 62.681671664036934], &quot;geometry&quot;: {&quot;coordinates&quot;: [[[30.312090254365668, 62.67036769745087], [30.313293163354977, 62.68112053638473], [30.289896305936022, 62.681671664036934], [30.28870185381488, 62.67091857266447], [30.312090254365668, 62.67036769745087]]], &quot;type&quot;: &quot;Polygon&quot;}, &quot;id&quot;: &quot;0&quot;, &quot;properties&quot;: {&quot;acquisition_date&quot;: &quot;2018-02-04 09:41:56&quot;, &quot;labels&quot;: [&quot;Non-irrigated arable land&quot;, &quot;Coniferous forest&quot;, &quot;Mixed forest&quot;], &quot;name&quot;: &quot;S2B_MSIL2A_20180204T94161_57_38&quot;, &quot;tile_source&quot;: &quot;S2B_MSIL1C_20180204T94161_N0206_R036_T35VPK_20180204T115809.SAFE&quot;}, &quot;type&quot;: &quot;Feature&quot;}, {&quot;bbox&quot;: [30.587535322382386, 62.81394583130794, 30.6123496593929, 62.82529679398397], &quot;geometry&quot;: {&quot;coordinates&quot;: [[[30.61103022744493, 62.81394583130794], [30.6123496593929, 62.8246950535926], [30.588846214638522, 62.82529679398397], [30.587535322382386, 62.814547295174926], [30.61103022744493, 62.81394583130794]]], &quot;type&quot;: &quot;Polygon&quot;}, &quot;id&quot;: &quot;4&quot;, &quot;properties&quot;: {&quot;acquisition_date&quot;: &quot;2017-09-24 09:30:20&quot;, &quot;labels&quot;: [&quot;Coniferous forest&quot;, &quot;Mixed forest&quot;, &quot;Transitional woodland/shrub&quot;, &quot;Peatbogs&quot;, &quot;Water bodies&quot;], &quot;name&quot;: &quot;S2B_MSIL2A_20170924T93020_69_24&quot;, &quot;tile_source&quot;: &quot;S2B_MSIL1C_20170924T93020_N0205_R136_T35VPK_20170924T093132.SAFE&quot;}, &quot;type&quot;: &quot;Feature&quot;}], &quot;type&quot;: &quot;FeatureCollection&quot;});
+            geo_json_5b59e8f78ed5cc9803d693675eff4439_add({&quot;bbox&quot;: [30.28870185381488, 62.67036769745087, 30.6123496593929, 62.82529679398397], &quot;features&quot;: [{&quot;bbox&quot;: [30.28870185381488, 62.67036769745087, 30.313293163354977, 62.681671664036934], &quot;geometry&quot;: {&quot;coordinates&quot;: [[[30.312090254365668, 62.67036769745087], [30.313293163354977, 62.68112053638473], [30.289896305936022, 62.681671664036934], [30.28870185381488, 62.67091857266447], [30.312090254365668, 62.67036769745087]]], &quot;type&quot;: &quot;Polygon&quot;}, &quot;id&quot;: &quot;0&quot;, &quot;properties&quot;: {&quot;acquisition_date&quot;: &quot;2018-02-04 09:41:56&quot;, &quot;labels&quot;: [&quot;Non-irrigated arable land&quot;, &quot;Coniferous forest&quot;, &quot;Mixed forest&quot;], &quot;name&quot;: &quot;S2B_MSIL2A_20180204T94161_57_38&quot;, &quot;tile_source&quot;: &quot;S2B_MSIL1C_20180204T94161_N0206_R036_T35VPK_20180204T115809.SAFE&quot;}, &quot;type&quot;: &quot;Feature&quot;}, {&quot;bbox&quot;: [30.587535322382386, 62.81394583130794, 30.6123496593929, 62.82529679398397], &quot;geometry&quot;: {&quot;coordinates&quot;: [[[30.61103022744493, 62.81394583130794], [30.6123496593929, 62.8246950535926], [30.588846214638522, 62.82529679398397], [30.587535322382386, 62.814547295174926], [30.61103022744493, 62.81394583130794]]], &quot;type&quot;: &quot;Polygon&quot;}, &quot;id&quot;: &quot;4&quot;, &quot;properties&quot;: {&quot;acquisition_date&quot;: &quot;2017-09-24 09:30:20&quot;, &quot;labels&quot;: [&quot;Coniferous forest&quot;, &quot;Mixed forest&quot;, &quot;Transitional woodland/shrub&quot;, &quot;Peatbogs&quot;, &quot;Water bodies&quot;], &quot;name&quot;: &quot;S2B_MSIL2A_20170924T93020_69_24&quot;, &quot;tile_source&quot;: &quot;S2B_MSIL1C_20170924T93020_N0205_R136_T35VPK_20170924T093132.SAFE&quot;}, &quot;type&quot;: &quot;Feature&quot;}], &quot;type&quot;: &quot;FeatureCollection&quot;});
 
         
     
-    geo_json_8bd22493726698d31adf08fb1144115d.bindTooltip(
+    geo_json_5b59e8f78ed5cc9803d693675eff4439.bindTooltip(
     function(layer){
     let div = L.DomUtil.create(&#x27;div&#x27;);
     
@@ -808,7 +808,7 @@ These files work particularly well with geopandas:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
-</div><script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "8e14051d7a0c487c869369c7daf00a5f"}</script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+</div><script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "eecf2fb63a4740018a304aeec9b6cf2b"}</script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
 </pre>
 </div><div class="output text_html"><div>
 <style scoped>
@@ -1035,7 +1035,7 @@ These files work particularly well with geopandas:</p>
     <script src="_static/scripts/furo.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script src="_static/design-tabs.js"></script>
-    <script type="application/vnd.jupyter.widget-state+json">{"state": {"e497b47a558443b9847816f0599e5b1e": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "8e14051d7a0c487c869369c7daf00a5f": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_e497b47a558443b9847816f0599e5b1e", "msg_id": "", "outputs": [{"output_type": "display_data", "metadata": {}, "data": {"text/plain": "\r\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2KReprojecting                         \u001b[33m0:00:00\u001b[0m\nLoading country shapes               \u001b[33m0:00:01\u001b[0m\nCalculating centroids                \u001b[33m0:00:00\u001b[0m\nAssigning data to countries \u001b[32m(  \u25cf   )\u001b[0m \u001b[33m0:00:00\u001b[0m\nReprojecting                         \u001b[33m0:00:00\u001b[0m\nLoading country shapes               \u001b[33m0:00:01\u001b[0m\nCalculating centroids                \u001b[33m0:00:00\u001b[0m\nAssigning data to countries \u001b[32m(  \u25cf   )\u001b[0m \u001b[33m0:00:00\u001b[0m", "text/html": "<pre style=\"white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace\">Reprojecting                         <span style=\"color: #808000; text-decoration-color: #808000\">0:00:00</span>\nLoading country shapes               <span style=\"color: #808000; text-decoration-color: #808000\">0:00:01</span>\nCalculating centroids                <span style=\"color: #808000; text-decoration-color: #808000\">0:00:00</span>\nAssigning data to countries <span style=\"color: #008000; text-decoration-color: #008000\">(  \u25cf   )</span> <span style=\"color: #808000; text-decoration-color: #808000\">0:00:00</span>\nReprojecting                         <span style=\"color: #808000; text-decoration-color: #808000\">0:00:00</span>\nLoading country shapes               <span style=\"color: #808000; text-decoration-color: #808000\">0:00:01</span>\nCalculating centroids                <span style=\"color: #808000; text-decoration-color: #808000\">0:00:00</span>\nAssigning data to countries <span style=\"color: #008000; text-decoration-color: #008000\">(  \u25cf   )</span> <span style=\"color: #808000; text-decoration-color: #808000\">0:00:00</span></pre>\n"}}], "tabbable": null, "tooltip": null}}}, "version_major": 2, "version_minor": 0}</script>
+    <script type="application/vnd.jupyter.widget-state+json">{"state": {"d58d5a9d678b4762b26da3084a13f66d": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "eecf2fb63a4740018a304aeec9b6cf2b": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_d58d5a9d678b4762b26da3084a13f66d", "msg_id": "", "outputs": [{"output_type": "display_data", "metadata": {}, "data": {"text/plain": "\r\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2KReprojecting                         \u001b[33m0:00:00\u001b[0m\nLoading country shapes               \u001b[33m0:00:02\u001b[0m\nCalculating centroids                \u001b[33m0:00:00\u001b[0m\nAssigning data to countries \u001b[32m(   \u25cf  )\u001b[0m \u001b[33m0:00:00\u001b[0m\nReprojecting                         \u001b[33m0:00:00\u001b[0m\nLoading country shapes               \u001b[33m0:00:02\u001b[0m\nCalculating centroids                \u001b[33m0:00:00\u001b[0m\nAssigning data to countries \u001b[32m(   \u25cf  )\u001b[0m \u001b[33m0:00:00\u001b[0m", "text/html": "<pre style=\"white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace\">Reprojecting                         <span style=\"color: #808000; text-decoration-color: #808000\">0:00:00</span>\nLoading country shapes               <span style=\"color: #808000; text-decoration-color: #808000\">0:00:02</span>\nCalculating centroids                <span style=\"color: #808000; text-decoration-color: #808000\">0:00:00</span>\nAssigning data to countries <span style=\"color: #008000; text-decoration-color: #008000\">(   \u25cf  )</span> <span style=\"color: #808000; text-decoration-color: #808000\">0:00:00</span>\nReprojecting                         <span style=\"color: #808000; text-decoration-color: #808000\">0:00:00</span>\nLoading country shapes               <span style=\"color: #808000; text-decoration-color: #808000\">0:00:02</span>\nCalculating centroids                <span style=\"color: #808000; text-decoration-color: #808000\">0:00:00</span>\nAssigning data to countries <span style=\"color: #008000; text-decoration-color: #008000\">(   \u25cf  )</span> <span style=\"color: #808000; text-decoration-color: #808000\">0:00:00</span></pre>\n"}}], "tabbable": null, "tooltip": null}}}, "version_major": 2, "version_minor": 0}</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     </body>
