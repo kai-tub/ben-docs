@@ -6,9 +6,9 @@ Please take a look at the hosted documentation:
 
 ## Motivation
 <!-- motivation-start -->
-The main goal of this documentation is to reduce the time to work with the multi-modal {{ ben }} dataset and to make it more accessible to others by providing an interactive dataset website.
+The main goal of this documentation is to introduce the multi-modal {{ ben }} dataset and to make it more accessible to others by providing an interactive dataset website.
 By providing visual and interactive examples, users can see how the data is structured and how it can be used in different contexts.
-Also, the website contains _background_ information and explains how to avoid common pitfalls to lower the probability of multiple people repeating similar mistakes multiple times.
+Also, the website contains _background_ information and explains how to avoid common pitfalls to lower the probability of different users repeating similar mistakes multiple times.
 To aggregate the knowledge of the community, a core feature of the dataset website is the ability to quickly provide feedback and contribute to the _living_ document in an open and centralized manner.
 Doing so, will (hopefully) lead to more robust and reliable research down the line.
 <!-- motivation-end -->

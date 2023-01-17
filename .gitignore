@@ -1,6 +1,7 @@
 # Personal often required
 docs/jupyter_execute/
 .vscode/
+.direnv/
 # do not allow for pdm to create this folder in git
 __pypackages__/
 links
