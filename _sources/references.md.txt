@@ -2,18 +2,18 @@
 
 Here, we provide a collection of relevant links provided by our research group:
 
-- The original BigEarthNet (S2) paper {cite:t}`BEN`
-- The BigEarthNet-S1 publication + the recommended 19-class nomenclature {cite:t}`BEN19labels`
+- The first BigEarthNet (S2) paper {cite:t}`BEN`
+- The BigEarthNet-MM publication + the recommended 19-class nomenclature {cite:t}`BEN19labels`
 
 ## Pretrained models
 Every repository includes code to re-run the training procedure.
 These models are all trained with the TensorFlow library.
 
-- Pretrained models trained on BEN-S2 with 43-classes
+- Pretrained models trained on BigEarthNet-S2 with 43-classes
     - https://git.tu-berlin.de/rsim/BigEarthNet-S2_43-classes_models
-- Pretrained models trained on BEN-S2 with 19-classes
+- Pretrained models trained on BigEarthNet-S2 with 19-classes
     - https://git.tu-berlin.de/rsim/BigEarthNet-S2_19-classes_models
-- Pretrained multi-modal models trained on BEN-S1 and BEN-S2 simultaneously
+- Pretrained multi-modal models trained on BigEarthNet-S1 and BigEarthNet-S2 simultaneously
     - https://git.tu-berlin.de/rsim/BigEarthNet-MM_19-classes_models
 
 ## BigEarthNet Tools
@@ -21,7 +21,7 @@ These models are all trained with the TensorFlow library.
   - https://git.tu-berlin.de/rsim/BigEarthNet-S1_tools
   - Read GeoTIFF patches from BigEarthNet-S1
   - Script to extract names and download links of the Sentinel-1 Level-1C GRD tiles
-    - Requires the BigEarthNet-S1 archive on disk
+    - Requires the BigEarthNet-S1 dataset on disk
 - BigEarthNet-S2 Tools
   - https://git.tu-berlin.de/rsim/BigEarthNet-S2_tools
   - Read GeoTIFF patches from BigEarthNet-S2

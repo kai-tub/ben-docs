@@ -227,17 +227,20 @@ In other words, objects smaller than 10m² cannot be represented, as they are to
 The reflected electromagnetic spectrum is what an observer (our eyes or a satellite) perceives and processes.
 We perceive a green leaf as green, as the green spectrum is the largest reflected spectrum.</p>
 </dd>
-<dt>Band</dt><dd><p>A band is a predefined range of the electromagnetic spectrum.
+</dl>
+<!-- https://www.earthdatascience.org/courses/earth-analytics/multispectral-remote-sensing-data/introduction-multispectral-imagery-r/ -->
+<dl class="simple myst">
+<dt>Band</dt><dd><p>A band represents a segment of the electromagnetic spectrum.
 For example, the green band is often defined as the spectrum with a wavelength from 500 to 565 nanometers.</p>
 </dd>
 <dt>Tiles or Granules</dt><dd><p>When talking about satellite images, a <em>tile</em> (also <em>granule</em>) often refers to predefined regions.
 The Sentinel-2 mission has defined 100km x 100km tiles that divides the earth into <a class="reference external" href="https://sentinels.copernicus.eu/web/sentinel/user-guides/sentinel-2-msi/product-types">60 unique zones</a>.</p>
 </dd>
-<dt>Patches</dt><dd><p>Patches is used as a term to specify a valid <em>sub-image</em> of a tile. “Patch” is not a standardized term, but in the BigEarthNet documentation, it refers to a 1200m x 1200m area of a Sentinel tile.</p>
+<dt>Patches</dt><dd><p>Patches is used as a term to specify a valid <em>portion</em> of a tile. “Patch” is not a standardized term, but in the BigEarthNet documentation, it refers to a 1200m x 1200m area of a Sentinel tile.</p>
 </dd>
 </dl>
 <p>It is necessary to split a tile into multiple patches further because tiles are too large to be effectively used for machine learning.
-For comparison, a single Sentinel-2 tile is ~800MB large, while a standard image size is around ~100kB.</p>
+For comparison, a single Sentinel-2 tile is ~800MB large, while the size of an individual <a class="reference external" href="https://bigearth.net/">BigEarthNet</a> patch is around ~200kB.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The spatial resolution can differ between bands from the same satellite.</p>
