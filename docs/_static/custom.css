@@ -28,6 +28,26 @@ div.cell.tag_scroll-output div.cell_output::-webkit-scrollbar-thumb:hover {
     background: #a0a0a0;
 }
 
+body[data-theme=dark] .tag_only-light {
+    display: none!important;
+}
+
+body[data-theme=light] .tag_only-dark {
+    display: none!important;
+}
+
+@media (prefers-color-scheme: dark) {
+    body:not([data-theme=light]) .tag_only-light {
+            display: none!important;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    body:not([data-theme=dark]) .tag_only-dark {
+            display: none!important;
+    }
+}
+
 @media print {
     div.cell.tag_scroll-output div.cell_output {
         max-height: unset;

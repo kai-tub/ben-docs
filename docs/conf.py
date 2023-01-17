@@ -90,7 +90,7 @@ myst_substitutions = {
 nb_custom_formats = {
     ".ipynb": [
         "common_nb_preprocessors.myst_nb_metadata_injector",
-        {"prefix": "#", "delimiter": "=", "extra_tags": ["scroll-output"]},
+        {"prefix": "#", "delimiter": "=", "extra_tags": ["scroll-output", "only-light", "only-dark"]},
     ]
 }
 
