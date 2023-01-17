@@ -12,8 +12,9 @@ Spectral reflectance
   The reflected electromagnetic spectrum is what an observer (our eyes or a satellite) perceives and processes.
   We perceive a green leaf as green, as the green spectrum is the largest reflected spectrum.
 
+<!-- https://www.earthdatascience.org/courses/earth-analytics/multispectral-remote-sensing-data/introduction-multispectral-imagery-r/ -->
 Band
-  : A band is a predefined range of the electromagnetic spectrum.
+  : A band represents a segment of the electromagnetic spectrum.
     For example, the green band is often defined as the spectrum with a wavelength from 500 to 565 nanometers.
 
 Tiles or Granules
@@ -21,10 +22,10 @@ Tiles or Granules
     The Sentinel-2 mission has defined 100km x 100km tiles that divides the earth into [60 unique zones](https://sentinels.copernicus.eu/web/sentinel/user-guides/sentinel-2-msi/product-types).
 
 Patches
-  : Patches is used as a term to specify a valid _sub-image_ of a tile. "Patch" is not a standardized term, but in the BigEarthNet documentation, it refers to a 1200m x 1200m area of a Sentinel tile.
+  : Patches is used as a term to specify a valid _portion_ of a tile. "Patch" is not a standardized term, but in the BigEarthNet documentation, it refers to a 1200m x 1200m area of a Sentinel tile.
 
 It is necessary to split a tile into multiple patches further because tiles are too large to be effectively used for machine learning.
-For comparison, a single Sentinel-2 tile is ~800MB large, while a standard image size is around ~100kB.
+For comparison, a single Sentinel-2 tile is ~800MB large, while the size of an individual {{ben}} patch is around ~200kB.
 
 :::{note}
 The spatial resolution can differ between bands from the same satellite.

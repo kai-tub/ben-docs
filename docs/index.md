@@ -26,7 +26,7 @@ end-before: <!-- motivation-end -->
 ---
 ```
 
-Specifically, by providing the following reference, we try to accomplish several goals:
+Specifically, by providing the following reference, our goals are to:
 
 - Provide interested users a high-level overview of the {{ ben }} dataset
   - Where does the data come from?
@@ -34,15 +34,14 @@ Specifically, by providing the following reference, we try to accomplish several
   - How is the dataset structured?
   - How do I work with the metadata?
   - How can I visualize the data?
-- What libraries are available to work with {{ ben }}?
-<!-- - Provide pre-calculated files that allow for quick stochastical analysis without requiring any complicated installation or preprocessing steps -->
+  - How do I work with different spatial resolutions?
+- Introduce libraries that make it easier to work with {{ ben }}?
 - Give _behind the scenes_ details about design decisions that are necessary to work with the data
-    - How to work with different spatial resolutions?
     <!-- - What interpolation method should be used? -->
 - Provide different optimized approaches to access the dataset to reduce compute-time and power usage greatly
-    - Optimizing the way we access the data can lead to significant speed-ups (5--10x)
+    - Heavily depends on the workload but can lead to significant speed-ups (5--10x)
 
-The official paper of the BigEarthNet dataset was initially published in {cite:t}`BEN` and updated to {{ben}} in {cite:t}`BEN19labels`.
+The official paper of the {{ben}} (BigEarthNet-S2) dataset was initially published in {cite:t}`BEN` and updated to multi-modal {{ben}} in {cite:t}`BEN19labels`.
 
 ```{toctree}
 :hidden:
