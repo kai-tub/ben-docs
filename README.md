@@ -1,4 +1,5 @@
 # BigEarthNet Guide
+[![DOI](https://www.zenodo.org/badge/439043960.svg)](https://www.zenodo.org/badge/latestdoi/439043960)
 > A user-friendly introduction to the multi-modal BigEarthNet-MM dataset.
 
 Please take a look at the hosted documentation:
