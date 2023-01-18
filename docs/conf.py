@@ -90,7 +90,7 @@ myst_substitutions = {
 nb_custom_formats = {
     ".ipynb": [
         "common_nb_preprocessors.myst_nb_metadata_injector",
-        {"prefix": "#", "delimiter": "=", "extra_tags": ["scroll-output"]},
+        {"prefix": "#", "delimiter": "=", "extra_tags": ["scroll-output", "only-light", "only-dark"]},
     ]
 }
 
@@ -106,7 +106,7 @@ source_suffix = {".ipynb": "myst-nb", ".md": "myst-nb"}
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "jupyter_execute"]
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "jupyter_execute", "md_representations"]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]

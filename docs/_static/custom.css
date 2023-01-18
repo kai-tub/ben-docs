@@ -28,6 +28,26 @@ div.cell.tag_scroll-output div.cell_output::-webkit-scrollbar-thumb:hover {
     background: #a0a0a0;
 }
 
+body[data-theme=dark] .tag_only-light {
+    display: none!important;
+}
+
+body[data-theme=light] .tag_only-dark {
+    display: none!important;
+}
+
+@media (prefers-color-scheme: dark) {
+    body:not([data-theme=light]) .tag_only-light {
+            display: none!important;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    body:not([data-theme=dark]) .tag_only-dark {
+            display: none!important;
+    }
+}
+
 @media print {
     div.cell.tag_scroll-output div.cell_output {
         max-height: unset;
@@ -35,4 +55,26 @@ div.cell.tag_scroll-output div.cell_output::-webkit-scrollbar-thumb:hover {
         max-width: unset;
         overflow-x: visible;
     }
+}
+
+/* Logic to support excalidraw light/dark modes */
+article[role="main"] svg {
+    margin: 1em 0em;
+    width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+    body:not([data-theme=light]) article[role="main"] svg {
+        filter: invert(93%) hue-rotate(180deg);
+    }
+}
+
+body[data-theme=dark] article[role="main"] svg {
+    filter: invert(93%) hue-rotate(180deg);
+}
+
+figcaption {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }

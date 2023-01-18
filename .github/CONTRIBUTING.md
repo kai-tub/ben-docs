@@ -38,11 +38,13 @@ The current project uses {{nix}} to manage the following dependencies:
 
 To further simplify the setup, the (currently still unstable) {{devshell}} tool is used to quickly and easily create a `nix development` environment that prepares a managed shell environment.
 
-This simplifies the entire set up the development environment to:
+This simplifies the entire set up the development environment to
 1. [Download and install the nix package manager](https://nixos.org/download.html#)
 2. Clone this repository with `git clone https://github.com/kai-tub/ben-docs.git`
 3. Change to the downloaded directory with `cd ben-docs`
 4. Replicate the development environment with `nix development` (this may take some time depending on your download speed)
+    - Requires the _experimental_ (yet widely popular) experimental features `nix-command` and `flakes`. If you aren't interested in {{nix}} you can enable it only for the command invocation with `nix --experimental-features nix-command --extra-experimental-features flakes develop`
+    - This has been tested on Linux and on Windows via [WSL](https://learn.microsoft.com/en-us/windows/wsl/).
 5. Start hacking 😁
 
 If you create a [PR](https://docs.github.com/en/get-started/quickstart/hello-world#opening-a-pull-request), an automatic test suite will check if the documentation can be successfully regenerated (using {{nix}}).
