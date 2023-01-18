@@ -1,0 +1,744 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Raw BigEarthNet Data" href="raw-data.html" /><link rel="prev" title="Data Source" href="data-source.html" />
+
+    <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+        <title>BigEarthNet Labels - BigEarthNet Guide</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/furo-mystnb-fixes.css.2dd7f7a90be06aa6101129dc878d8a0eeac1d8b1c21ac96724101df4c4ed10eb..css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">BigEarthNet Guide</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">BigEarthNet Guide</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">BigEarthNet Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Remote Sensing Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-source.html">Data Source</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">BigEarthNet Labels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="raw-data.html">Raw BigEarthNet Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patch-distribution.html">Geographical Patch distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libraries.html">Helpful Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">Further references</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="opinionated.html">Opinionated</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="metrics.html">Recommended Metrics</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="general/contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general/code_of_conduct.html">Contributor Covenant Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general/dependencies.html">Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general/license.html">License</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section class="tex2jax_ignore mathjax_ignore" id="bigearthnet-labels">
+<h1>BigEarthNet Labels<a class="headerlink" href="#bigearthnet-labels" title="Permalink to this heading">#</a></h1>
+<p>BigEarthNet used the <a class="reference external" href="https://land.copernicus.eu/pan-european/corine-land-cover">CORINE Land Cover database</a> (CLC) of the year 2018 (<a class="reference external" href="https://land.copernicus.eu/pan-european/corine-land-cover/clc2018">CLC2018</a>) to label 590’326 patches.
+The label information about these patches were overlayed with data from the Sentinel-1 and Sentinel-2 mission, to create the datasets BigEarthnet-S1 and BigEarthNet-S2.
+BigEarthNet-S2 was the first published dataset and used the <em>most specific</em> version of the classification level of the CLC database, Level-3 with 43 different classes in the dataset <span id="id1">[<a class="reference internal" href="references.html#id4" title="Gencer Sumbul, Marcela Charfuelan, Begüm Demir, and Volker Markl. Bigearthnet: A large-scale benchmark archive for remote sensing image understanding. In IGARSS 2019 - 2019 IEEE International Geoscience and Remote Sensing Symposium. IEEE, July 2019. URL: https://doi.org/10.1109/igarss.2019.8900532, doi:10.1109/igarss.2019.8900532.">2</a>]</span>.
+With the publication of the BigEarthNet-S1 dataset, the recommended label nomenclature has been updated to use a 19-class nomenclature specifically designed for use in the machine-learning domain. <span id="id2">[<a class="reference internal" href="references.html#id5" title="Gencer Sumbul, Arne de Wall, Tristan Kreuziger, Filipe Marcelino, Hugo Costa, Pedro Benevides, Mario Caetano, Begüm Demir, and Volker Markl. BigEarthNet-MM: A large-scale, multimodal, multilabel benchmark archive for remote sensing image classification and retrieval [Software and data sets]. IEEE Geosci. Remote Sens. Mag., 9(3):174-180, September 2021. URL: https://doi.org/10.1109/mgrs.2021.3089174, doi:10.1109/mgrs.2021.3089174.">3</a>]</span>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p>The original BigEarthNet-S2 dataset used the CLC Level-3 specification, which defines 44 classes</p>
+<ul>
+<li><p>Of these 44-classes one class, <code class="docutils literal notranslate"><span class="pre">Glaciers</span> <span class="pre">and</span> <span class="pre">perpetual</span> <span class="pre">snow</span></code> is not present</p></li>
+<li><p>As a result the label-set is referred to as the 43-label nomenclature.</p></li>
+</ul>
+</li>
+<li><p>The 19-class label nomenclature was introduced to better reflect the application in the machine learning domain</p></li>
+</ul>
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<section id="class-nomenclature">
+<span id="clc-level-3"></span><h2>43-class nomenclature<a class="headerlink" href="#class-nomenclature" title="Permalink to this heading">#</a></h2>
+<p>The CORINE (Coordination of Information on the Environment) Land Cover nomenclature is a nomenclature used to describe physical material at the surface of the earth.
+The CLC nomenclature defines a standardized classification schema that can be used for annotating remote imagery.</p>
+<p>The CLC classification schema is defined as a 3-level deep hierarchy with:</p>
+<ul class="simple">
+<li><p>5 classes in level 1</p></li>
+<li><p>15 classes in level 2</p></li>
+<li><p>44 classes in level 3</p></li>
+</ul>
+<p>The following box shows the label hierarchy in a tabular form.
+More in-depth information about the CLC2018 nomenclature, including example images for each level-3 label, can be reviewed on the <a class="reference external" href="https://land.copernicus.eu/user-corner/technical-library/corine-land-cover-nomenclature-guidelines/html/index.html">Corine-Land-Cover-Nomenclature-Guidelines</a> site.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_26834 th {
+  text-align: left;
+}
+</style>
+<table id="T_26834">
+  <thead>
+    <tr>
+      <th class="blank" >&nbsp;</th>
+      <th class="blank" >&nbsp;</th>
+      <th class="blank level0" >&nbsp;</th>
+    </tr>
+    <tr>
+      <th class="index_name level0" >CLC_LVL1</th>
+      <th class="index_name level1" >CLC_LVL2</th>
+      <th class="index_name level2" >CLC_LVL3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_26834_level0_row0" class="row_heading level0 row0" rowspan="11">Agricultural areas</th>
+      <th id="T_26834_level1_row0" class="row_heading level1 row0" rowspan="3">Arable land</th>
+      <th id="T_26834_level2_row0" class="row_heading level2 row0" >Non-irrigated arable land</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level2_row1" class="row_heading level2 row1" >Permanently irrigated land</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level2_row2" class="row_heading level2 row2" >Rice fields</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level1_row3" class="row_heading level1 row3" rowspan="4">Heterogeneous agricultural areas</th>
+      <th id="T_26834_level2_row3" class="row_heading level2 row3" >Agro-forestry areas</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level2_row4" class="row_heading level2 row4" >Annual crops associated with permanent crops</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level2_row5" class="row_heading level2 row5" >Complex cultivation patterns</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level2_row6" class="row_heading level2 row6" >Land principally occupied by agriculture, with significant areas of natural vegetation</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level1_row7" class="row_heading level1 row7" >Pastures</th>
+      <th id="T_26834_level2_row7" class="row_heading level2 row7" >Pastures</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level1_row8" class="row_heading level1 row8" rowspan="3">Permanent crops</th>
+      <th id="T_26834_level2_row8" class="row_heading level2 row8" >Fruit trees and berry plantations</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level2_row9" class="row_heading level2 row9" >Olive groves</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level2_row10" class="row_heading level2 row10" >Vineyards</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level0_row11" class="row_heading level0 row11" rowspan="11">Artificial Surfaces</th>
+      <th id="T_26834_level1_row11" class="row_heading level1 row11" rowspan="2">Artificial, non-agricultural vegetated areas</th>
+      <th id="T_26834_level2_row11" class="row_heading level2 row11" >Green urban areas</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level2_row12" class="row_heading level2 row12" >Sport and leisure facilities</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level1_row13" class="row_heading level1 row13" rowspan="4">Industrial, comercial and transport units</th>
+      <th id="T_26834_level2_row13" class="row_heading level2 row13" >Airports</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level2_row14" class="row_heading level2 row14" >Industrial or commercial units</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level2_row15" class="row_heading level2 row15" >Port areas</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level2_row16" class="row_heading level2 row16" >Road and rail networks and associated land</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level1_row17" class="row_heading level1 row17" rowspan="3">Mine, dump and construction sites</th>
+      <th id="T_26834_level2_row17" class="row_heading level2 row17" >Construction sites</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level2_row18" class="row_heading level2 row18" >Dump sites</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level2_row19" class="row_heading level2 row19" >Mineral extraction sites</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level1_row20" class="row_heading level1 row20" rowspan="2">Urban fabric</th>
+      <th id="T_26834_level2_row20" class="row_heading level2 row20" >Continuous urban fabric</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level2_row21" class="row_heading level2 row21" >Discontinuous urban fabric</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level0_row22" class="row_heading level0 row22" rowspan="12">Forest and seminatural areas</th>
+      <th id="T_26834_level1_row22" class="row_heading level1 row22" rowspan="3">Forest</th>
+      <th id="T_26834_level2_row22" class="row_heading level2 row22" >Broad-leaved forest</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level2_row23" class="row_heading level2 row23" >Coniferous forest</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level2_row24" class="row_heading level2 row24" >Mixed forest</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level1_row25" class="row_heading level1 row25" rowspan="5">Open spaces with little or no vegetation</th>
+      <th id="T_26834_level2_row25" class="row_heading level2 row25" >Bare rock</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level2_row26" class="row_heading level2 row26" >Beaches, dunes, sands</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level2_row27" class="row_heading level2 row27" >Burnt areas</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level2_row28" class="row_heading level2 row28" >Glaciers and perpetual snow</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level2_row29" class="row_heading level2 row29" >Sparsely vegetated areas</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level1_row30" class="row_heading level1 row30" rowspan="4">Shrub and/or herbaceous vegetation associations</th>
+      <th id="T_26834_level2_row30" class="row_heading level2 row30" >Moors and heathland</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level2_row31" class="row_heading level2 row31" >Natural grassland</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level2_row32" class="row_heading level2 row32" >Sclerophyllous vegetation</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level2_row33" class="row_heading level2 row33" >Transitional woodland/shrub</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level0_row34" class="row_heading level0 row34" rowspan="5">Water bodies</th>
+      <th id="T_26834_level1_row34" class="row_heading level1 row34" rowspan="2">Inland waters</th>
+      <th id="T_26834_level2_row34" class="row_heading level2 row34" >Water bodies</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level2_row35" class="row_heading level2 row35" >Water courses</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level1_row36" class="row_heading level1 row36" rowspan="3">Marine waters</th>
+      <th id="T_26834_level2_row36" class="row_heading level2 row36" >Coastal lagoons</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level2_row37" class="row_heading level2 row37" >Estuaries</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level2_row38" class="row_heading level2 row38" >Sea and ocean</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level0_row39" class="row_heading level0 row39" rowspan="5">Wetlands</th>
+      <th id="T_26834_level1_row39" class="row_heading level1 row39" rowspan="3">Coastal wetlands</th>
+      <th id="T_26834_level2_row39" class="row_heading level2 row39" >Intertidal flats</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level2_row40" class="row_heading level2 row40" >Salines</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level2_row41" class="row_heading level2 row41" >Salt marshes</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level1_row42" class="row_heading level1 row42" rowspan="2">Inland wetlands</th>
+      <th id="T_26834_level2_row42" class="row_heading level2 row42" >Inland marshes</th>
+    </tr>
+    <tr>
+      <th id="T_26834_level2_row43" class="row_heading level2 row43" >Peatbogs</th>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="id3">
+<h2>19-class nomenclature<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p>The 19-class nomenclature has combined and dropped classes from the 43-class variant for better use in machine learning.
+More specifically, ten classes of the original CLC nomenclature are maintained in the new nomenclature, 22 classes are grouped into 9 new classes, and 11 classes have been removed.
+Classes that strongly depend on land use or require additional data for their discrimination were removed.</p>
+<p>The change was necessary because there are some CLC classes that are difficult to be identified by only exploiting (single-date) Sentinel-2 images, because:</p>
+<ul class="simple">
+<li><p>Land use concepts associated with some classes may not be visible from space or fully recognizable with the spatial resolution of Sentinel-2 images, such as:</p>
+<ul>
+<li><p>Dump sites, Sport, and leisure facilities</p></li>
+</ul>
+</li>
+<li><p>RS time series, which BigEarthNet does not include, may be required to describe and discriminate some classes , such as:</p>
+<ul>
+<li><p>Non-irrigated arable land, or permanently irrigated land</p></li>
+</ul>
+</li>
+</ul>
+<p>The following table displays the exact the mapping from the old to the new class nomenclature.</p>
+<!-- :::{dropdown} 43-class to 19-class label nomenclature
+
+:::{glue:} old2new-labels-table
+
+::: -->
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>11 classes were dropped from the original 43-class nomenclature.
+As a result, there are 57 patches of the original BigEarthNet dataset that have <strong>no</strong> target labels.
+These patches should be dropped in experiments to remain compatible with the new nomenclature.</p>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_d5bf2 th {
+  text-align: left;
+}
+#T_d5bf2_row0_col0, #T_d5bf2_row0_col1, #T_d5bf2_row1_col0, #T_d5bf2_row1_col1, #T_d5bf2_row2_col0, #T_d5bf2_row2_col1, #T_d5bf2_row3_col0, #T_d5bf2_row4_col0, #T_d5bf2_row5_col0, #T_d5bf2_row6_col0, #T_d5bf2_row7_col0, #T_d5bf2_row8_col0, #T_d5bf2_row9_col0, #T_d5bf2_row10_col0, #T_d5bf2_row11_col0, #T_d5bf2_row11_col1, #T_d5bf2_row12_col0, #T_d5bf2_row12_col1, #T_d5bf2_row13_col0, #T_d5bf2_row13_col1, #T_d5bf2_row14_col0, #T_d5bf2_row14_col1, #T_d5bf2_row15_col0, #T_d5bf2_row15_col1, #T_d5bf2_row16_col0, #T_d5bf2_row16_col1, #T_d5bf2_row17_col0, #T_d5bf2_row17_col1, #T_d5bf2_row18_col0, #T_d5bf2_row18_col1, #T_d5bf2_row19_col0, #T_d5bf2_row19_col1, #T_d5bf2_row20_col0, #T_d5bf2_row20_col1, #T_d5bf2_row21_col0, #T_d5bf2_row21_col1, #T_d5bf2_row22_col0, #T_d5bf2_row22_col1, #T_d5bf2_row23_col0, #T_d5bf2_row23_col1, #T_d5bf2_row24_col0, #T_d5bf2_row24_col1, #T_d5bf2_row25_col0, #T_d5bf2_row25_col1, #T_d5bf2_row26_col0, #T_d5bf2_row26_col1, #T_d5bf2_row27_col0, #T_d5bf2_row27_col1, #T_d5bf2_row28_col0, #T_d5bf2_row28_col1, #T_d5bf2_row29_col0, #T_d5bf2_row29_col1, #T_d5bf2_row30_col0, #T_d5bf2_row31_col0, #T_d5bf2_row31_col1, #T_d5bf2_row32_col0, #T_d5bf2_row33_col0, #T_d5bf2_row33_col1, #T_d5bf2_row34_col0, #T_d5bf2_row34_col1, #T_d5bf2_row35_col0, #T_d5bf2_row35_col1, #T_d5bf2_row36_col0, #T_d5bf2_row36_col1, #T_d5bf2_row37_col0, #T_d5bf2_row38_col0, #T_d5bf2_row38_col1, #T_d5bf2_row39_col0, #T_d5bf2_row39_col1, #T_d5bf2_row40_col0, #T_d5bf2_row40_col1, #T_d5bf2_row41_col0, #T_d5bf2_row41_col1, #T_d5bf2_row42_col0, #T_d5bf2_row42_col1 {
+  text-align: left;
+}
+#T_d5bf2_row3_col1, #T_d5bf2_row4_col1, #T_d5bf2_row5_col1, #T_d5bf2_row6_col1, #T_d5bf2_row7_col1, #T_d5bf2_row8_col1, #T_d5bf2_row9_col1, #T_d5bf2_row10_col1, #T_d5bf2_row30_col1, #T_d5bf2_row32_col1, #T_d5bf2_row37_col1 {
+  text-align: left;
+  color: red;
+}
+</style>
+<table id="T_d5bf2">
+  <thead>
+    <tr>
+      <th id="T_d5bf2_level0_col0" class="col_heading level0 col0" >Original 43-class label</th>
+      <th id="T_d5bf2_level0_col1" class="col_heading level0 col1" >Updated 19-class label</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_d5bf2_row0_col0" class="data row0 col0" >Continuous urban fabric</td>
+      <td id="T_d5bf2_row0_col1" class="data row0 col1" >Urban fabric</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row1_col0" class="data row1 col0" >Discontinuous urban fabric</td>
+      <td id="T_d5bf2_row1_col1" class="data row1 col1" >Urban fabric</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row2_col0" class="data row2 col0" >Industrial or commercial units</td>
+      <td id="T_d5bf2_row2_col1" class="data row2 col1" >Industrial or commercial units</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row3_col0" class="data row3 col0" >Road and rail networks and associated land</td>
+      <td id="T_d5bf2_row3_col1" class="data row3 col1" >REMOVED</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row4_col0" class="data row4 col0" >Port areas</td>
+      <td id="T_d5bf2_row4_col1" class="data row4 col1" >REMOVED</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row5_col0" class="data row5 col0" >Airports</td>
+      <td id="T_d5bf2_row5_col1" class="data row5 col1" >REMOVED</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row6_col0" class="data row6 col0" >Mineral extraction sites</td>
+      <td id="T_d5bf2_row6_col1" class="data row6 col1" >REMOVED</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row7_col0" class="data row7 col0" >Dump sites</td>
+      <td id="T_d5bf2_row7_col1" class="data row7 col1" >REMOVED</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row8_col0" class="data row8 col0" >Construction sites</td>
+      <td id="T_d5bf2_row8_col1" class="data row8 col1" >REMOVED</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row9_col0" class="data row9 col0" >Green urban areas</td>
+      <td id="T_d5bf2_row9_col1" class="data row9 col1" >REMOVED</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row10_col0" class="data row10 col0" >Sport and leisure facilities</td>
+      <td id="T_d5bf2_row10_col1" class="data row10 col1" >REMOVED</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row11_col0" class="data row11 col0" >Non-irrigated arable land</td>
+      <td id="T_d5bf2_row11_col1" class="data row11 col1" >Arable land</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row12_col0" class="data row12 col0" >Permanently irrigated land</td>
+      <td id="T_d5bf2_row12_col1" class="data row12 col1" >Arable land</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row13_col0" class="data row13 col0" >Rice fields</td>
+      <td id="T_d5bf2_row13_col1" class="data row13 col1" >Arable land</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row14_col0" class="data row14 col0" >Vineyards</td>
+      <td id="T_d5bf2_row14_col1" class="data row14 col1" >Permanent crops</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row15_col0" class="data row15 col0" >Fruit trees and berry plantations</td>
+      <td id="T_d5bf2_row15_col1" class="data row15 col1" >Permanent crops</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row16_col0" class="data row16 col0" >Olive groves</td>
+      <td id="T_d5bf2_row16_col1" class="data row16 col1" >Permanent crops</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row17_col0" class="data row17 col0" >Pastures</td>
+      <td id="T_d5bf2_row17_col1" class="data row17 col1" >Pastures</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row18_col0" class="data row18 col0" >Annual crops associated with permanent crops</td>
+      <td id="T_d5bf2_row18_col1" class="data row18 col1" >Permanent crops</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row19_col0" class="data row19 col0" >Complex cultivation patterns</td>
+      <td id="T_d5bf2_row19_col1" class="data row19 col1" >Complex cultivation patterns</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row20_col0" class="data row20 col0" >Land principally occupied by agriculture, with significant areas of natural vegetation</td>
+      <td id="T_d5bf2_row20_col1" class="data row20 col1" >Land principally occupied by agriculture, with significant areas of natural vegetation</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row21_col0" class="data row21 col0" >Agro-forestry areas</td>
+      <td id="T_d5bf2_row21_col1" class="data row21 col1" >Agro-forestry areas</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row22_col0" class="data row22 col0" >Broad-leaved forest</td>
+      <td id="T_d5bf2_row22_col1" class="data row22 col1" >Broad-leaved forest</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row23_col0" class="data row23 col0" >Coniferous forest</td>
+      <td id="T_d5bf2_row23_col1" class="data row23 col1" >Coniferous forest</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row24_col0" class="data row24 col0" >Mixed forest</td>
+      <td id="T_d5bf2_row24_col1" class="data row24 col1" >Mixed forest</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row25_col0" class="data row25 col0" >Natural grassland</td>
+      <td id="T_d5bf2_row25_col1" class="data row25 col1" >Natural grassland and sparsely vegetated areas</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row26_col0" class="data row26 col0" >Moors and heathland</td>
+      <td id="T_d5bf2_row26_col1" class="data row26 col1" >Moors, heathland and sclerophyllous vegetation</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row27_col0" class="data row27 col0" >Sclerophyllous vegetation</td>
+      <td id="T_d5bf2_row27_col1" class="data row27 col1" >Moors, heathland and sclerophyllous vegetation</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row28_col0" class="data row28 col0" >Transitional woodland/shrub</td>
+      <td id="T_d5bf2_row28_col1" class="data row28 col1" >Transitional woodland, shrub</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row29_col0" class="data row29 col0" >Beaches, dunes, sands</td>
+      <td id="T_d5bf2_row29_col1" class="data row29 col1" >Beaches, dunes, sands</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row30_col0" class="data row30 col0" >Bare rock</td>
+      <td id="T_d5bf2_row30_col1" class="data row30 col1" >REMOVED</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row31_col0" class="data row31 col0" >Sparsely vegetated areas</td>
+      <td id="T_d5bf2_row31_col1" class="data row31 col1" >Natural grassland and sparsely vegetated areas</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row32_col0" class="data row32 col0" >Burnt areas</td>
+      <td id="T_d5bf2_row32_col1" class="data row32 col1" >REMOVED</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row33_col0" class="data row33 col0" >Inland marshes</td>
+      <td id="T_d5bf2_row33_col1" class="data row33 col1" >Inland wetlands</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row34_col0" class="data row34 col0" >Peatbogs</td>
+      <td id="T_d5bf2_row34_col1" class="data row34 col1" >Inland wetlands</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row35_col0" class="data row35 col0" >Salt marshes</td>
+      <td id="T_d5bf2_row35_col1" class="data row35 col1" >Coastal wetlands</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row36_col0" class="data row36 col0" >Salines</td>
+      <td id="T_d5bf2_row36_col1" class="data row36 col1" >Coastal wetlands</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row37_col0" class="data row37 col0" >Intertidal flats</td>
+      <td id="T_d5bf2_row37_col1" class="data row37 col1" >REMOVED</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row38_col0" class="data row38 col0" >Water courses</td>
+      <td id="T_d5bf2_row38_col1" class="data row38 col1" >Inland waters</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row39_col0" class="data row39 col0" >Water bodies</td>
+      <td id="T_d5bf2_row39_col1" class="data row39 col1" >Inland waters</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row40_col0" class="data row40 col0" >Coastal lagoons</td>
+      <td id="T_d5bf2_row40_col1" class="data row40 col1" >Marine waters</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row41_col0" class="data row41 col0" >Estuaries</td>
+      <td id="T_d5bf2_row41_col1" class="data row41 col1" >Marine waters</td>
+    </tr>
+    <tr>
+      <td id="T_d5bf2_row42_col0" class="data row42 col0" >Sea and ocean</td>
+      <td id="T_d5bf2_row42_col1" class="data row42 col1" >Marine waters</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="raw-data.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Raw BigEarthNet Data</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="data-source.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Data Source</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, Kai Norman Clasen
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              <a class="muted-link " href="https://github.com/kai-tub/ben-docs/" aria-label="GitHub">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a>
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">BigEarthNet Labels</a><ul>
+<li><a class="reference internal" href="#class-nomenclature">43-class nomenclature</a></li>
+<li><a class="reference internal" href="#id3">19-class nomenclature</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script src="_static/design-tabs.js"></script>
+    </body>
+</html>
