@@ -1,4 +1,5 @@
 # BigEarthNet Guide
+[![DOI](https://www.zenodo.org/badge/439043960.svg)](https://www.zenodo.org/badge/latestdoi/439043960)
 
 :::{warning}
 - This site should be considered in BETA status and is an active WIP!
