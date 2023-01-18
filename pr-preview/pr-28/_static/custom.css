@@ -64,12 +64,12 @@ article[role="main"] svg {
 }
 
 @media (prefers-color-scheme: dark) {
-    body[data-theme="auto"] article[role="main"] svg {
+    body:not([data-theme=light]) article[role="main"] svg {
         filter: invert(93%) hue-rotate(180deg);
     }
 }
 
-body[data-theme="dark"] article[role="main"] svg {
+body[data-theme=dark] article[role="main"] svg {
     filter: invert(93%) hue-rotate(180deg);
 }
 
