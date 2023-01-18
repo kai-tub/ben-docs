@@ -252,12 +252,17 @@ The current project uses <a class="reference external" href="https://nixos.org/e
 </ul>
 <p><a class="reference external" href="https://python-poetry.org/">Poetry</a> is then used to manage all of the direct Python dependencies.</p>
 <p>To further simplify the setup, the (currently still unstable) <a class="reference external" href="https://numtide.github.io/devshell/">devshell</a> tool is used to quickly and easily create a <code class="docutils literal notranslate"><span class="pre">nix</span> <span class="pre">development</span></code> environment that prepares a managed shell environment.</p>
-<p>This simplifies the entire set up the development environment to:</p>
+<p>This simplifies the entire set up the development environment to</p>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://nixos.org/download.html#">Download and install the nix package manager</a></p></li>
 <li><p>Clone this repository with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/kai-tub/ben-docs.git</span></code></p></li>
 <li><p>Change to the downloaded directory with <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">ben-docs</span></code></p></li>
-<li><p>Replicate the development environment with <code class="docutils literal notranslate"><span class="pre">nix</span> <span class="pre">development</span></code> (this may take some time depending on your download speed)</p></li>
+<li><p>Replicate the development environment with <code class="docutils literal notranslate"><span class="pre">nix</span> <span class="pre">development</span></code> (this may take some time depending on your download speed)</p>
+<ul class="simple">
+<li><p>Requires the <em>experimental</em> (yet widely popular) experimental features <code class="docutils literal notranslate"><span class="pre">nix-command</span></code> and <code class="docutils literal notranslate"><span class="pre">flakes</span></code>. If you aren’t interested in <a class="reference external" href="https://nixos.org/explore.html">nix</a> you can enable it only for the command invocation with <code class="docutils literal notranslate"><span class="pre">nix</span> <span class="pre">--experimental-features</span> <span class="pre">nix-command</span> <span class="pre">--extra-experimental-features</span> <span class="pre">flakes</span> <span class="pre">develop</span></code></p></li>
+<li><p>This has been tested on Linux and on Windows via <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/">WSL</a>.</p></li>
+</ul>
+</li>
 <li><p>Start hacking 😁</p></li>
 </ol>
 <p>If you create a <a class="reference external" href="https://docs.github.com/en/get-started/quickstart/hello-world#opening-a-pull-request">PR</a>, an automatic test suite will check if the documentation can be successfully regenerated (using <a class="reference external" href="https://nixos.org/explore.html">nix</a>).

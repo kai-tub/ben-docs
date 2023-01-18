@@ -375,7 +375,6 @@
     "tags": []
    },
    "source": [
-    "\n",
     ":::{important}\n",
     "Instead of writing another metadata loading script:\n",
     "- Download one of the pre-converted files or\n",
@@ -395,6 +394,9 @@
   }
  ],
  "metadata": {
+  "jupytext": {
+   "formats": "ipynb,md_representations//md:myst"
+  },
   "kernelspec": {
    "display_name": "Python 3.10.4 ('.venv': venv)",
    "language": "python",
