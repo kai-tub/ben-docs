@@ -9,6 +9,7 @@ on:
       - closed
 permissions:
   pull-requests: write
+  pages: write
 
 jobs:
   deploy-preview:
