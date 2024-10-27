@@ -3,7 +3,7 @@
 > A user-friendly introduction to the multi-modal BigEarthNet-MM dataset.
 
 Please take a look at the hosted documentation:
-- [docs.kai-tub.tech/ben-docs/](https://docs.kai-tub.tech/ben-docs/)
+- [kai-tub.github.io/ben-docs/](https://kai-tub.github.io/ben-docs/)
 
 ## Motivation
 <!-- motivation-start -->
@@ -16,4 +16,4 @@ Doing so, will (hopefully) lead to more robust and reliable research down the li
 
 ## Contributing
 Extensive work went towards making it as easy as possible to contribute to and reproduce the work environment.
-Please see the [Contributing](docs.kai-tub.tech/ben-docs/contributing) section of the documentation for more details!
+Please see the [Contributing](kai-tub.github.io/ben-docs/contributing) section of the documentation for more details!

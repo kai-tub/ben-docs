@@ -45,7 +45,7 @@ extensions = [
 
 
 intersphinx_mapping = {
-    "ben_gdf_builder": ("https://docs.kai-tub.tech/bigearthnet_gdf_builder", None)
+    "ben_gdf_builder": ("https://kai-tub.github.io/bigearthnet_gdf_builder", None)
 }
 
 # Only useful if sub-urls are accessed
@@ -77,10 +77,10 @@ myst_enable_extensions = [
 
 myst_substitutions = {
     "ben": "[BigEarthNet](https://bigearth.net/)",
-    "BenEncoder": "[BigEarthNet Encoder](https://docs.kai-tub.tech/bigearthnet_encoder/)",
-    "BenInterface": "[BigEarthNet Patch Interface](https://docs.kai-tub.tech/bigearthnet_patch_interface/)",
-    "BenGdfBuilder": "[BigEarthNet GDF Builder](https://docs.kai-tub.tech/bigearthnet_gdf_builder/)",
-    "BenCommon": "[BigEarthNet Common](https://docs.kai-tub.tech/bigearthnet_common/)",
+    "BenEncoder": "[BigEarthNet Encoder](https://kai-tub.github.io/bigearthnet_encoder/)",
+    "BenInterface": "[BigEarthNet Patch Interface](https://kai-tub.github.io/bigearthnet_patch_interface/)",
+    "BenGdfBuilder": "[BigEarthNet GDF Builder](https://kai-tub.github.io/bigearthnet_gdf_builder/)",
+    "BenCommon": "[BigEarthNet Common](https://kai-tub.github.io/bigearthnet_common/)",
     "nix": "[nix](https://nixos.org/explore.html)",
     "devshell": "[devshell](https://numtide.github.io/devshell/)",
     "hypothesis": "[hypothes.is](https://web.hypothes.is/)",
