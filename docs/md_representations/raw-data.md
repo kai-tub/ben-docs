@@ -273,9 +273,9 @@ from bigearthnet_gdf_builder.builder import add_full_ben_s2_metadata
 
 # also provides a quick way to add important metadata
 # example "metadata" subset
-meta_gdf = add_full_ben_s2_metadata(gdf)
+#meta_gdf = add_full_ben_s2_metadata(gdf)
 # showing first row as tables have display issues
-meta_gdf
+#meta_gdf
 ```
 
 +++ {"tags": []}
