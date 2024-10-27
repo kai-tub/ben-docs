@@ -352,24 +352,6 @@
    ]
   },
   {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {
-    "tags": []
-   },
-   "outputs": [],
-   "source": [
-    "# scroll-output\n",
-    "from bigearthnet_gdf_builder.builder import add_full_ben_s2_metadata\n",
-    "\n",
-    "# also provides a quick way to add important metadata\n",
-    "# example \"metadata\" subset\n",
-    "meta_gdf = add_full_ben_s2_metadata(gdf)\n",
-    "# showing first row as tables have display issues\n",
-    "meta_gdf"
-   ]
-  },
-  {
    "cell_type": "markdown",
    "metadata": {
     "tags": []
